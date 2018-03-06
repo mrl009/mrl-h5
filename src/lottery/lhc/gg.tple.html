@@ -1,0 +1,20 @@
+<div class="ch_numball ball-red bigBalls lhc-zmgg">
+    <div ng-if="oneSname=='zmgg'" class="lz-tip fs12">必须两组以上玩法</div>
+    <ul class="balls clearfix" ng-repeat="v in lottery.balls">
+        <b class="fl fs14"><b class="main-w">{{v.name}}</b></b>
+        <li ng-repeat="t in v.child">
+            <span
+                class="ball"
+                ng-click="ggBalls($event)"
+                name="{{t.name}}"
+                rate="{{t.rate}}"
+                rebate="{{t.rebate}}"
+                code="{{t.code}}"
+                pid="{{t.id}}"
+            >
+                <div>{{t.name}}</div>
+                <div ng-bind="t.rate" class="rate"></div>
+            </span>
+        </li>
+    </ul>
+</div>

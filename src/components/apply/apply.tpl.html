@@ -1,0 +1,69 @@
+<iheader>
+    <back></back>
+    <h1 class="title">申请代理</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="apply">
+    <form>
+        <div class="form-group">
+            <label class="iconfont">&#xe624;</label>
+            <span class="line main-bg"></span>
+            <input type="tel"
+                   ng-model="formData.phone"
+                   ng-disabled="isDisabled"
+                   placeholder="请填写真实手机号，否则不予通过"/>
+        </div>
+        <div class="form-group">
+            <label class="iconfont">&#xe606;</label>
+            <span class="block line main-bg"></span>
+            <input class="padding-left email form-input"
+                   type="text" ng-model="formData.email"
+                   ng-disabled="isDisabled"
+                   placeholder="请填写真实邮箱"/>
+        </div>
+        <div class="form-group">
+            <label class="iconfont">&#xe65c;</label>
+            <span class="block line main-bg"></span>
+            <input type="text"
+                   ng-model="formData.qq"
+                   ng-disabled="isDisabled"
+                   placeholder="请填写qq或者微信"/>
+        </div>
+        <div class="form-text pd12">
+            <p class="fs16">请提交申请后耐心等待1~3个工作日!</p>
+            <textarea
+              id="textarea"
+              ng-disabled="isDisabled"
+              ng-model="formData.user_memo"
+              placeholder="申请理由,建议......"
+            ></textarea>
+        </div>
+        <div class="form-submit pd12" ng-show="!isDisabled">
+            <input class="btn-block btn-submit white fs16 main-bg" type="submit" value="提交申请" ng-click="register()"/>
+        </div>
+
+        <!--提交后-->
+        <div ng-if="isDisabled">
+            <p class="label">
+                <label>申请状态:</label>
+                <span class="status assertive warn-color">{{statusTips}}</span>
+            </p>
+            <p class="label">
+                <label>原因:</label>
+                <span class="status warn-color">{{memo}}</span>
+            </p>
+            <div class="pd12">
+                <button
+                  class="btn-block btn-disabled fs16 "
+                  ng-if="!isStatusNoTow"
+                  ng-disabled="!isStatusNoTow">已提交</button>
+                <button
+                  class="btn-block btn-submit fs16 main-bg"
+                  ng-if="isStatusNoTow"
+                  ng-click="register()">提交</button>
+            </div>
+        </div>
+    </form>
+</content>

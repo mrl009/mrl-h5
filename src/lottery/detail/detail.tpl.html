@@ -1,0 +1,146 @@
+<iheader>
+    <back ng-click="goBack()"></back>
+    <h1 class="title" >
+        <label class="zx fs12">玩法</label>
+        <span class="t-btn" ng-click="openType($event)">
+            {{playInfo.topTitle}}
+            {{type != 'pcdd' ? '-' : ''}}
+            {{type != 'pcdd' ? playInfo.name : ''}}&nbsp;&nbsp;
+            <i class="icon-xt"></i>
+        </span>
+        <span class="g-type warn-color">{{playlist.ctg=='gc'?(GF|limitTo:1):(BY|limitTo:1)}}</span>
+    </h1>
+    <i class="icon pull-right iconfont fs20 white icon-dropmenu" ng-click="dropMenu($event)"></i>
+</iheader>
+
+<content hasTabs="true" ng-class="{true: 'pk10-content'}[type=='pk10']" class="bg-white">
+    <div class="lottery row">
+        <div class="col-50 right-line">
+            <div class="text-center lottery-title fs14" ng-click="openLottery()">
+                <i class="iconfont icon-kj"></i>
+                近期开奖
+            </div>
+            <ul class="list-inline text-center pd-ball"
+                ng-style="{'padding': kithe[gid].number.length >= 10 ? '0 1.5rem':kithe[gid].number.length >=8 ? '0 2rem': ''}"
+                ng-class="{'open-pk10': type=='pk10'}">
+                <li ng-repeat="num in kithe[gid].number track by $index">
+                    <p class="white circle20 main-w fs12 text-center kj-ball"
+                       ng-if="(type != 'pk10' && type != 's_pk10') &&
+                              (type != 'lhc' && type != 's_lhc') &&
+                              (type != 'pcdd' && type != 's_pcdd') &&
+                              (type != 'k3' && type != 's_k3')">
+                        {{num}}
+                    </p>
+                    <p class="white circle20 open-win-ball-cell fs12 text-center kj-ball"
+                       codepk="{{num}}"
+                       ng-if="type == 'pk10' || type == 's_pk10'">
+                        {{num}}
+                    </p>
+                    <p class="white circle20 open-win-ball-cell fs12 text-center kj-ball"
+                       code="{{num}}"
+                       ng-if="type == 'lhc' || type == 's_lhc'">
+                        {{num}}
+                    </p>
+                  <!--k3  -->
+                    <P ng-if="type == 'k3' || type == 's_k3'"
+                       class="{{['k3-1', 'k3-2', 'k3-3', 'k3-4', 'k3-5','k3-6'][num-1]}}"
+                    ></P>
+                    <!--pcdd-->
+                    <span class="open-win-ball-cell main-w"
+                          ng-if="(type == 'pcdd' || type == 's_pcdd') && $index !== 3">
+                                            {{num}}
+                    </span>
+                    <span class="open-win-ball-cell"
+                          codepcdd="{{num}}"
+                          ng-if="(type == 'pcdd' || type == 's_pcdd') && $index === 3">
+                                            {{num}}
+                                        </span>
+                    <span  class="fs14 text-center bold"
+                           ng-if="(type == 'pcdd' || type == 's_pcdd') && ($index == 0 || $index == 1)">+</span>
+                    <span  class="fs14 text-center bold"
+                           ng-if="(type == 'pcdd' || type == 's_pcdd') && $index == 2">=</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-50">
+            <div class="text-center lottery-title fs14">
+                距{{kithe[gid].kithe}}期截止
+            </div>
+            <ul class="list-inline text-center fs22 white time-block"
+                ng-style="{'margin-top': kithe[gid].number.length >= 8 ? '0.6rem':''}"
+                ng-if="hdDate(syTimeCc[gid], 0)!='未开盘'">
+                <li class="bg-black">{{hdDate(syTimeCc[gid], 0)}}</li>
+                <li class="bg-black mg-l5 mg-r5">{{hdDate(syTimeCc[gid], 1)}}</li>
+                <li class="bg-black">{{hdDate(syTimeCc[gid], 2)}}</li>
+            </ul>
+
+            <ul class="list-inline text-center fs22 white time-block"
+                ng-style="{'margin-top': kithe[gid].number.length >= 8 ? '0.6rem':''}"
+                ng-if="hdDate(syTimeCc[gid], 0)=='未开盘'">
+                <li class="bg-black">未</li>
+                <li class="bg-black mg-l5 mg-r5">开</li>
+                <li class="bg-black">盘</li>
+            </ul>
+        </div>
+    </div>
+    <div class="lot-wrap lot-number">
+        <nav class="hint mg-t15">
+            <div class="fl fs14 graylight" ng-click="randomOne()">
+                <i class="iconfont fs24 graylight icon-yao"></i>
+                摇一摇
+            </div>
+            <div class="fr fs14">
+                <a ng-click="showTips(gid)" class="graylight">
+                    <i class="iconfont fs20 graylight icon-info"></i>
+                    玩法提示
+                </a>
+            </div>
+        </nav>
+        <div class="container re s-lianma m-b10" ng-if="playInfo.name === '连码'">
+            <ul class="row">
+                <li class="col-20 fs12 text-center"
+                    ng-class="{'main-color': ballIndex == $index}"
+                    ng-click="selectItem($index)"
+                    ng-repeat="item in lottery track by $index">
+                    {{item.name}} <br>
+                    <span class="fs10">赔率:</span>{{item.rate}}
+                </li>
+            </ul>
+        </div>
+        <ng-include src="LTY_ROOT + tmp"></ng-include>
+    </div>
+</content>
+<ifooter class="lottery-footer">
+    <div class="left">
+        <button class="button-del" ng-click="clearAll()">
+            <i class="iconfont icon-lajixiang"></i>
+        </button>
+    </div>
+    <div class="title money fs14" ng-if="!mtxt">
+        <span class="main-color" ng-bind="suData.sumbet"></span>
+        注
+        <span class="main-color" ng-bind="suData.money"></span>
+        元
+    </div>
+    <div class="title money" ng-if="mtxt">
+        <div class="bet-input-left">
+            <span class="main-color fl" ng-bind="suData.sumbet"></span>
+            <span class="fl">注</span>
+            <span class="fl fs14">&nbsp;</span>
+            <span class="txtmoney fl">
+                <number
+                    class="text-input fs16"
+                    init-value="suData.txtmoney"
+                    type="number"
+                    maxleng="5"
+                    name="betMoney"></number>
+            </span>
+            <span class="yuan fl fs14">元</span>
+        </div>
+    </div>
+    <button
+        class="button button-add button-fill right"
+        ng-click="bet()"
+        ng-disabled="suData.sumbet < 1"
+    >立即投注</button>
+</ifooter>

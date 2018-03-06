@@ -1,0 +1,140 @@
+<iheader ng-if="showList">
+	<back></back>
+	<h1 class="title">投注记录</h1>
+</iheader>
+<content hasTabs="true" ng-if="showList">
+	<div class="order-wrap" ng-if="!isLogin">
+		<div class="bet-unlogin">
+	        <img src="../../assets/img/icon-unlogin.png">
+	        <p>登录才能看见注单哟</p>
+	        <a href="/login/" class="login-button main-w">登录</a>
+	        <a href="/register" class="main-color border-color">10秒注册</a>
+	    </div>
+	</div>
+	<div class="order-wrap" ng-if="isLogin">
+		<tab-items>
+			<tab-item title="{{ot.title}}"
+				ng-repeat="ot in orderType"
+				ng-click="chooseTab(ot.id)"
+			></tab-item>
+		</tab-items>
+		<div class="list-empty" ng-if="isEmpty">
+            <img src="../../assets/img/icon-empty.png">
+            <p>暂无该投注记录，不要让大奖溜走~</p>
+            <a class="bet-button main-w" href="/tabs/buy/">
+                立即投注
+            </a>
+        </div>
+		<div class="list"
+			ng-if="!isEmpty"
+			pull-refresh
+			refresh="refresh()"
+			load-more="loadMore()"
+		>
+			<div class="item"
+				ng-repeat="item in orderItems track by $index"
+				ng-click="orderDetail(item.order_num,item.issue,item.game,item.tname,item.open_resu_num,item.status,
+                item.names,item.price_sum,item.bet_time,item.rebate,item.rate,item.win_price,item.win_counts,item.is_open)"
+			>
+	            <div class="row" >
+	                <div class="col col-40">
+	                    <span ng-if="item.status!=3" class="game fs16">{{item.game}}</span>
+	                    <span ng-if="item.status!=3" class="tname fs12">{{item.tname}}</span>
+	                    <span ng-if="item.status==3" class="game-disable fs16">{{item.game}}</span>
+	                    <span ng-if="item.status==3" class="tname-disable fs12">{{item.tname}}</span>
+	                </div>
+	                <div class="col col-30">
+	                    <span ng-if="item.status!=3" class="issue fs12">{{item.issue}}期</span>
+	                    <span ng-if="item.status==3" class="issue-disable fs12 issue">{{item.issue}}期</span>
+	                </div>
+	                <div class="col col-30 wins-content">
+	                    <div class="zt-list">
+	                        <span class="zt-item" ng-if="item.status==1">
+	                            <img class="wins_img" src="../../assets/img/icon-zj.png">
+	                        </span>
+	                        <span class="zt-item">
+	                            <span class="wins-price fs12" ng-if="item.status!=3">-{{item.price_sum}}元</span>
+	                        </span>
+	                        <span class="zt-item" ng-if="item.status==1">
+	                            <span class="wins-sum fs12">{{item.win_price}}元</span>
+	                        </span>
+	                        <span class="zt-item" ng-if="item.status==4">
+	                            <span class="wins-wait-open mag-top fr">待开奖</span>
+	                        </span>
+	                        <span class="zt-item">
+	                            <span class="wins-price-disable no-wrap fs14" ng-if="item.status==3">-{{item.price_sum}}元</span>
+	                        </span>
+	                        <span class="zt-item mag-top no-wrap" ng-if="item.status==3">
+	                            <span class="wins-wait-open-disable fs12">已撤单</span>
+	                        </span>
+	                        <span class="zt-item mag-top" ng-if="item.status!=1 && item.status!=3 && item.status!=4">
+	                            <span class="wins-wait-open-disable fs12">未中奖</span>
+	                        </span>
+	                    </div>
+	                </div>
+	            </div>
+            </div>
+        </div>
+	</div>
+</content>
+
+<!--详情页-->
+<iheader ng-if="!showList">
+	<back ng-click="goBack()"></back>
+	<h1 class="title">注单详情</h1>
+</iheader>
+<content class="bet-detail-list" ng-if="!showList && isLogin" hasTabs="true">
+    <div class="order_num"><span>注单号{{detail.order_num}}</span></div>
+    <div class="list-cell">
+        <ul class="list">
+            <li class="item">
+                <span>期号</span><span>{{detail.issue}}</span>
+            </li>
+            <li class="item">
+                <span>彩种</span><span>{{detail.game}}</span>
+            </li>
+            <li class="item">
+                <span>玩法</span><span>{{detail.tname}}</span>
+            </li>
+            <li class="item row">
+                <span class="col col-25 col-center">投注号码</span><span class="col col-75">{{detail.names}}</span>
+            </li>
+            <li class="item">
+                <span>开奖状态</span><span>{{detail.statusName}}</span>
+            </li>
+            <li class="item" ng-if="detail.status!=4 && detail.status != 3">
+                <span>开奖号码</span><span>{{detail.open_resu_num}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="list-cell">
+        <ul class="list">
+            <li class="item">
+                <span>投注金额</span><span>{{detail.price_sum}}元</span>
+            </li>
+            <li class="item" ng-if="detail.status==1">
+                <span>中奖注数</span><span>{{detail.win_counts}}</span>
+            </li>
+            <li class="item" ng-if="detail.status==1">
+                <span>投注返点</span><span>{{detail.rebate}}</span>
+            </li>
+            <li class="item" ng-if="detail.status==1">
+                <span>投注赔率</span><span>{{detail.rate}}</span>
+            </li>
+            <li class="item" ng-if="detail.status==1">
+                <span>中奖金额</span><span>{{detail.win_price}}</span>
+            </li>
+            <li class="item" ng-if="detail.status==1">
+                <span>实际输赢</span><span>{{((detail.win_price)-(detail.price_sum)).toFixed(3)}}</span>
+            </li>
+            <li class="item" >
+                <span>投注时间</span><span>{{detail.bet_time}}</span>
+            </li>
+        </ul>
+    </div>
+    <div
+    	class="cancel-button"
+    	ng-if="detail.is_open"
+    	ng-click="orderCancel(detail.order_num)"
+    >撤销订单</div>
+</content>

@@ -1,0 +1,114 @@
+.accordion {
+  margin: 10pt 0;
+  border: none;
+  background: #F5F5F9;
+}
+.accordion p {
+  margin: 0!important;
+}
+.accordion .ddd p {
+  white-space: normal;
+  word-break: break-all;
+}
+.accordion .item {
+  margin-top: 10pt;
+  border-radius: 5pt;
+  padding: 0 0.5rem;
+}
+.accordion .item img {
+  width: 100%;
+  height: 5rem;
+  vertical-align: middle;
+}
+.accordion .item h3:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+.accordion .content {
+  /*font-weight: 400;*/
+  /*padding: 15pt;*/
+  background: #ffffff;
+  display: none;
+  /*box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2);*/
+  border-bottom-left-radius: 5pt;
+  border-bottom-right-radius: 5pt;
+  /*margin-top: 5pt;*/
+  margin-bottom: 5pt;
+}
+.accordion .item .item-header-title {
+  font-family: PingFang-SC-Regular;
+  font-size: 0.8rem;
+  color: #616161;
+  letter-spacing: 0;
+  float: left;
+}
+.accordion .item .item-header-a {
+  font-family: PingFang-SC-Regular;
+  font-size: 0.5rem;
+  color: #C81623;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.accordion .item:first-child {
+  margin-top: 0;
+}
+.accordion .content {
+  transition: all 0.5s ease-in-out;
+}
+.accordion .show-content {
+  display: block;
+}
+.vip-explain .bg-vip {
+  height: 10rem;
+}
+.vip-explain .bg-vip .col-50:last-child {
+  background: url('../../assets/img/VIP/pleasantly.png') center no-repeat;
+  background-size: 70%;
+}
+.vip-explain .vip-box {
+  width: 7.5rem;
+  height: 5.5rem;
+  margin: -2px auto 0.75rem;
+  background-color: #bb722b;
+  color: #ffc14f;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.vip-explain .icon-current-vip {
+  margin: 0.75rem 0 0.2rem;
+}
+.vip-explain .btn-wrap {
+  padding: 0.8rem 0.5rem 0;
+}
+.vip-explain .btn-wrap .btn {
+  padding: 0.5rem 0;
+  width: 100%;
+}
+.vip-explain .bg-p-img {
+  margin: 1rem 0 0.3rem;
+  line-height: 2rem;
+  background: url('../../assets/img/VIP/title.png') center no-repeat;
+  background-size: 100%;
+}
+.vip-explain .vip-header [class^='col'],
+.vip-explain .vip-rows [class^='col'] {
+  line-height: 1.5rem;
+  text-align: center;
+}
+.vip-explain .vip-header [class^='col']:last-child,
+.vip-explain .vip-rows [class^='col']:last-child {
+  border-right: 0!important;
+}
+.vip-explain .vip-header [class^='col'] {
+  border-right: 1px solid #fff;
+}
+.vip-explain .vip-rows {
+  border-bottom: 1px solid #d8d8d8;
+}
+.vip-explain .vip-rows [class^='col'] {
+  border-right: 1px solid #d8d8d8;
+}

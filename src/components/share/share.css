@@ -1,0 +1,46 @@
+/* =============register============= */
+.share {
+  position: relative;
+  /**
+ * Created by Jeffery Wang.
+ * Create Time: 2015-06-16 19:52
+ * Author Link: http://blog.wangjunfeng.com
+ */
+}
+.share > img {
+  width: 9rem;
+  height: 9rem;
+  display: block;
+  margin: 3.25rem auto 0;
+}
+.share p {
+  margin: 0.8rem auto;
+  width: 65%;
+}
+.share .c-popup-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background: #eaeaea;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.share .c-gap-top {
+  display: block;
+}
+.share .c-tool-list .c-tool-btn {
+  width: 18.7%;
+  flex: 1 1 auto;
+  color: #666;
+  text-align: center;
+  font-size: 11px;
+}
+.share .c-tool-list .c-tool-btn .c-img {
+  max-width: 60px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 50%;
+}
+.share .wa-image-entity {
+  display: inline-block;
+}

@@ -1,0 +1,16 @@
+<iheader>
+    <back></back>
+    <h1 class="title">充值详情</h1>
+</iheader>
+<content class="topUpConfirm">
+    <div>
+        <p class="first text-center lh30">
+            <span>订单号：{{info.order_num}}</span></p>
+        <p class="text-center lh30">
+            <span>充值金额：{{info.money}}</span>
+        </p>
+
+        <img class="block auto" ng-src="{{info.img}}" style="margin: 0 auto" alt="">
+        <pre style="padding: 0 0.5rem" class="left" ng-bind-html="content"></pre>
+    </div>
+</content>

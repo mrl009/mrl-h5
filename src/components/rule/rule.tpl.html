@@ -1,0 +1,11 @@
+<iheader>
+	<back></back>
+	<h1 class="title">玩法规则</h1>
+</iheader>
+<content class="rule">
+	<slide-tabs auto-hide="true">
+		<slide-tab ng-repeat="game in games" bar-title="{{game.label}}" bar-img="{{game.img}}" type="{{game.tmp}}">
+			<div ng-bind-html="game.html"></div>
+		</slide-tab>
+	</slide-tabs>
+</content>

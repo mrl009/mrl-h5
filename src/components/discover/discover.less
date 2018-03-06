@@ -1,0 +1,49 @@
+@import '../../assets/css/variables';
+
+.discover {
+    .player-item {
+        position:relative;
+        overflow: hidden;
+        height: 55/20rem;
+        border-bottom:1px solid #eee;
+        &.initHeight{
+            opacity: 0 !important;
+            height: 0 !important;
+        }
+        &.addItem {
+            transition: all .5s linear;
+            opacity: 1 !important;
+            height: 55/20rem !important;
+        }
+        p{
+            margin: 0;
+        }
+        img{
+            width:2rem;
+            height:2rem;
+            margin:0 0.75rem;
+        }
+        i{
+            position:absolute;
+            right:0.5rem;
+        }
+        [class ^= 'top'] {
+            width:22/20rem;
+            line-height: 22/20rem;
+            border-radius:50%;
+            text-align: center;
+        }
+        .top-one {
+            background-image: linear-gradient(-156deg, #F5515F 0%, #9F041B 100%);
+        }
+        .top-two{
+            background-image: linear-gradient(-156deg, #51AFF5 0%, #04559F 100%);
+        }
+        .top-three {
+            background-image: linear-gradient(-156deg, #91F551 0%, #459F04 100%);
+        }
+        .top-no {
+            font-size:14px;
+        }
+    }
+}

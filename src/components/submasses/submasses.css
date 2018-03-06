@@ -1,0 +1,93 @@
+.content-bg {
+  background-color: #eee;
+}
+.main-bg {
+  background-color: #F44336 !important;
+}
+.disabled-bg {
+  background-color: #ddd!important;
+}
+.success-bg {
+  background-color: #469060;
+}
+.bg-vip {
+  background-color: #8d5527;
+}
+.white {
+  color: #fff;
+}
+.deactivated {
+  color: #1B65D4;
+}
+.bg-deactivated {
+  background-color: #1B65D4;
+}
+.light-gray {
+  color: #a4a4a4;
+}
+.bg-form-group {
+  background: #fff;
+}
+.bg-input-none {
+  background: transparent;
+}
+.bg-white {
+  background: #fff;
+}
+.bg-gray {
+  background: #ccc;
+}
+.btn-bg-yellow {
+  background: #F8E71C;
+}
+.btn-bg-red {
+  background: #C62828;
+}
+.placeholder-gray::placeholder {
+  color: #ccc;
+}
+.main-color {
+  color: #F44336 !important;
+}
+.warn-color {
+  color: #F44336 !important;
+}
+.invert-active {
+  background: #fff!important;
+  color: #F44336 !important;
+}
+.orange {
+  color: #ffcd6b;
+}
+.border-color {
+  border-color: #F44336 !important;
+}
+.gold {
+  color: #FBC757;
+}
+.subTabs {
+  background: #e42929;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.sub-user-list {
+  margin: 0.5rem 0.25rem;
+  position: absolute;
+  width: 100%;
+  top: 5rem;
+  bottom: 0;
+  overflow: hidden;
+}
+.sub-user-list li.row {
+  padding: 0.2rem;
+  background: #fff;
+  margin-top: 0;
+}
+.sub-user-list span.col:first-child,
+.sub-user-list span.col:nth-child(2) {
+  border-right: 1px dashed #d8d8d8;
+}
+.sub-user-list .list {
+  overflow: auto;
+}

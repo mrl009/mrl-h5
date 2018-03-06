@@ -1,0 +1,167 @@
+<iheader>
+    <back></back>
+    <ul class="flex-center head-tabs white-text">
+        <li class="fl text-center"
+            ng-class="{'change': 'left' == title}"
+            ng-click="toggleTitle('left')">个人资料</li>
+        <li class="fl text-center"
+            ng-class="{'change': 'right' == title}"
+            ng-click="toggleTitle('right')">等级头衔</li>
+    </ul>
+</iheader>
+<content class="userInfo">
+    <ul class="fs14 setting animated bounceInLeft" ng-show="title == 'left'">
+        <li class="flex-middle bg-white re">
+            <span>头像</span>
+            <div class="flex-middle" ng-click="replacePicture()">
+                <!--<input class="ab" type="file" accept="image/png,image/jpeg"  multiple-->
+                       <!--file-up-load="uploadAvatar">-->
+                <img ng-src="{{userInfo.img == 0? DEFAULT_IMG: userInfo.img}}" alt="">
+                <i class="iconfont">&#xe61c;</i>
+            </div>
+        </li>
+        <li class="flex-middle bg-white">
+            <span>昵称</span>
+            <span ng-class="{'light-gray': !userInfo.nickname}"
+                ng-click="showNickname()"
+                ng-show="!show_nickname">{{userInfo.nickname? userInfo.nickname: '请设置昵称'}}
+                <i class="iconfont">&#xe61c;</i></span>
+            <input type="text"
+                   ng-show="show_nickname"
+                   ng-blur="setInfo($event, 'nickname', '昵称')"
+                   ng-disabled="!show_nickname"
+                   placeholder="请填写昵称">
+        </li>
+        <li class="flex-middle bg-white m-b10">
+            <span>账号</span>
+            <span ng-click="showUsername()"
+                  ng-show="!show_name">{{userInfo.username? userInfo.username: '重命名'}}</span>
+            <input type="text" ng-show="show_name"
+                   ng-disabled="!show_name"
+                   ng-blur="setInfo($event, 'username', '用户名')"
+                   placeholder="请填账号名">
+        </li>
+
+        <li class="flex-middle bg-white">
+            <span>手机</span>
+            <span ng-class="{'light-gray': !userInfo.phone}" ng-click="showPhone()"
+                  ng-show="!show_phone">
+                {{userInfo.phone != 0? userInfo.phone: '未绑定'}}
+                <i class="iconfont">&#xe61c;</i>
+            </span>
+            <input type="text" ng-show="show_phone"
+                   ng-disabled="!show_phone"
+                   ng-blur="setInfo($event, 'phone', '手机号')"
+                   placeholder="请填写手机号码">
+        </li>
+        <li class="flex-middle bg-white">
+            <span>邮箱</span>
+            <span ng-class="{'light-gray': !userInfo.email}"
+                  ng-click="showEmail()"
+                  ng-show="!show_email">
+                {{userInfo.email? userInfo.email:'未绑定'}}
+                <i class="iconfont">&#xe61c;</i>
+            </span>
+            <input type="text" ng-show="show_email"
+                   ng-disabled="!show_email"
+                   ng-blur="setInfo($event, 'email', '邮箱')"
+                   placeholder="请填写邮箱地址">
+        </li>
+        <li class="flex-middle bg-white re">
+            <span>性别</span>
+            <span ng-class="{'light-gray': !userInfo.sex}"
+                  ng-click="showSex()">
+                {{!userInfo.sex? '未设置': userInfo.sex == 1? '男': userInfo.sex == 2? '女':'保密'}}
+                <i class="iconfont">&#xe61c;</i>
+            </span>
+            <ul class="sexList ab bg-white" ng-show="show_sex">
+                <li class=" lh30 text-center"
+                    ng-class="{'checkSex': userInfo.sex == 1}"
+                    ng-click="setSex(1)">
+                    <i class="iconfont white-text m-r5">&#xe61b;</i> 男
+                </li>
+                <li class="text-center lh30"
+                    ng-class="{'checkSex': userInfo.sex == 2}"
+                    ng-click="setSex(2)">
+                    <i class="iconfont white-text m-r5">&#xe61b;</i> 女
+                </li>
+                <li ng-class="{'checkSex': userInfo.sex == 3}"
+                    ng-click="setSex(3)"
+                    class="text-center lh30">
+                    <i class="iconfont white-text m-r5">&#xe61b;</i> 保密
+                </li>
+            </ul>
+        </li>
+        <li class="flex-middle bg-white">
+            <span>生日</span>
+            <input readonly="readonly"
+                   value="{{userInfo.birthday | date:'yyyy-MM-dd'}}"
+                   class="date-input fs14 text-right"
+                   ng-click="setBirthday($event)">
+        </li>
+        <p class="text-center fs14">注意:资料一经设置,将无法修改</p>
+    </ul>
+
+
+    <div class="grade animated bounceInRight" ng-show="title == 'right'">
+        <div class="m-b8 user-detail fs12 white-text">
+            <div class="over">
+                <img class="fl m-r15" ng-src="{{rankInfo.img == 0? DEFAULT_IMG:rankInfo.img}}">
+                <div class="fl">
+                    <p>
+                        <span class="fs16">{{rankInfo.username}}</span>
+                        <i class="icon"></i>
+                        <span class="golden fs16">{{rankInfo.VipID}}</span>
+                    </p>
+                    <p class="fs14">
+                        头衔: {{rankInfo.VipName}} <span class="golden">成长值{{rankInfo.integral}}分</span>
+                    </p>
+                </div>
+            </div>
+            <p class="podpis">距离下一级需要{{balance}}分,每充值1元加1分</p>
+            <div class="flex-middle vip-progress">
+                <span>{{rankInfo.VipName}}</span>
+                <div class="progress bg-white">
+                    <span class="progress-text black">
+                        {{w}}
+                    </span>
+                    <div class="progress-bar main-bg"
+                         ng-style="{'width':w}">
+                    </div>
+                </div>
+                <span>{{rankInfo.NextVipName}}</span>
+            </div>
+        </div>
+        <h3 class="bg-white mt-8 lh-30 pd-l10">
+            <i class="iconfont">&#xe601;</i>
+            等级机制
+        </h3>
+        <div class="grade-info">
+            <div class="row bg-gray lh40">
+                <div class="col-30 text-center border-r">等级</div>
+                <div class="col-30 text-center border-r">头衔</div>
+                <div class="col-40 text-center">成长积分</div>
+            </div>
+            <div class="row bg-white fs14" ng-repeat="item in rankInfo.Vip_list">
+                <div class="col-30 text-center border-r border-b lh35">VIP{{item.id}}</div>
+                <div class="col-30 text-center border-r border-b lh35">{{item.title}}</div>
+                <div class="col-40 text-center border-b lh35">{{item.integral}}</div>
+            </div>
+        </div>
+    </div>
+</content>
+
+<script id="change-photos.html" type="text/ng-template">
+    <div class="img-box bg-white">
+        <div class="upload-photo text-center re">
+            <i class="iconfont block main-color">&#xe61d;</i>
+            <input class="ab" type="file"  capture="camera" accept="image/png,image/jpeg" multiple
+                   file-up-load="uploadAvatar">
+        </div>
+        <div ng-repeat="img in imgs track by $index"
+             ng-click="selectPicture($index)">
+            <img ng-src="{{img}}"
+                 ng-class="{'border-color': $index == checkImgIndex}">
+        </div>
+    </div>
+</script>

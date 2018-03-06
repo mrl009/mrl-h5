@@ -1,0 +1,154 @@
+<iheader class="bar bar-nav">
+    <a class="fl fs16 white" style="padding-top:2%;font-size: 1rem !important;">{{WEBNAME}}</a>
+    <div class="fr" style="">
+        <a class="icon pull-left fs14 white bold" href="/login/" ng-if="!isLogin">登录&nbsp;&nbsp;|</a>
+        <a class="icon pull-right fs14 white bold" href="/register" ng-if="!isLogin">&nbsp;注册</a>
+        <a class="icon pull-right fs14 white" href="/tabs/my" ng-if="isLogin">
+            <span class="icon iconfont icon-wodex" style="font-size: 1.3rem"></span>
+        </a>
+    </div>
+	<!--<a class="icon pull-left fs14 white" href="/login/" ng-if="!isLogin">登录</a>
+	<h1 class="title">{{WEBNAME}}</h1>
+	<a class="icon pull-right fs14 white" href="/register" ng-if="!isLogin">注册</a>-->
+    <a class="icon pull-right fs14 white" href="/tabs/my" ng-if="isLogin">&yen;{{balance}}</a>
+</iheader>
+
+<content class="home" hasTabs="true">
+    <carousel pagination="sp">
+        <carousel-item ng-repeat="c in COURSEDATA">
+            <a ng-href="/activity">
+                <img ng-src="{{c.pic}}" class="carousel-img">
+            </a>
+        </carousel-item>
+    </carousel>
+    <!--消息通知-->
+    <div class="bg-white notice">
+         <a href="/noticeDetail/0" class="clearfix">
+             <i class="iconfont icon-laba main-color m-l10"></i>
+             <marquee class="fs16" scrollamount=3>{{NOTICEMSG}}</marquee>
+             <i class="iconfont m-r10">&#xe615;</i>
+        </a>
+    </div>
+
+    <div class="card-content funs rows bg-white">
+         <div class="col col-25" ng-repeat="item in SLIDESIMG">
+              <a class="home-fun-a" href="/topup" ng-show="item.id==1">
+                  <img class="fun-img" ng-src="{{item.pic}}">
+                  <p class="home-fun-p">{{item.title}}</p>
+              </a>
+              <a class="home-fun-a" href="/tabs/order" ng-show="item.id==6">
+                  <img class="fun-img" ng-src="{{item.pic}}">
+                  <p class="home-fun-p">{{item.title}}</p>
+              </a>
+              <a class="home-fun-a" href="/loadApp" ng-show="item.id==3">
+                  <img class="fun-img" src="../../assets/img/app.png">
+                  <p class="home-fun-p">APP下载</p>
+              </a>
+              <a class="home-fun-a" href="{{ONLINE_SERVICE}}" ng-show="item.id==4">
+                  <img class="fun-img" ng-src="{{item.pic}}">
+                  <p class="home-fun-p">{{item.title}}</p>
+             </a>
+         </div>
+    </div>
+<!--新版-->
+    <h3 class="row play-type m-t10 bg-white fs16" ng-if="cp_default==0 && allauth">
+        <div ng-click="initPlayList('gc')"
+             class="col-50 text-center">
+            <span class="bold"
+                  ng-class="{'main-color border-color': 'gc' == playType}"
+            >{{GF}}</span>
+        </div>
+        <div ng-click="initPlayList('sc')"
+             class="col-50 text-center">
+            <span class="bold"
+                  ng-class="{'main-color border-color': 'sc' == playType}"
+            >{{BY}}</span>
+        </div>
+    </h3>
+    <h3 class="row play-type m-t10 bg-white fs16" ng-if="cp_default==1 && allauth">
+        <div ng-click="initPlayList('sc')"
+             class="col-50 text-center">
+            <span class="bold"
+                  ng-class="{'main-color border-color': 'sc' == playType}"
+            >{{BY}}</span>
+        </div>
+        <div ng-click="initPlayList('gc')"
+             class="col-50 text-center">
+            <span class="bold"
+                  ng-class="{'main-color border-color': 'gc' == playType}"
+            >{{GF}}</span>
+        </div>
+    </h3>
+
+    <section class="lh35 bg-white mt-8 pd-l10" style="border-bottom: solid 1px #e3e3e3" ng-if="!allauth">
+        <i class="icon icon-hot"></i>
+        <span class="fs14 fh">热门彩种</span>
+    </section>
+    <div class="rows bg-white play-list animated fadeIn" ng-show="playType == 'gc'">
+        <div class="col-4"
+             ng-repeat="item in games_gc_list track by $index"
+             ng-class="{'actived': item.id == active}"
+             ng-click="goToNext(item, $event)">
+            <lazy-img class="game-logo block" url="{{item.img}}" alt=""></lazy-img>
+            <p class="text-center fs12 light-gray">{{item.every_time}}</p>
+            <h4 class="fs14 text-center">{{item.name}}</h4>
+        </div>
+
+        <a class="col-4 load-more" href="/allLottery/{{playType}}" ng-if="games_list.length!=0">
+            <img class="game-logo block" src="../../assets/img/icon-more.png">
+            <div class="text-center fs14 m-t10">全部彩种</div>
+        </a>
+    </div>
+    <div class="rows bg-white play-list animated fadeIn" ng-show="playType == 'sc'">
+        <div class="col-4"
+             ng-repeat="item in games_sc_list track by $index"
+             ng-class="{'actived': item.id == active}"
+             ng-click="goToNext(item, $event)">
+            <lazy-img class="game-logo block" url="{{item.img}}" alt=""></lazy-img>
+            <p class="text-center fs12 light-gray">{{item.every_time}}</p>
+            <h4 class="fs14 text-center">{{item.name}}</h4>
+        </div>
+        <a class="col-4 load-more" href="/allLottery/{{playType}}" ng-if="games_list.length!=0">
+            <img class="game-logo block" src="../../assets/img/icon-more.png">
+            <div class="text-center fs14 m-t10">全部彩种</div>
+        </a>
+    </div>
+
+    <div class="bottom-nav fs12">
+        <a class="bg-white text-center block radius5" href="/question/39">如何充值</a>
+        <a class="bg-white text-center block radius5" href="/question/40">如何提款</a>
+        <a class="bg-white text-center block radius5" href="/question/41">安全保障</a>
+        <a class="bg-white text-center block radius5" href="/activity">优惠活动</a>
+    </div>
+
+    <div class="red-packet" ng-if="showPacket">
+        <span>
+            <img class="bounce redpic"
+                 ng-click="red_packet_click()"
+                 src="../../assets/img/red_packet/newred.gif">
+        </span>
+        <span ng-click="closered()" style="margin-left: 1.3rem;"><!-- style="top: 46.5%;right: 21%;position: fixed;"-->
+            <img src="../../assets/img/red_packet/cc.png">
+        </span>
+    </div>
+
+    <div class="download flex-space"  ng-if="!is_d_show && APP_URL && is_ios">
+        <div class="close flex-middle">
+            <i class="iconfont fl white-text picker-close" ng-click="close()"></i>
+            <p class="fs14">下载APP,多重好礼等你来拿!</p>
+        </div>
+        <a class="radius5 btn main-w fs14" href="{{APP_URL}}" target="_blank">下载APP</a>
+    </div>
+</content>
+
+<div class="ath-container ath-icon flex-middle white-text fs16 animated fadeIn"
+     ng-click="zclose()"
+     ng-show="show_logo_wap">
+    <img class="ath-application-icon" ng-src="{{logo_wap}}">
+    <div class="m-l10">
+        <p>先点击 <i class="iconfont">&#xe6f1;</i></p>
+        <span>再添加到主屏幕</span>
+    </div>
+    <div class="zclose">x</div>
+</div>
+

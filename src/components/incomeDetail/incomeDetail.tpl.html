@@ -1,0 +1,34 @@
+<iheader>
+    <back></back>
+    <h1 class="title">充值详情</h1>
+</iheader>
+<content class="incomeDetail">
+    <ul class="bg-white m-b10">
+        <li>
+            <span>交易单号</span><span class="fr">{{info.order_num}}</span>
+        </li>
+        <li>
+            <span>交易时间</span><span class="fr">{{info.addtime}}</span>
+        </li>
+        <li>
+            <span>交易方式</span><span class="fr">{{info.style}}</span>
+        </li>
+        <li>
+            <span>交易状态</span><span class="fr">{{info.status}}</span>
+        </li>
+    </ul>
+    <ul class="bg-white m-b10">
+        <li>
+            <span>充值金额</span><span class="fr">{{info.price}}元</span>
+        </li>
+        <li>
+            <span>充值优惠</span><span class="fr">{{info.admin_fee || '0'}}元</span>
+        </li>
+        <!--<li>-->
+        <!--<span>备注</span>-->
+        <!--</li>-->
+    </ul>
+    <ul class="bg-white">
+        <li><span>备注：</span></li>
+    </ul>
+</content>

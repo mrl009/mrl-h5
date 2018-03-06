@@ -1,0 +1,861 @@
+<ion-tabs class="trend-pk10">
+
+    <ion-tab title="一">
+        <!-- 标签 1 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[0] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[0][0]}}</td>
+                        <td>{{countTime[0][1]}}</td>
+                        <td>{{countTime[0][2]}}</td>
+                        <td>{{countTime[0][3]}}</td>
+                        <td>{{countTime[0][4]}}</td>
+                        <td>{{countTime[0][5]}}</td>
+                        <td>{{countTime[0][6]}}</td>
+                        <td>{{countTime[0][7]}}</td>
+                        <td>{{countTime[0][8]}}</td>
+                        <td>{{countTime[0][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[0][0]}}</td>
+                        <td>{{maxContinueTime[0][1]}}</td>
+                        <td>{{maxContinueTime[0][2]}}</td>
+                        <td>{{maxContinueTime[0][3]}}</td>
+                        <td>{{maxContinueTime[0][4]}}</td>
+                        <td>{{maxContinueTime[0][5]}}</td>
+                        <td>{{maxContinueTime[0][6]}}</td>
+                        <td>{{maxContinueTime[0][7]}}</td>
+                        <td>{{maxContinueTime[0][8]}}</td>
+                        <td>{{maxContinueTime[0][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[0][0]}}</td>
+                        <td>{{maxUnselectTime[0][1]}}</td>
+                        <td>{{maxUnselectTime[0][2]}}</td>
+                        <td>{{maxUnselectTime[0][3]}}</td>
+                        <td>{{maxUnselectTime[0][4]}}</td>
+                        <td>{{maxUnselectTime[0][5]}}</td>
+                        <td>{{maxUnselectTime[0][6]}}</td>
+                        <td>{{maxUnselectTime[0][7]}}</td>
+                        <td>{{maxUnselectTime[0][8]}}</td>
+                        <td>{{maxUnselectTime[0][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[0][0]}}</td>
+                        <td>{{avgUnselectTime[0][1]}}</td>
+                        <td>{{avgUnselectTime[0][2]}}</td>
+                        <td>{{avgUnselectTime[0][3]}}</td>
+                        <td>{{avgUnselectTime[0][4]}}</td>
+                        <td>{{avgUnselectTime[0][5]}}</td>
+                        <td>{{avgUnselectTime[0][6]}}</td>
+                        <td>{{avgUnselectTime[0][7]}}</td>
+                        <td>{{avgUnselectTime[0][8]}}</td>
+                        <td>{{avgUnselectTime[0][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="二">
+        <!-- 标签 2 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[1] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[1][0]}}</td>
+                        <td>{{countTime[1][1]}}</td>
+                        <td>{{countTime[1][2]}}</td>
+                        <td>{{countTime[1][3]}}</td>
+                        <td>{{countTime[1][4]}}</td>
+                        <td>{{countTime[1][5]}}</td>
+                        <td>{{countTime[1][6]}}</td>
+                        <td>{{countTime[1][7]}}</td>
+                        <td>{{countTime[1][8]}}</td>
+                        <td>{{countTime[1][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[1][0]}}</td>
+                        <td>{{maxContinueTime[1][1]}}</td>
+                        <td>{{maxContinueTime[1][2]}}</td>
+                        <td>{{maxContinueTime[1][3]}}</td>
+                        <td>{{maxContinueTime[1][4]}}</td>
+                        <td>{{maxContinueTime[1][5]}}</td>
+                        <td>{{maxContinueTime[1][6]}}</td>
+                        <td>{{maxContinueTime[1][7]}}</td>
+                        <td>{{maxContinueTime[1][8]}}</td>
+                        <td>{{maxContinueTime[1][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[1][0]}}</td>
+                        <td>{{maxUnselectTime[1][1]}}</td>
+                        <td>{{maxUnselectTime[1][2]}}</td>
+                        <td>{{maxUnselectTime[1][3]}}</td>
+                        <td>{{maxUnselectTime[1][4]}}</td>
+                        <td>{{maxUnselectTime[1][5]}}</td>
+                        <td>{{maxUnselectTime[1][6]}}</td>
+                        <td>{{maxUnselectTime[1][7]}}</td>
+                        <td>{{maxUnselectTime[1][8]}}</td>
+                        <td>{{maxUnselectTime[1][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[1][0]}}</td>
+                        <td>{{avgUnselectTime[1][1]}}</td>
+                        <td>{{avgUnselectTime[1][2]}}</td>
+                        <td>{{avgUnselectTime[1][3]}}</td>
+                        <td>{{avgUnselectTime[1][4]}}</td>
+                        <td>{{avgUnselectTime[1][5]}}</td>
+                        <td>{{avgUnselectTime[1][6]}}</td>
+                        <td>{{avgUnselectTime[1][7]}}</td>
+                        <td>{{avgUnselectTime[1][8]}}</td>
+                        <td>{{avgUnselectTime[1][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="三">
+        <!-- 标签 3 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[2] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[2][0]}}</td>
+                        <td>{{countTime[2][1]}}</td>
+                        <td>{{countTime[2][2]}}</td>
+                        <td>{{countTime[2][3]}}</td>
+                        <td>{{countTime[2][4]}}</td>
+                        <td>{{countTime[2][5]}}</td>
+                        <td>{{countTime[2][6]}}</td>
+                        <td>{{countTime[2][7]}}</td>
+                        <td>{{countTime[2][8]}}</td>
+                        <td>{{countTime[2][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[2][0]}}</td>
+                        <td>{{maxContinueTime[2][1]}}</td>
+                        <td>{{maxContinueTime[2][2]}}</td>
+                        <td>{{maxContinueTime[2][3]}}</td>
+                        <td>{{maxContinueTime[2][4]}}</td>
+                        <td>{{maxContinueTime[2][5]}}</td>
+                        <td>{{maxContinueTime[2][6]}}</td>
+                        <td>{{maxContinueTime[2][7]}}</td>
+                        <td>{{maxContinueTime[2][8]}}</td>
+                        <td>{{maxContinueTime[2][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[2][0]}}</td>
+                        <td>{{maxUnselectTime[2][1]}}</td>
+                        <td>{{maxUnselectTime[2][2]}}</td>
+                        <td>{{maxUnselectTime[2][3]}}</td>
+                        <td>{{maxUnselectTime[2][4]}}</td>
+                        <td>{{maxUnselectTime[2][5]}}</td>
+                        <td>{{maxUnselectTime[2][6]}}</td>
+                        <td>{{maxUnselectTime[2][7]}}</td>
+                        <td>{{maxUnselectTime[2][8]}}</td>
+                        <td>{{maxUnselectTime[2][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[2][0]}}</td>
+                        <td>{{avgUnselectTime[2][1]}}</td>
+                        <td>{{avgUnselectTime[2][2]}}</td>
+                        <td>{{avgUnselectTime[2][3]}}</td>
+                        <td>{{avgUnselectTime[2][4]}}</td>
+                        <td>{{avgUnselectTime[2][5]}}</td>
+                        <td>{{avgUnselectTime[2][6]}}</td>
+                        <td>{{avgUnselectTime[2][7]}}</td>
+                        <td>{{avgUnselectTime[2][8]}}</td>
+                        <td>{{avgUnselectTime[2][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+    <ion-tab title="四">
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[3] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[3][0]}}</td>
+                        <td>{{countTime[3][1]}}</td>
+                        <td>{{countTime[3][2]}}</td>
+                        <td>{{countTime[3][3]}}</td>
+                        <td>{{countTime[3][4]}}</td>
+                        <td>{{countTime[3][5]}}</td>
+                        <td>{{countTime[3][6]}}</td>
+                        <td>{{countTime[3][7]}}</td>
+                        <td>{{countTime[3][8]}}</td>
+                        <td>{{countTime[3][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[3][0]}}</td>
+                        <td>{{maxContinueTime[3][1]}}</td>
+                        <td>{{maxContinueTime[3][2]}}</td>
+                        <td>{{maxContinueTime[3][3]}}</td>
+                        <td>{{maxContinueTime[3][4]}}</td>
+                        <td>{{maxContinueTime[3][5]}}</td>
+                        <td>{{maxContinueTime[3][6]}}</td>
+                        <td>{{maxContinueTime[3][7]}}</td>
+                        <td>{{maxContinueTime[3][8]}}</td>
+                        <td>{{maxContinueTime[3][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[3][0]}}</td>
+                        <td>{{maxUnselectTime[3][1]}}</td>
+                        <td>{{maxUnselectTime[3][2]}}</td>
+                        <td>{{maxUnselectTime[3][3]}}</td>
+                        <td>{{maxUnselectTime[3][4]}}</td>
+                        <td>{{maxUnselectTime[3][5]}}</td>
+                        <td>{{maxUnselectTime[3][6]}}</td>
+                        <td>{{maxUnselectTime[3][7]}}</td>
+                        <td>{{maxUnselectTime[3][8]}}</td>
+                        <td>{{maxUnselectTime[3][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[3][0]}}</td>
+                        <td>{{avgUnselectTime[3][1]}}</td>
+                        <td>{{avgUnselectTime[3][2]}}</td>
+                        <td>{{avgUnselectTime[3][3]}}</td>
+                        <td>{{avgUnselectTime[3][4]}}</td>
+                        <td>{{avgUnselectTime[3][5]}}</td>
+                        <td>{{avgUnselectTime[3][6]}}</td>
+                        <td>{{avgUnselectTime[3][7]}}</td>
+                        <td>{{avgUnselectTime[3][8]}}</td>
+                        <td>{{avgUnselectTime[3][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+    <ion-tab title="五">
+        <!-- 标签 5 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[4] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[4][0]}}</td>
+                        <td>{{countTime[4][1]}}</td>
+                        <td>{{countTime[4][2]}}</td>
+                        <td>{{countTime[4][3]}}</td>
+                        <td>{{countTime[4][4]}}</td>
+                        <td>{{countTime[4][5]}}</td>
+                        <td>{{countTime[4][6]}}</td>
+                        <td>{{countTime[4][7]}}</td>
+                        <td>{{countTime[4][8]}}</td>
+                        <td>{{countTime[4][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[4][0]}}</td>
+                        <td>{{maxContinueTime[4][1]}}</td>
+                        <td>{{maxContinueTime[4][2]}}</td>
+                        <td>{{maxContinueTime[4][3]}}</td>
+                        <td>{{maxContinueTime[4][4]}}</td>
+                        <td>{{maxContinueTime[4][5]}}</td>
+                        <td>{{maxContinueTime[4][6]}}</td>
+                        <td>{{maxContinueTime[4][7]}}</td>
+                        <td>{{maxContinueTime[4][8]}}</td>
+                        <td>{{maxContinueTime[4][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[4][0]}}</td>
+                        <td>{{maxUnselectTime[4][1]}}</td>
+                        <td>{{maxUnselectTime[4][2]}}</td>
+                        <td>{{maxUnselectTime[4][3]}}</td>
+                        <td>{{maxUnselectTime[4][4]}}</td>
+                        <td>{{maxUnselectTime[4][5]}}</td>
+                        <td>{{maxUnselectTime[4][6]}}</td>
+                        <td>{{maxUnselectTime[4][7]}}</td>
+                        <td>{{maxUnselectTime[4][8]}}</td>
+                        <td>{{maxUnselectTime[4][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[4][0]}}</td>
+                        <td>{{avgUnselectTime[4][1]}}</td>
+                        <td>{{avgUnselectTime[4][2]}}</td>
+                        <td>{{avgUnselectTime[4][3]}}</td>
+                        <td>{{avgUnselectTime[4][4]}}</td>
+                        <td>{{avgUnselectTime[4][5]}}</td>
+                        <td>{{avgUnselectTime[4][6]}}</td>
+                        <td>{{avgUnselectTime[4][7]}}</td>
+                        <td>{{avgUnselectTime[4][8]}}</td>
+                        <td>{{avgUnselectTime[4][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="六">
+        <!-- 标签 6 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[5] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[5][0]}}</td>
+                        <td>{{countTime[5][1]}}</td>
+                        <td>{{countTime[5][2]}}</td>
+                        <td>{{countTime[5][3]}}</td>
+                        <td>{{countTime[5][4]}}</td>
+                        <td>{{countTime[5][5]}}</td>
+                        <td>{{countTime[5][6]}}</td>
+                        <td>{{countTime[5][7]}}</td>
+                        <td>{{countTime[5][8]}}</td>
+                        <td>{{countTime[5][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[5][0]}}</td>
+                        <td>{{maxContinueTime[5][1]}}</td>
+                        <td>{{maxContinueTime[5][2]}}</td>
+                        <td>{{maxContinueTime[5][3]}}</td>
+                        <td>{{maxContinueTime[5][4]}}</td>
+                        <td>{{maxContinueTime[5][5]}}</td>
+                        <td>{{maxContinueTime[5][6]}}</td>
+                        <td>{{maxContinueTime[5][7]}}</td>
+                        <td>{{maxContinueTime[5][8]}}</td>
+                        <td>{{maxContinueTime[5][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[5][0]}}</td>
+                        <td>{{maxUnselectTime[5][1]}}</td>
+                        <td>{{maxUnselectTime[5][2]}}</td>
+                        <td>{{maxUnselectTime[5][3]}}</td>
+                        <td>{{maxUnselectTime[5][4]}}</td>
+                        <td>{{maxUnselectTime[5][5]}}</td>
+                        <td>{{maxUnselectTime[5][6]}}</td>
+                        <td>{{maxUnselectTime[5][7]}}</td>
+                        <td>{{maxUnselectTime[5][8]}}</td>
+                        <td>{{maxUnselectTime[5][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[5][0]}}</td>
+                        <td>{{avgUnselectTime[5][1]}}</td>
+                        <td>{{avgUnselectTime[5][2]}}</td>
+                        <td>{{avgUnselectTime[5][3]}}</td>
+                        <td>{{avgUnselectTime[5][4]}}</td>
+                        <td>{{avgUnselectTime[5][5]}}</td>
+                        <td>{{avgUnselectTime[5][6]}}</td>
+                        <td>{{avgUnselectTime[5][7]}}</td>
+                        <td>{{avgUnselectTime[5][8]}}</td>
+                        <td>{{avgUnselectTime[5][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="七">
+        <!-- 标签 7 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[6] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[6][0]}}</td>
+                        <td>{{countTime[6][1]}}</td>
+                        <td>{{countTime[6][2]}}</td>
+                        <td>{{countTime[6][3]}}</td>
+                        <td>{{countTime[6][4]}}</td>
+                        <td>{{countTime[6][5]}}</td>
+                        <td>{{countTime[6][6]}}</td>
+                        <td>{{countTime[6][7]}}</td>
+                        <td>{{countTime[6][8]}}</td>
+                        <td>{{countTime[6][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[6][0]}}</td>
+                        <td>{{maxContinueTime[6][1]}}</td>
+                        <td>{{maxContinueTime[6][2]}}</td>
+                        <td>{{maxContinueTime[6][3]}}</td>
+                        <td>{{maxContinueTime[6][4]}}</td>
+                        <td>{{maxContinueTime[6][5]}}</td>
+                        <td>{{maxContinueTime[6][6]}}</td>
+                        <td>{{maxContinueTime[6][7]}}</td>
+                        <td>{{maxContinueTime[6][8]}}</td>
+                        <td>{{maxContinueTime[6][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[6][0]}}</td>
+                        <td>{{maxUnselectTime[6][1]}}</td>
+                        <td>{{maxUnselectTime[6][2]}}</td>
+                        <td>{{maxUnselectTime[6][3]}}</td>
+                        <td>{{maxUnselectTime[6][4]}}</td>
+                        <td>{{maxUnselectTime[6][5]}}</td>
+                        <td>{{maxUnselectTime[6][6]}}</td>
+                        <td>{{maxUnselectTime[6][7]}}</td>
+                        <td>{{maxUnselectTime[6][8]}}</td>
+                        <td>{{maxUnselectTime[6][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[6][0]}}</td>
+                        <td>{{avgUnselectTime[6][1]}}</td>
+                        <td>{{avgUnselectTime[6][2]}}</td>
+                        <td>{{avgUnselectTime[6][3]}}</td>
+                        <td>{{avgUnselectTime[6][4]}}</td>
+                        <td>{{avgUnselectTime[6][5]}}</td>
+                        <td>{{avgUnselectTime[6][6]}}</td>
+                        <td>{{avgUnselectTime[6][7]}}</td>
+                        <td>{{avgUnselectTime[6][8]}}</td>
+                        <td>{{avgUnselectTime[6][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="八">
+        <!-- 标签 8 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[7] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[7][0]}}</td>
+                        <td>{{countTime[7][1]}}</td>
+                        <td>{{countTime[7][2]}}</td>
+                        <td>{{countTime[7][3]}}</td>
+                        <td>{{countTime[7][4]}}</td>
+                        <td>{{countTime[7][5]}}</td>
+                        <td>{{countTime[7][6]}}</td>
+                        <td>{{countTime[7][7]}}</td>
+                        <td>{{countTime[7][8]}}</td>
+                        <td>{{countTime[7][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[7][0]}}</td>
+                        <td>{{maxContinueTime[7][1]}}</td>
+                        <td>{{maxContinueTime[7][2]}}</td>
+                        <td>{{maxContinueTime[7][3]}}</td>
+                        <td>{{maxContinueTime[7][4]}}</td>
+                        <td>{{maxContinueTime[7][5]}}</td>
+                        <td>{{maxContinueTime[7][6]}}</td>
+                        <td>{{maxContinueTime[7][7]}}</td>
+                        <td>{{maxContinueTime[7][8]}}</td>
+                        <td>{{maxContinueTime[7][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[7][0]}}</td>
+                        <td>{{maxUnselectTime[7][1]}}</td>
+                        <td>{{maxUnselectTime[7][2]}}</td>
+                        <td>{{maxUnselectTime[7][3]}}</td>
+                        <td>{{maxUnselectTime[7][4]}}</td>
+                        <td>{{maxUnselectTime[7][5]}}</td>
+                        <td>{{maxUnselectTime[7][6]}}</td>
+                        <td>{{maxUnselectTime[7][7]}}</td>
+                        <td>{{maxUnselectTime[7][8]}}</td>
+                        <td>{{maxUnselectTime[7][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[7][0]}}</td>
+                        <td>{{avgUnselectTime[7][1]}}</td>
+                        <td>{{avgUnselectTime[7][2]}}</td>
+                        <td>{{avgUnselectTime[7][3]}}</td>
+                        <td>{{avgUnselectTime[7][4]}}</td>
+                        <td>{{avgUnselectTime[7][5]}}</td>
+                        <td>{{avgUnselectTime[7][6]}}</td>
+                        <td>{{avgUnselectTime[7][7]}}</td>
+                        <td>{{avgUnselectTime[7][8]}}</td>
+                        <td>{{avgUnselectTime[7][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="九">
+        <!-- 标签 9 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[8] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[8][0]}}</td>
+                        <td>{{countTime[8][1]}}</td>
+                        <td>{{countTime[8][2]}}</td>
+                        <td>{{countTime[8][3]}}</td>
+                        <td>{{countTime[8][4]}}</td>
+                        <td>{{countTime[8][5]}}</td>
+                        <td>{{countTime[8][6]}}</td>
+                        <td>{{countTime[8][7]}}</td>
+                        <td>{{countTime[8][8]}}</td>
+                        <td>{{countTime[8][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[8][0]}}</td>
+                        <td>{{maxContinueTime[8][1]}}</td>
+                        <td>{{maxContinueTime[8][2]}}</td>
+                        <td>{{maxContinueTime[8][3]}}</td>
+                        <td>{{maxContinueTime[8][4]}}</td>
+                        <td>{{maxContinueTime[8][5]}}</td>
+                        <td>{{maxContinueTime[8][6]}}</td>
+                        <td>{{maxContinueTime[8][7]}}</td>
+                        <td>{{maxContinueTime[8][8]}}</td>
+                        <td>{{maxContinueTime[8][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[8][0]}}</td>
+                        <td>{{maxUnselectTime[8][1]}}</td>
+                        <td>{{maxUnselectTime[8][2]}}</td>
+                        <td>{{maxUnselectTime[8][3]}}</td>
+                        <td>{{maxUnselectTime[8][4]}}</td>
+                        <td>{{maxUnselectTime[8][5]}}</td>
+                        <td>{{maxUnselectTime[8][6]}}</td>
+                        <td>{{maxUnselectTime[8][7]}}</td>
+                        <td>{{maxUnselectTime[8][8]}}</td>
+                        <td>{{maxUnselectTime[8][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[8][0]}}</td>
+                        <td>{{avgUnselectTime[8][1]}}</td>
+                        <td>{{avgUnselectTime[8][2]}}</td>
+                        <td>{{avgUnselectTime[8][3]}}</td>
+                        <td>{{avgUnselectTime[8][4]}}</td>
+                        <td>{{avgUnselectTime[8][5]}}</td>
+                        <td>{{avgUnselectTime[8][6]}}</td>
+                        <td>{{avgUnselectTime[8][7]}}</td>
+                        <td>{{avgUnselectTime[8][8]}}</td>
+                        <td>{{avgUnselectTime[8][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="十">
+        <!-- 标签 10 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1" draw-line>
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th>05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                    </tr>
+                    <tr ng-repeat="cell in numData[9] track by $index">
+                        <td class="kithe">{{cell.kithe}}</td>
+                        <td ng-repeat="cellData in cell.arrayObj track by $index" code="{{cellData.flag}}">
+                            <div class="cell">{{cellData.num}}</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="trend-footer">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">出现次数</th>
+                        <td>{{countTime[9][0]}}</td>
+                        <td>{{countTime[9][1]}}</td>
+                        <td>{{countTime[9][2]}}</td>
+                        <td>{{countTime[9][3]}}</td>
+                        <td>{{countTime[9][4]}}</td>
+                        <td>{{countTime[9][5]}}</td>
+                        <td>{{countTime[9][6]}}</td>
+                        <td>{{countTime[9][7]}}</td>
+                        <td>{{countTime[9][8]}}</td>
+                        <td>{{countTime[9][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th  class="kithe">最大连出</th>
+                        <td>{{maxContinueTime[9][0]}}</td>
+                        <td>{{maxContinueTime[9][1]}}</td>
+                        <td>{{maxContinueTime[9][2]}}</td>
+                        <td>{{maxContinueTime[9][3]}}</td>
+                        <td>{{maxContinueTime[9][4]}}</td>
+                        <td>{{maxContinueTime[9][5]}}</td>
+                        <td>{{maxContinueTime[9][6]}}</td>
+                        <td>{{maxContinueTime[9][7]}}</td>
+                        <td>{{maxContinueTime[9][8]}}</td>
+                        <td>{{maxContinueTime[9][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">最大遗漏</th>
+                        <td>{{maxUnselectTime[9][0]}}</td>
+                        <td>{{maxUnselectTime[9][1]}}</td>
+                        <td>{{maxUnselectTime[9][2]}}</td>
+                        <td>{{maxUnselectTime[9][3]}}</td>
+                        <td>{{maxUnselectTime[9][4]}}</td>
+                        <td>{{maxUnselectTime[9][5]}}</td>
+                        <td>{{maxUnselectTime[9][6]}}</td>
+                        <td>{{maxUnselectTime[9][7]}}</td>
+                        <td>{{maxUnselectTime[9][8]}}</td>
+                        <td>{{maxUnselectTime[9][9]}}</td>
+                    </tr>
+                    <tr>
+                        <th class="kithe">平均遗漏</th>
+                        <td>{{avgUnselectTime[9][0]}}</td>
+                        <td>{{avgUnselectTime[9][1]}}</td>
+                        <td>{{avgUnselectTime[9][2]}}</td>
+                        <td>{{avgUnselectTime[9][3]}}</td>
+                        <td>{{avgUnselectTime[9][4]}}</td>
+                        <td>{{avgUnselectTime[9][5]}}</td>
+                        <td>{{avgUnselectTime[9][6]}}</td>
+                        <td>{{avgUnselectTime[9][7]}}</td>
+                        <td>{{avgUnselectTime[9][8]}}</td>
+                        <td>{{avgUnselectTime[9][9]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+</ion-tabs>

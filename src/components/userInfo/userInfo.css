@@ -1,0 +1,88 @@
+.userInfo .setting li.flex-middle {
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 0.75rem 0.5rem;
+}
+.userInfo .setting li.flex-middle img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 7px;
+}
+.userInfo .setting li.flex-middle .iconfont {
+  font-size: 14px;
+}
+.userInfo .setting li.flex-middle [type='text'] {
+  width: 80%;
+}
+.userInfo .setting [type='file'] {
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.userInfo .setting .sexList {
+  box-shadow: 0 0 5px 0 darkgrey;
+  width: 4rem;
+  top: 0;
+  right: 0;
+  padding: 0.3rem 0;
+  border-radius: 0.3rem;
+}
+.userInfo .setting .sexList .checkSex {
+  background-color: #4899fc;
+  color: #fff;
+}
+.userInfo .grade .row {
+  padding: 0;
+}
+.userInfo .grade p {
+  margin: 0;
+}
+.userInfo .grade .podpis {
+  margin: 0.6rem 0 0.4rem 0;
+}
+.userInfo .grade img {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 7px;
+}
+.userInfo .grade .over {
+  overflow: hidden;
+}
+.userInfo .grade .user-detail {
+  padding: 1.25rem 0 0 1.25rem;
+  height: 7.5rem;
+  background-image: linear-gradient(-180deg, #652428 0%, #370B2E 100%);
+}
+.userInfo .grade .vip-progress {
+  justify-content: space-between;
+  width: 95%;
+}
+.userInfo .grade .progress {
+  height: 0.8rem;
+  width: 12.5rem;
+  border-radius: 0.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.userInfo .grade .progress-bar {
+  height: 100%;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+.userInfo .grade .progress-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 999;
+}
+.userInfo .grade .border-r {
+  border-right: 1px solid #eee;
+}
+.userInfo .grade .border-b {
+  border-bottom: 1px solid #eee;
+}

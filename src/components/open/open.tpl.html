@@ -1,0 +1,67 @@
+<iheader>
+    <back></back>
+    <h1 class="title">开奖结果</h1>
+</iheader>
+<content ng-show="!showList" hasTabs="true">
+    <ul>
+        <li class="open-win-list" ng-repeat="item in openLottoryArray">
+            <div class="openItem">
+                <a class="item open-wins-cell row clearfix"
+                   ng-click="goOpenDetail(item.gid, item.img, item.name, item.tmp)">
+                    <div class="col col-20 open-wins-div-img">
+                        <img class="open-win-img" ng-src="{{item.img}}">
+                    </div>
+                    <div class="col col-70" style="padding: 0px;padding-top:7px">
+                        <span class="open-win-title">{{item.name}}</span>
+                        <span class="open-win-time">{{item.kj_time}}</span>
+                        <p><span class="open-win-date">第{{item.kj_issue}}期</span></p>
+                    </div>
+                    <div class="col mi-right">
+                        <i class="iconfont icon-arrow-right"></i>
+                    </div>
+                </a>
+                <div class="number">
+                    <div class="open-win-ball" ng-repeat="cell in item.number track by $index">
+                        <span class="open-win-ball-cell main-w"
+                            ng-if="item.cptype != 'pk10' &&
+                                   item.cptype != 'lhc' &&
+                                   item.cptype != 'k3' &&
+                                   item.cptype != 'pcdd'">{{cell}}</span>
+                        <span class="open-win-ball-cell"
+                            ng-if="item.cptype == 'pk10'"
+                            codepk="{{cell}}">{{cell}}</span>
+                        <span class="open-win-ball-cell" ng-style="{'margin-left': $index == 6 && '0.6rem'}"
+                            code="{{cell}}" ng-if="item.cptype == 'lhc'">
+                            {{cell}}
+                        </span>
+                        <span class="{{['k3-1', 'k3-2', 'k3-3', 'k3-4', 'k3-5','k3-6'][cell-1]}}"
+                              ng-if="item.cptype == 'k3'">
+                        </span>
+
+                    <!--PCDD-->
+                        <span class="open-win-ball-cell main-w"
+                              ng-if="item.cptype == 'pcdd' && $index !== 3">
+                                 {{cell}}
+                        </span>
+                        <span class="open-win-ball-cell"
+                              codepcdd="{{cell}}"
+                              ng-if="item.cptype == 'pcdd' && $index === 3">
+                                  {{cell}}
+                        </span>
+                        <span  class="fs14 text-center bold"
+                               ng-if="item.cptype == 'pcdd' && ($index == 0 || $index == 1)">+</span>
+                        <span  class="fs14 text-center bold"
+                               ng-if="item.cptype == 'pcdd' && $index == 2">=</span>
+                    </div>
+
+                    <div class="open-detail-sx" ng-if="item.cptype == 'lhc'">
+                        <span class="open-win-ball-sx" ng-repeat="cellsx in item.shengxiao track by $index">
+                            <span class="blanket" ng-if="$index==6">&nbsp</span>{{cellsx}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</content>
+

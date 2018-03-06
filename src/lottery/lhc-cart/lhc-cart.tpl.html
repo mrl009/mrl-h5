@@ -1,0 +1,52 @@
+<iheader>
+	<back></back>
+	<h1 class="title">{{topTitle}}注单</h1>
+</iheader>
+<content hastabs="true" class="lhc-cart">
+	<div class="cart">
+		<div class="cd-area fs12 text-center">第{{kithe[gid].kithe}}期投注时间：<span class="main-color">{{syTimeCc[gid]}}</span></div>
+		<div class="data-area" ng-if="order && order.length">
+			<div class="head-area"></div>
+
+			<div class="lists-area clearfix">
+				<div class="la-row la-head">
+					<div class="la-col">下注类型</div>
+					<div class="la-col">号码</div>
+					<div class="la-col">注数</div>
+					<div class="la-col">金额</div>
+				</div>
+				<div class="la-row" ng-repeat="o in order">
+					<div class="la-col">{{o.atitle}}</div>
+					<div class="la-col main-color">{{o.names}}</div>
+					<div class="la-col">{{o.counts}}</div>
+					<div class="la-col">{{o.price_sum}}</div>
+				</div>
+			</div>
+			<div class="balls-area">
+				<div class="deco-ball" ng-repeat="b in balls track by $index"></div>
+			</div>
+		</div>
+	</div>
+</content>
+
+<ifooter class="cart">
+    <div class="left">
+        <button class="button-del" ng-click="delAll()">
+            <i class="iconfont icon-lajixiang"></i>
+        </button>
+    </div>
+    <div class="title money fs14">
+		<div class="price-row price-row__first">
+			合计{{total.toFixed(3)||5}}元
+		</div>
+		<div class="price-row">可用余额
+			<span>{{balance.toFixed(3)}}元</span>
+		</div>
+    </div>
+    <div class="right">
+        <button class="button button-add main-w"
+            ng-click="betSubmit()"
+            ng-disabled="suData.sumbet < 1 || !isSubmit"
+        >添加注单</button>
+    </div>
+</ifooter>

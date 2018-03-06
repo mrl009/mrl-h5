@@ -1,0 +1,28 @@
+@import "../../assets/css/colors";
+.subTabs{
+    background:@tab-bg-color;
+    padding:5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.sub-user-list{
+    margin:0.5rem 0.25rem;
+    position: absolute;
+    width: 100%;
+    top: 5rem;
+    bottom: 0;
+    overflow: hidden;
+    li.row{
+        padding:0.2rem;
+        background:#fff;
+        margin-top:0;
+    }
+    span.col:first-child,span.col:nth-child(2) {
+        border-right:1px dashed @border-default-color;
+    }
+
+    .list {
+        overflow: auto;
+    }
+}

@@ -1,0 +1,38 @@
+.betting ul.tabs {
+  margin: 0.5rem 0;
+  background: #e42929;
+  padding: 0.2rem;
+}
+.betting ul.tabs li.col {
+  font-size: 0.7rem;
+  height: 34px;
+  line-height: 30px;
+}
+.betting ul.tabs li.active {
+  background: #fff;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}
+.betting .betting-list {
+  padding: 0.3rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 5.6rem;
+  overflow: auto;
+}
+.betting .betting-list div.row {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.betting .betting-list div.row span.wins-price {
+  color: #D0011B;
+}
+.betting .betting-list div.row span.wins-sum {
+  color: #FF0000;
+  font-weight: 700;
+}
+.betting .betting-list .m-t2 {
+  margin-top: 2rem;
+}

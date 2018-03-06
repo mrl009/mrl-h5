@@ -1,0 +1,74 @@
+<iheader>
+    <back></back>
+    <h1 class="title">开奖结果</h1>
+</iheader>
+<content class="open-detail-list">
+    <div class="open-detail-header row">
+        <img class="col-center" ng-src="{{data.img}}">
+        <div class="col col-60">
+            <p><span class="warn-color">{{data.name}}</span></p>
+            <p><span>第{{items.top_issue}}期</span></p>
+        </div>
+        <div class="col col-center status warn-color">即将开奖</div>
+    </div>
+
+    <div class="detail-list">
+        <div class="open-detail-item-list" ng-repeat="item in items.rows">
+            <p>
+                <span class="time">第{{item.kj_issue}}期</span>
+                <span class="date">{{item.kj_time}}</span>
+            </p>
+
+            <div class="ball-content clearfix">
+            <!--pk10-->
+                 <span ng-if="data.tmp == 'pk10'" ng-repeat="cell in item.number track by $index">
+                     <span class="open-win-ball-cell" codepk="{{cell}}">{{cell}}</span>
+                 </span>
+                 <span ng-if="data.tmp != 'lhc' && data.tmp != 'pk10' && data.tmp != 'k3' && data.tmp != 'pcdd'"
+                       ng-repeat="cell in item.number track by $index">
+                     <span class="open-win-ball-cell main-w">{{cell}}</span>
+                 </span>
+            <!--六合彩-->
+                 <div class="open-win-ball" ng-if="data.tmp == 'lhc'" ng-repeat="cell in item.number track by $index">
+
+                    <span class="open-win-ball-cell"
+                          style="background: none !important;color: #000;font-size: 16px;font-weight: bold;width: .36rem;" ng-if="$index == 6"
+                    >+</span>
+                     <span class="open-win-ball-cell" code="{{cell}}">{{cell}}</span>
+                 </div>
+                 <div class="open-detail-sx" ng-if="data.tmp == 'lhc'">
+                     <span class="open-win-ball-sx"
+                           ng-repeat="cellsx in item.shengxiao track by $index">
+                        <span class="blanket" ng-if="$index == 6">&nbsp;</span>{{cellsx}}
+                     </span>
+                 </div>
+            <!--k3-->
+                 <span class="{{['k3-1', 'k3-2', 'k3-3', 'k3-4', 'k3-5','k3-6'][cell-1]}}"
+                       ng-repeat="cell in item.number track by $index"
+                      ng-if="data.tmp == 'k3'">
+                 </span>
+            <!--pcdd    -->
+                <div class="open-win-ball"
+                    ng-repeat="num in item.number track by $index">
+                    <span class="open-win-ball-cell main-w"
+                         ng-if="data.tmp == 'pcdd' && $index !== 3">
+                         {{num}}
+                    </span>
+                    <span class="open-win-ball-cell"
+                          code="{{num}}"
+                          ng-if="data.tmp == 'pcdd' && $index === 3">
+                          {{num}}
+                    </span>
+                    <span  class="fs14 text-center bold"
+                           ng-if="($index == 0 || $index == 1) && data.tmp == 'pcdd'">+</span>
+                    <span  class="fs14 text-center bold"
+                           ng-if="$index == 2 && data.tmp == 'pcdd'">=</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</content>
+<a href="/{{data.tmp}}/{{data.tmp}}/{{gid}}" class="next-btn main-w">去购彩</a>
+
+
+

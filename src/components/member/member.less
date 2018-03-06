@@ -1,0 +1,119 @@
+.cal-rem-margin(@mt, @mr, @mb, @ml) {
+	margin: @mt*16/20rem @mr*16/20rem @mb*16/20rem @ml*16/20rem;
+}
+
+/**************会员中心**************/
+.my {
+    p{
+        margin:0;
+    }
+	.member {
+        background: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+
+    .member-avatar {
+        margin: 0.75rem auto 0;
+        border-radius: 7px;
+        width: 55/20rem;
+        height: 55/20rem;
+        position: relative;
+        &.ma-unlogin {
+            background: url(../../assets/img/icon-avatar.png) no-repeat center;
+            background-size: 63/20rem 63/20rem;
+        }
+
+        &.ma-login {
+            background: url(../../assets/img/icon-login-avatar.png) no-repeat center;
+            background-size: 63/20rem 63/20rem;
+        }
+    }
+    .icon-vip {
+        position:absolute;
+        width:1.2rem;
+        height:1.2rem;
+        transform-origin: center center;
+        transform: rotate(45deg);
+        top:-0.6rem;
+        right:-0.6rem;
+        span {
+            position:absolute;
+            bottom:0;
+            width: 100%;
+            text-align: center;
+            color: #ac0d18;
+            transform: scale(0.7);
+        }
+    }
+    .qipao{
+        width:1.2rem;
+        height:1.2rem;
+        top:-0.5rem;
+        right:-1rem;
+        color: #fff;
+    }
+
+    .member-content {
+        margin: 0.32rem 0 0;
+        .member-tc-wrap {
+            margin:0.5rem 0;
+            a {
+                padding:0.35rem 1rem;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .my-tabs-info {
+        [class ^= 'icon'] {
+            margin: 0.4rem auto 0.25rem;
+            height:1.8rem;
+            width:1.8rem;
+        }
+    }
+    .my-items {
+        >a {
+            float:left;
+            width: unit(100/3, %);
+            height:95/20rem;
+            text-align: center;
+            background:#fff;
+            box-sizing: border-box;
+            border-right:1px solid #ddd;
+            border-top:1px solid #ddd;
+            &:nth-child(3n){
+                border-right:0;
+            }
+            &:nth-child(1), &:nth-child(2),&:nth-child(3){
+                border-top:0;
+            }
+            [class ^= 'icon'] {
+                border-radius: 50%;
+                width:2rem;
+                height:2rem;
+                margin:0.75rem auto 0.25rem;
+            }
+        }
+    }
+    .refresh-btn{
+        display:inline-block;
+        line-height:1rem;
+        transform-origin: center center;
+        transform:rotate(0deg);
+    }
+    .rotate-circle {
+        transition: all 2s linear;
+        transform:rotate(360deg);
+    }
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

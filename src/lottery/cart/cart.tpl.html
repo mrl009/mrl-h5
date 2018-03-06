@@ -1,0 +1,57 @@
+<iheader>
+	<back></back>
+	<h1 class="title">{{topTitle}}注单</h1>
+</iheader>
+<content hastabs="true">
+	<div class="cart">
+		<div class="top-wrap m-b10" style="background:#f1f1f1" ng-if="zh">
+			<div class="tools">
+				<div class="back fs14" ng-click="back()">返回继续添加</div>
+				<div class="random fs14"><!-- 随机一注 --></div>
+				<div class="plan fs14" ng-click="goToSmartTracking()">智能追号</div>
+			</div>
+		</div>
+		<div class="list-area">
+			<div class="order-item m-b10" ng-repeat="v in order">
+				<div class="total">
+					<div>
+						<span class="play-name fs14">{{v.atitle}}</span>
+						<span class="fs14">({{v.btitle}})共</span>
+						<span class="hight-text">{{v.counts}}</span>
+						<span class="fs14">注，共</span>
+						<span class="hight-text">{{v.price_sum}}</span>
+						<span class="fs14">元</span>
+						<span class="fr del" ng-click="delItem($index)">
+							<a class="iconfont icon-closecircled"></a>
+						</span>
+					</div>
+				</div>
+				<div class="content fs14" ng-if="gid == 3">赔率:{{handleRate(v.rate)}}</div>
+				<div class="content fs14" >{{v.names}}</div>
+			</div>
+		</div>
+	</div>
+</content>
+
+<ifooter class="cart">
+    <div class="left">
+        <button class="button-del" ng-click="delAll()">
+            <i class="iconfont icon-lajixiang"></i>
+        </button>
+    </div>
+    <div class="title fs14">
+		<div class="price-row price-row__first">
+			<span>{{orderNum}}</span>注,
+			<span>{{total.toFixed(3)}}</span>元
+		</div>
+		<div class="price-row">可用余额
+			<span>{{balance.toFixed(3)}}元</span>
+		</div>
+    </div>
+    <div class="right">
+        <button class="button button-add main-w"
+            ng-click="betSubmit()"
+            ng-disabled="suData.sumbet < 1 || flag || !isSubmit"
+        >添加注单</button>
+    </div>
+</ifooter>

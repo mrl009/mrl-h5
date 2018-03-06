@@ -1,0 +1,133 @@
+<iheader>
+    <back></back>
+    <h1 class="title">充值</h1>
+</iheader>
+<content class="topupTwo fs14">
+    <div class="box">
+        <p class="title fs12 pd-l10">收款银行账户资料</p>
+        <div class="bank-info bg-white pd-l10">
+            <div class="row flex-middle">
+                <div class="col-25">银行:</div>
+                <div class="light-gray col-60">
+                    <input
+                        class="bank-input bg-gray"
+                        value="{{items.bank_name}}"
+                        id="bank_name"
+                        ng-readonly="true"/>
+                </div>
+                <div
+                    class="col-15 text-center cpbank"
+                    ng-click="copyUrl('cpbank', 'bank_name')">
+                    <span class="radius5 bg-blue white-text copy-btn no-wrap">复制</span>
+                </div>
+            </div>
+            <div class="row flex-middle">
+                <div class="col-25">收款人：</div>
+                <div class="light-gray col-60">
+                    <input
+                        class="bank-input bg-gray"
+                        value="{{items.user}}"
+                        id="user"
+                        ng-readonly="true"
+                    >
+                </div>
+                <div
+                    class="col-15 text-center cpman"
+                    ng-click="copyUrl('cpman', 'user')">
+                    <span class="radius5 bg-blue white-text copy-btn no-wrap">复制</span>
+                </div>
+            </div>
+            <div class="row flex-middle">
+                <div class="col col-25">账号：</div>
+                <div class="light-gray col-60">
+                    <input
+                        class="bank-input bg-gray"
+                        value="{{items.num}}"
+                        id="num"
+                        ng-readonly="true"
+                    >
+                </div>
+                <div
+                    class="col-15 text-center cpacct"
+                    ng-click="copyUrl('cpacct', 'num')">
+                    <span class="radius5 bg-blue white-text copy-btn no-wrap">复制</span>
+                </div>
+            </div>
+            <div class="row flex-middle">
+                <div class="col col-25">开户网点：</div>
+                <div class="light-gray col-60">
+                    <input
+                        class="bank-input bg-gray"
+                        value="{{items.card_address}}"
+                        id="card_address"
+                        ng-readonly="true">
+                </div>
+                <div
+                    class="col-15 text-center cpbran"
+                    ng-click="copyUrl('cpbran', 'card_address')">
+                    <span class="radius5 bg-blue white-text copy-btn no-wrap">复制</span>
+                </div>
+            </div>
+        </div>
+        <p class="title fs12 pd-l10">填写您的转账资料</p>
+        <div class="transfer-form bg-white">
+            <p class="row flex-middle">
+                <span class="col-25 col-center">存入时间</span>
+                <input
+                    class="col col-70 light-gray warn-color"
+                    ng-disabled="true"
+                    value="{{data.time}}"
+                >
+            </p>
+            <p class="row flex-middle">
+                <span class="col-25 col-center">存入金额</span>
+                <input
+                    class="col col-70 light-gray warn-color"
+                    value="{{data.money}}"
+                    ng-disabled="true"
+                >
+            </p>
+            <p class="row flex-middle">
+                <span class="col-25 col-center">存款人姓名</span>
+                <input
+                    class="col col-70 light-gray"
+                    placeholder="输入存款人"
+                    ng-model="data.name">
+            </p>
+            <div id="bank_style" ng-if="items.type == 'bank' || items.jump_mode == 2">
+                <div class="row button-list">
+                    <div class="col col-50 flex-middle" ng-click="setBankStyle(1)">
+                        <i class="iconfont m-r5" ng-class="{'main-color':data.bank_style == 1}">&#xe60a;</i>
+                        <span>网银转帐</span>
+                    </div>
+                    <div class="col col-50 flex-middle" ng-click="setBankStyle(3)">
+                        <i class="iconfont m-r5" ng-class="{'main-color':data.bank_style == 3}">&#xe60a;</i>
+                        <span>ATM现金入款</span>
+                    </div>
+                </div>
+                <div class="row button-list">
+                    <div class="col col-50 text-center flex-middle" ng-click="setBankStyle(4)">
+                        <i class="iconfont m-r5" ng-class="{'main-color':data.bank_style == 4}">&#xe60a;</i>
+                        <span>银行柜台</span>
+                    </div>
+                    <div class="col col-50 text-center flex-middle" ng-click="setBankStyle(5)">
+                        <i class="iconfont m-r5" ng-class="{'main-color':data.bank_style == 5}">&#xe60a;</i>
+                        <span>手机转帐</span>
+                    </div>
+                </div>
+                <div class="row button-list">
+                    <div class="col col-50 text-center flex-middle" ng-click="setBankStyle(6)">
+                        <i class="iconfont m-r5" ng-class="{'main-color':data.bank_style == 6}">&#xe60a;</i>
+                        <span>支付宝转帐</span>
+                    </div>
+                    <div class="col col-50 text-center flex-middle" ng-click="setBankStyle(7)">
+                        <i class="iconfont m-r5" ng-class="{'main-color':data.bank_style == 7}">&#xe60a;</i>
+                        <span>微信转帐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--提交-->
+        <a class="btn main-bg block white text-center" ng-click="topUp()">我已支付</a>
+    </div>
+</content>

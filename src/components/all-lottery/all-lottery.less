@@ -1,0 +1,98 @@
+/* =========== all-lottery ============ */
+.badge-lottery{
+    position: relative;
+    top:50%;
+    transform: translate3d(0, -50%, 0);
+}
+.gtype {
+    position: absolute;
+    top:50%;
+    transform: translate3d(0, -50%, 0);
+}
+.all-lottery {
+    img{
+        border-radius: 50%;
+    }
+    p {
+        margin: 0;
+    }
+	&-list {
+	    float: left;
+	    width: 100%;
+	    .title {
+		    line-height: 42/20rem;
+		}
+        .content {
+            width: 100%;
+            position: relative;
+            float: left;
+        }
+
+        .content-cell {
+            border-right: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            width: percentage(1/3);
+            height:5rem;
+
+            &:nth-child(3n) {
+                border-right: 0;
+            }
+        }
+        img {
+            width: 2rem;
+            height: 2rem;
+            display: block;
+            margin: 18/20rem auto 13/20rem;
+        }
+        div {
+            display: inline-block;
+        }
+
+        .yu-0 {
+            &:nth-last-child(1),
+            &:nth-last-child(2),
+            &:nth-last-child(3) {
+                border-bottom: 0;
+            }
+        }
+
+        .yu-1 {
+            &:nth-last-child(1) {
+                border-bottom: 0;
+            }
+        }
+
+        .yu-2 {
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+                border-bottom: 0;
+            }
+        }
+	}
+    .default-lottery-list{
+        padding:0 0.5rem;
+        .grid{
+            width:50%;
+            height:75/20rem;
+            display: inline-block;
+            border-bottom:1px solid #d8d8d8;
+            border-right:1px solid #d8d8d8;
+            >a{
+                height:100%;
+            }
+            &:nth-child(2n){
+                border-right:0;
+            }
+        }
+        .lottery-info{
+            flex-direction: column;
+            display: flex;
+            align-content: space-between;
+        }
+        img{
+            width:45/20rem;
+            height:45/20rem;
+            margin: 0 8/20rem 0 22/20rem;
+        }
+    }
+}

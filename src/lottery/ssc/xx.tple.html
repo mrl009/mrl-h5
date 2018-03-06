@@ -1,0 +1,94 @@
+<div class="lot-number-wrap ssc clearfix" ng-repeat="v in lottery.balls track by v.id">
+    <div class="title tool-title clearfix"
+        ng-if="
+            ssname != 'lh' &&
+            (lastSname!= 'dxds') &&
+            (lastSname!= 'zx' ) &&
+            (lastSname!= 'z3' ) &&
+            (lastSname!= 'z6' )
+        "
+        ng-class="{'ssc-len2': v.name.length==2}"
+    >
+        <div class="lot-number-left fl">
+            <span class="fl tag no-wrap main-color fs14">{{v.name}}</span>
+        </div>
+        <ul class="right fr">
+            <li ng-click="toolQuan($event)">全</li>
+            <li ng-click="toolDa($event)">大</li>
+            <li ng-click="toolXiao($event)">小</li>
+            <li ng-click="toolDan($event)">单</li>
+            <li ng-click="toolShuang($event)">双</li>
+            <li ng-click="toolClear($event)">清</li>
+        </ul>
+    </div>
+    <div class="title"
+        ng-class="{'ssc-len2': v.name.length==2}"
+        ng-if="
+            (lastSname== 'zx' && v.name != '位置') ||
+            (lastSname== 'z3' && v.name != '位置') ||
+            (lastSname== 'z6' && v.name != '位置')
+        "
+    >
+        <div class="lot-number-left fl ">
+            <span class="ssc-tag main-color fs14 text-center no-wrap">{{v.name}}</span>
+        </div>
+        <ul class="right fr">
+            <li ng-click="toolQuan($event)">全</li>
+            <li ng-click="toolDa($event)">大</li>
+            <li ng-click="toolXiao($event)">小</li>
+            <li ng-click="toolDan($event)">单</li>
+            <li ng-click="toolShuang($event)">双</li>
+            <li ng-click="toolClear($event)">清</li>
+        </ul>
+    </div>
+
+    <div class="lot-number-left fl" ng-if="ssname == 'lh' || lastSname == 'dxds' ">
+        <span class="ssc-lhtag fs14 no-wrap text-center">{{v.name}}</span>
+    </div>
+
+    <div class="title fs14"
+        ng-class="{'zx-title': v.name.length==2}"
+        ng-if="
+            (lastSname== 'zx' && v.name == '位置') ||
+            (lastSname== 'z3' && v.name == '位置') ||
+            (lastSname== 'z6' && v.name == '位置')
+        "
+    >
+        <div class="lot-number-left fl text-right">位置: </div>
+        <div class="lot-number-right fr">
+            <div class="ch_numball ball-red">
+                <ul class="balls">
+                    <li ng-repeat="t in v.child track by t.id">
+                        <span class="ball border-color"
+                            ng-click="selBalls($event)"
+                            name="{{t.name}}"
+                            rate="{{t.rate}}"
+                            rate_min="{{t.rate_min}}"
+                            rebate="{{t.rebate}}"
+                            code="{{t.code}}"
+                            pid="{{t.id}}"
+                        ><i class="iconfont icon-checkbox"></i>{{t.name}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="lot-number-right fr" ng-if="v.name != '位置'">
+        <div class="ch_numball ball-red">
+            <ul class="balls">
+                <li ng-repeat="t in v.child track by t.id">
+                    <span class="ball border-color"
+                        ng-click="selBalls($event)"
+                        name="{{t.name}}"
+                        rate="{{t.rate}}"
+                        rate_min="{{t.rate_min}}"
+                        rebate="{{t.rebate}}"
+                        code="{{t.code}}"
+                        pid="{{t.id}}"
+                    >{{t.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

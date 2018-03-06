@@ -1,0 +1,80 @@
+<iheader>
+	<back></back>
+	<h1 class="title">提现</h1>
+    <a class="icon pull-right white fs14" href="/payoutRecord">
+        提现记录
+    </a>
+</iheader>
+<content class="withdraw fs16">
+    <p class="title  clearfix">
+        <span class="fl fs14">
+            余额：
+            <span class="warn-color">{{items.balance}}</span>元
+        </span>
+        <span class="text-right fr fs14">
+            可提现金额：
+            <span class="warn-color">{{(items.balance - items.all_fee).toFixed(3)}}</span>元
+        </span>
+    </p>
+    <div class="bg-white withdraw-detail">
+        <h3 class="text-center lh40 fs16">稽核详情</h3>
+        <div class="row ">
+            <span class="col-50 lh30">存款:{{items.total_price}}元</span>
+            <span class="col-50 lh30">优惠：{{items.discount_price}}元</span>
+        </div>
+        <div class="row ">
+            <span class="col-50 lh30">提款需达投注量：{{items.auth_dml}}元</span>
+            <span class="col-50 lh30">已达投注量：{{items.dml}}元</span>
+        </div>
+        <div class="row ">
+            <span class="col-50 lh30">手续费：{{items.out_fee}}元</span>
+            <span class="col-50 lh30">行政费：{{items.total_ratio_price}}元</span>
+        </div>
+        <div class="row ">
+            <span class="col-100 lh30">共扣除：
+                <span class="warn-color">{{items.all_fee}}元</span>
+            </span>
+        </div>
+        <div class="row fs12 light-gray">
+            <span class="col-50 lh30">起始: {{items.start_date}}</span>
+            <span class="col-50 lh30">结束: {{items.end_date}}</span>
+        </div>
+    </div>
+
+    <div class="bg-white withdraw-detail">
+        <h3 class="text-center lh40 fs16">出款限额</h3>
+        <div class="row ">
+            <div class="col-50 lh30">
+                <span>单次最低出款额度：{{outMin}}</span>
+            </div>
+            <div class="col-50 lh30">
+                <span>银行卡单次出款上限：{{outMax.bank}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-50 lh30" ng-if="outMax.zfb != 0">
+                <span>支付宝单次出款上限：{{outMax.zfb}}</span>
+            </div>
+            <div class="col-50 lh30" ng-if="outMax.wx != 0">
+                <span>微信单次出款上限：{{outMax.wx}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="withdraw-detail bg-white">
+        <div class="row">
+            <span>提现金额</span>
+        </div>
+        <div class="row">
+            <span class="light-gray" style="font-size:1.5rem!important;">¥</span>
+            <input placeholder="请输入提现金额"
+                   class="bg-white pd-l10"
+                   ng-model="data.money"
+                   ng-focus="move('up')"
+                   ng-blur="move('down')"
+                   onkeyup="value=value.replace(/^\s*|[^0-9]|\s*$/g,'')">
+        </div>
+    </div>
+    <div class="bottom-btn">
+        <a class="button button-big button-fill" ng-click="withdraw()">确认</a>
+    </div>
+</content>

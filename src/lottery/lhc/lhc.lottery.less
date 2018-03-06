@@ -1,0 +1,374 @@
+/*****六合彩顶部样式******/
+.lhc {
+	.playTwo {
+		width: 100%;
+
+		.playList {
+			width: auto;
+			z-index: 999!important;
+		}
+
+		ul {
+			overflow-x: scroll;
+		}
+
+		li {
+			font-size: 0.875*16/20rem;
+			float: left;
+			padding: 0.2*16/20rem;
+			text-align: center;
+			margin: 0.4*16/20rem;
+			min-width: 4.75*16/20rem;
+			background: #e5e5e5;
+			border-radius: 15px;
+			border: 1px solid #bdbdbd;
+		}
+
+		.active {
+			background: rgba(218, 18, 43, 1);
+			color: #fff;
+		}
+	}
+
+	//.lot-wrap {
+	//	top: 5rem;
+	//}
+
+	/*特码*/
+	.tm  {
+		ul li {
+			height: 60/20rem;
+		}
+		.rate,
+		.balls div {
+			font-size: 0.8*16/20rem;
+			color: #383838;
+		}
+	}
+
+	// .lot-number-right {
+	// 	width: 88%;
+	// }
+
+	.temcll {
+		background: #fff;
+		// .lot-number-left {
+		// 	padding: 0.2rem 0 0 0.1rem;
+		// }
+	}
+
+	.ch_numball {
+		li {
+			width: 20%;
+		}
+	}
+}
+
+.lhc {
+	.list-inline {
+		li {
+			&:last-child {
+				margin-left: 0.5rem;
+			}
+
+			&.clear-mag {
+			    margin-left: 0;
+			}
+		}
+	}
+}
+
+.lhc .lhc-hx div[class="activated"] {
+	color: #AC0D18;
+	font-weight: bold;
+}
+.lhc .lhc-hx {
+	flex-flow: column wrap;
+	padding-top: 7/20rem;
+	padding-bottom: 7/20rem;
+	border-top-width: 2/20rem;
+	border-top-color: rgb(255, 255, 255);
+	background: white;
+	border-bottom: 3px solid #f7f7f8;
+}
+.lhc .hxList {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 6/20rem;
+
+	div {
+		width: 100%;
+		text-align: center;
+	}
+}
+.lhc .hxList span{display: inline-block; width: 50px; font-size: 16px; font-weight: 300; text-align: center;}
+.lhc .lot-number-right{padding-bottom: 1.2rem}
+
+.lhc .sxball span.ball div:first-child {margin-top: -5px;height: 30px;font-size: 22px;}
+.lhc .sxball span.ball div:last-child {height: 19px;font-size: 12px; word-spacing:1px;}
+/***大圆球**/
+.lhc .bigBalls ul li{ height: 60/20rem;width: 25%;}
+.lhc .bigBalls span{ width: 3.4*16/20rem;height: 3.4*16/20rem;line-height:1.4*16/20rem;padding-top:0.5*16/20rem}
+.lhc .bigBalls span .rate{ font-size: 0.7*16/20rem;color: #AC0D18;}
+/***生肖方型***/
+.lhc .fangBall .rate{font-size: 0.7rem ;height: 21/20rem;color: #AC0D18;margin-top: -5px;}
+.lhc .fangBall .sxnumber{font-size:0.6rem}
+.lhc .fangBall span {
+	width: 6.25*16/20rem;
+	height: 5*16/20rem;
+}
+
+.lhc .fangBall .rate,
+.lhc .sxball .ball div:first-child,
+.lhc .sxball .ball div:last-child {
+	text-align: center;
+}
+.lhc .sxball .ball div:first-child {
+	height: 1.875*16/20rem;
+	font-size: 1rem;
+}
+.lhc .fangBall .rate {
+	height: 0.8rem;
+	white-space: nowrap;
+}
+.lhc .sxball .ball div:last-child {
+	height: 1rem;
+	font-size: 0.6rem;
+}
+
+.lhc .fangBall .ball {
+	border: 1px solid #e91c36;
+	background: #fff;
+}
+
+.lhc {
+	.ball.active {
+		.rate {
+			color: #fff;
+		}
+
+		.color {
+			color: #fff;
+		}
+	}
+}
+
+.lhc {
+	.betinfo {
+	    position: fixed;
+	    bottom: 2.5rem;
+	    background: #ccc;
+	    width: 100%;
+	    text-align: center;
+	}
+}
+
+/***六合彩：正码过关***/
+/***文件：lhc/gg.html***/
+.lhc-zmgg {background: #f5f5fa; position: relative;}
+.lhc-zmgg .lz-tip {position: absolute;right: 0.2rem;top: 13px;color: #d91d36;}
+.lhc-zmgg .balls {background: #ffffff;}
+.lhc-zmgg .balls .fl {width: 100%;height: 2rem;background: #f5f5fa;}
+.lhc-zmgg .balls .fl b {float: left;padding: .2rem;text-align: center;margin-top: 0.2rem;min-width: 4.75rem;color: white;border-radius: 15/20rem;border: 1px solid #bdbdbd;background: rgba(218, 18, 43, 1);}
+
+/*连码*/
+.lhc-lm {
+	background: #fff;
+	.lm-label {
+		// margin-top: -0.4rem;
+		margin-left: 0.3rem;
+	}
+
+	.lot-number-right {
+		margin-right: 0;
+	}
+}
+
+/*自选不中*/
+.zxbz-label {
+}
+
+.lhc-zxbz {
+	background: #fff;
+}
+
+.lhc-sb {
+	background: #fff;
+    .font124,
+    .font141,
+    .font142,
+    .font143,
+    .font144,
+    .font301,
+    .font302,
+    .font303,
+    .font304 {
+        color: red;
+    }
+
+    .font125,
+    .font150,
+    .font149,
+    .font147,
+    .font148,
+    .font305,
+    .font306,
+    .font307,
+    .font308 {
+        color: green;
+    }
+
+    .font126,
+    .font153,
+    .font154,
+    .font155,
+    .font156,
+    .font309,
+    .font310,
+    .font311,
+    .font312 {
+        color: blue;
+    }
+}
+
+/***蓝色***/
+.lhc .ball-red [code="10"],
+.lhc .ball-red [code="14"],
+.lhc .ball-red [code="15"],
+.lhc .ball-red [code="20"],
+.lhc .ball-red [code="25"],
+.lhc .ball-red [code="26"],
+.lhc .ball-red [code="31"],
+.lhc .ball-red [code="36"],
+.lhc .ball-red [code="37"],
+.lhc .ball-red [code="41"],
+.lhc .ball-red [code="42"],
+.lhc .ball-red [code="47"],
+.lhc .ball-red [code="48"],
+.lhc .ball-red [code="3"],
+.lhc .ball-red [code="4"],
+.lhc .ball-red [code="9"] {
+	border: solid 1px #4ba8f6;
+}
+/***红色***/
+.lhc .ball-red [code="12"],
+.lhc .ball-red [code="13"],
+.lhc .ball-red [code="18"],
+.lhc .ball-red [code="19"],
+.lhc .ball-red [code="23"],
+.lhc .ball-red [code="24"],
+.lhc .ball-red [code="29"],
+.lhc .ball-red [code="30"],
+.lhc .ball-red [code="34"],
+.lhc .ball-red [code="35"],
+.lhc .ball-red [code="40"],
+.lhc .ball-red [code="45"],
+.lhc .ball-red [code="46"],
+.lhc .ball-red [code="1"],
+.lhc .ball-red [code="2"],
+.lhc .ball-red [code="7"],
+.lhc .ball-red [code="8"] {
+	border: solid 1px #ff4b54;
+}
+/***绿色***/
+.lhc .ball-red [code="11"],
+.lhc .ball-red [code="16"],
+.lhc .ball-red [code="17"],
+.lhc .ball-red [code="21"],
+.lhc .ball-red [code="22"],
+.lhc .ball-red [code="27"],
+.lhc .ball-red [code="28"],
+.lhc .ball-red [code="32"],
+.lhc .ball-red [code="33"],
+.lhc .ball-red [code="38"],
+.lhc .ball-red [code="39"],
+.lhc .ball-red [code="43"],
+.lhc .ball-red [code="44"],
+.lhc .ball-red [code="49"],
+.lhc .ball-red [code="5"],
+.lhc .ball-red [code="6"] {
+	border: solid 1px #74b65d;
+}
+
+.hx-rate {
+	margin: 0.5rem 0.3rem 0 0;
+	border: 1px solid;
+}
+
+// .hx-tool {
+// 	margin-top: 0.1rem;
+// }
+
+.lhc-zy {
+	// .lot-number-left {
+	// 	p {
+	// 		margin-top: 0.6rem;
+	// 		margin-left: 0.6rem;
+	// 	}
+	// }
+}
+
+.lhc {
+	.lottery {
+		padding-bottom: 0;
+	}
+}
+
+.lottery-records  {
+	.item {
+		display: inline-block;
+	    border: 0;
+	    padding: 0;
+	    margin: 0.1*16/20rem;
+
+	    &:last-child {
+	    	.cell-sx {
+	    		text-align: right;
+	    		margin-right: 0.2rem;
+	    	}
+	    }
+	}
+
+    .cell {
+	    border-radius: 50%;
+	    color: #ffffff;
+	    float: left;
+	    width: 1*16/20rem;
+	    height: 1*16/20rem;
+	    line-height: 1*16/20rem;
+	    font-size: 0.8*16/20rem;
+	    text-align: center;
+	}
+
+	.symbol {
+	    margin-top: 0.1*16/20rem;
+	    margin-right: 0.2*16/20rem;
+	    float: left;
+	    line-height: 0.85*16/20rem;
+	    color: #444;
+	}
+
+	.cell-sx {
+		color: #444;
+	}
+}
+
+.lhc-ol {
+	.item {
+		height: auto;
+		width: auto;
+		background: none;
+	}
+}
+
+//.lhc-time-block {
+//	margin-top: 0.7rem;
+//}
+
+.lhc {
+	.lottery-title {
+		line-height: 1.6rem;
+		height: 1.6rem;
+	}
+}

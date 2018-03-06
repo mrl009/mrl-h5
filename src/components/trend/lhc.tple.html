@@ -1,0 +1,96 @@
+<ion-tabs class="trend-lhc">
+    <ion-tab title="号码">
+        <ion-view>
+            <div class="trend-content">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>正一</th>
+                        <th>正二</th>
+                        <th>正三</th>
+                        <th>正四</th>
+                        <th>正五</th>
+                        <th>正六</th>
+                        <th>特码</th>
+                    </tr>
+                    <tr ng-repeat="x in number">
+                        <td class="kithe no-wrap">{{x.kithe}}</td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[0].sb}}">{{x.number_arr[0].num}}
+                            </div>{{x.number_arr[0].sx}}
+                        </td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[1].sb}}">{{x.number_arr[1].num}}</div>{{x.number_arr[1].sx}}
+                        </td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[2].sb}}">{{x.number_arr[2].num}}</div>{{x.number_arr[2].sx}}
+                        </td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[3].sb}}">{{x.number_arr[3].num}}</div>{{x.number_arr[3].sx}}</td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[4].sb}}">{{x.number_arr[4].num}}</div>
+                            {{x.number_arr[4].sx}}
+                        </td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[5].sb}}">{{x.number_arr[5].num}}
+                            </div>{{x.number_arr[5].sx}}
+                        </td>
+                        <td class="no-wrap">
+                            <div class="cell" code="{{x.number_arr[6].sb}}">{{x.number_arr[6].num}}</div>{{x.number_arr[6].sx}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="总和">
+        <!-- 标签 2 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>总数</th>
+                        <th>单双</th>
+                        <th>大小</th>
+                        <th>七色波</th>
+                    </tr>
+                    <tr ng-repeat="x in sum">
+                        <td class="kithe">{{x.kithe}}</td>
+                        <td>{{x.sum}}</td>
+                        <td>{{x.oddflag}}</td>
+                        <td>{{x.bigflag}}</td>
+                        <td>{{x.colorflag}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="特码">
+        <!-- 标签 3 内容 -->
+        <ion-view>
+            <div class="trend-content">
+                <table border="1">
+                    <tr>
+                        <th class="kithe">期数</th>
+                        <th>单双</th>
+                        <th>大小</th>
+                        <th>和单双</th>
+                        <th>和大小</th>
+                        <th>大小尾</th>
+                    </tr>
+                    <tr ng-repeat="x in speical">
+                        <td class="kithe">{{x.kithe}}</td>
+                        <td>{{x.oddflag}}</td>
+                        <td>{{x.bigflag}}</td>
+                        <td>{{x.sumOddFlag}}</td>
+                        <td>{{x.sumBigFlag}}</td>
+                        <td>{{x.bigRearFlag}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ion-view>
+    </ion-tab>
+</ion-tabs>

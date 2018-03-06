@@ -1,0 +1,55 @@
+<iheader>
+    <back></back>
+    <h1 class="title">{{title}}</h1>
+</iheader>
+<content class="bg-white">
+   <div class="animated fadeInRight" style="top: 1rem;padding: .2rem;" ng-bind-html="content" ng-show="id != 88"></div>
+   <div ng-show="id == 88" class="animated fadeInRight fs14 vip-explain">
+       <div class="bg-vip text-center row">
+           <div class="col-50 white-text text-center">
+               <div class="vip-box">
+                   <i class="icon icon-current-vip"></i><br>
+                   <span class="lh30">当前等级: VIP{{info.vip_id? info.vip_id: '--'}}</span> <br>
+                   <span>VIP晋级奖励: {{info.money? info.money: '0'}}</span> <br>
+               </div>
+               <strong class="fs20">VIP晋级奖励</strong><br>
+               <span class="fs12">最高可得{{info.total_money? info.total_money: '47856'}}元</span>
+           </div>
+           <div class="col-50">
+               <!--背景图-->
+           </div>
+       </div>
+       <div class="btn-wrap bg-white container">
+           <button class="btn block radius5 text-center white-text fs14"
+                   ng-click="getAward()"
+                   ng-class="info.is_reward? 'success-bg': 'disabled-bg'">领取</button>
+           <p class="text-center bg-p-img white-text">
+               <span>VIP晋级机制</span>
+           </p>
+       </div>
+
+       <div class="row vip-header bg-gray">
+           <div class="col-20">等级</div>
+           <div class="col-30">成长积分</div>
+           <div class="col-30">VIP晋级奖励</div>
+           <div class="col-20">跳级奖励</div>
+       </div>
+       <div class="row vip-rows" ng-repeat="item in vipList">
+           <div class="col-20">{{item.id}}</div>
+           <div class="col-30">{{item.integral}}</div>
+           <div class="col-30">{{item.jj_money}}</div>
+           <div class="col-20">{{item.tj_money}}</div>
+       </div>
+       <div class="pd-l10 pd-r10">
+           <p class="text-center bg-p-img white-text m-l10 m-r10">
+               <span>活动说明</span>
+           </p>
+       </div>
+       <div class="pd-l10 pd-r10">
+           <p>1、会员每晋升一个等级，都能获得奖励，最高可达38888元。</p>
+           <p>2、充值1元可获得1成长积分。</p>
+           <p>例1：奥巴马从VIP1直接晋升到VIP4，他将能获得1+5+10=16元奖励。</p>
+           <p>例2：本拉登从VIP2直接晋升到VIP4，他将能获得5+10=15元奖励。</p>
+       </div>
+   </div>
+</content>

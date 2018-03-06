@@ -1,0 +1,34 @@
+<div class="lot-number-wrap clearfix pk10" ng-repeat="v in lottery.balls track by v.id">
+	<div class="title tool-title clearfix">
+		<div class="lot-number-left fl text-center">
+			<span class="no-wrap fs14">{{v.name}}</span>
+		</div>
+		<ul class="right fr">
+			<li ng-click="toolQuan($event)">全</li>
+			<li ng-click="toolDa($event)">大</li>
+			<li ng-click="toolXiao($event)">小</li>
+			<li ng-click="toolDan($event)">单</li>
+			<li ng-click="toolShuang($event)">双</li>
+			<li ng-click="toolClear($event)">清</li>
+		</ul>
+	</div>
+
+	<div class="lot-number-right fr">
+		<div class="ch_numball ball-red">
+			<ul class="balls">
+				<li ng-repeat="t in v.child track by t.id">
+					<span
+						class="ball"
+						ng-click="selBalls($event)"
+						name="{{t.name}}"
+						rate="{{t.rate}}"
+						rate_min="{{t.rate_min}}"
+						rebate="{{t.rebate}}"
+						code="{{t.code}}"
+						pid="{{t.id}}"
+					>{{t.name}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

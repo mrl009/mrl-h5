@@ -1,0 +1,85 @@
+/* =========== all-lottery ============ */
+.badge-lottery {
+  position: relative;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+.gtype {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+.all-lottery img {
+  border-radius: 50%;
+}
+.all-lottery p {
+  margin: 0;
+}
+.all-lottery-list {
+  float: left;
+  width: 100%;
+}
+.all-lottery-list .title {
+  line-height: 2.1rem;
+}
+.all-lottery-list .content {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.all-lottery-list .content-cell {
+  border-right: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  width: 33.33333333%;
+  height: 5rem;
+}
+.all-lottery-list .content-cell:nth-child(3n) {
+  border-right: 0;
+}
+.all-lottery-list img {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  margin: 0.9rem auto 0.65rem;
+}
+.all-lottery-list div {
+  display: inline-block;
+}
+.all-lottery-list .yu-0:nth-last-child(1),
+.all-lottery-list .yu-0:nth-last-child(2),
+.all-lottery-list .yu-0:nth-last-child(3) {
+  border-bottom: 0;
+}
+.all-lottery-list .yu-1:nth-last-child(1) {
+  border-bottom: 0;
+}
+.all-lottery-list .yu-2:nth-last-child(1),
+.all-lottery-list .yu-2:nth-last-child(2) {
+  border-bottom: 0;
+}
+.all-lottery .default-lottery-list {
+  padding: 0 0.5rem;
+}
+.all-lottery .default-lottery-list .grid {
+  width: 50%;
+  height: 3.75rem;
+  display: inline-block;
+  border-bottom: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+}
+.all-lottery .default-lottery-list .grid > a {
+  height: 100%;
+}
+.all-lottery .default-lottery-list .grid:nth-child(2n) {
+  border-right: 0;
+}
+.all-lottery .default-lottery-list .lottery-info {
+  flex-direction: column;
+  display: flex;
+  align-content: space-between;
+}
+.all-lottery .default-lottery-list img {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0 0.4rem 0 1.1rem;
+}

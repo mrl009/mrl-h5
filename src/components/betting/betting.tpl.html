@@ -1,0 +1,71 @@
+<iheader>
+    <back></back>
+    <h1 class="title">投注记录</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="betting">
+    <div class="search-box">
+        <input class="input-search" type="text" placeholder="请输入用户名" ng-model="username"/>
+        <button class="button fr main-w border-color" ng-click="search()">搜索</button><br>
+    </div>
+    <ul class="row tabs main-bg">
+        <li class="col text-center white"
+            ng-repeat="item in tabs"
+            ng-click = "checkTab(item.type)"
+            ng-class="{'active':type == item.type}">
+            {{item.name}}
+        </li>
+    </ul>
+    <div class="member-lack-bet-record text-center" ng-if="!sheetList.length">
+        <img src="../../assets/img/member-lack-box.png">
+        <p class="text-center fs14 gray">暂无该投注记录,不要让大奖溜走~</p>
+    </div>
+    <div
+        class="container betting-list"
+        ng-if="sheetList.length"
+        pull-refresh
+        refresh="refresh()"
+        load-more="more()"
+    >
+        <div class="row fs14" ng-repeat="item in sheetList">
+            <div class="col col-35">
+                <span  class="game fs14 no-wrap">{{item.game}}</span>
+                <span  class="tname block m-t2 fs10 no-wrap">{{item.tname}}</span>
+            </div>
+            <div class="col col-35 text-center">
+                <span class="issue fs14 no-wrap">{{item.issue}}期</span>
+                <span class="agent_name block m-t2 no-wrap">{{item.username}}</span>
+            </div>
+            <div class="col col-30 wins-cotent">
+
+                <!--中奖-->
+                <div class="item text-right" ng-if="item.status == 1">
+                    <img class="wins_img" src="../../assets/img/win_notice@2x.png">
+                </div>
+                <div class="item text-right" ng-if="item.status == 1">
+                    <span class="wins-price fs12">投注{{item.price_sum}}元</span>
+                </div>
+                <div class="item text-right" ng-if="item.status == 1">
+                    <span class="wins-sum fs12">中奖{{item.win_price}}元</span>
+                </div>
+
+                <!--撤单-->
+                <div class="item text-right" ng-if="item.status != 1">
+                    <span class="wins-price-disable" >{{item.price_sum}}元</span>
+                </div>
+                <div class="item" ng-if="item.status == 3">
+                    <span class="wins-wait-open-disable block m-t2 text-right">已撤单</span>
+                </div>
+                <div class="item" ng-if="item.status == 5">
+                    <span class="wins-wait-open-disable block m-t2 text-right">未中奖</span>
+                </div>
+                <div class="item" ng-if="item.status == 4">
+                    <span class="wins-wait-open-disable block m-t2 text-right">待开奖</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</content>
+

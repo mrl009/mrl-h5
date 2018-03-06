@@ -1,0 +1,48 @@
+<iheader>
+    <back></back>
+    <h1 class="title">账户明细</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="account">
+    <div class="search-box">
+        <input
+            class="input-search"
+            type="text"
+            placeholder="请输入用户名"
+            ng-model="data.username"/>
+        <button class="button button-background fr main-bg border-color" ng-click="getAccountList()">搜索</button><br>
+    </div>
+    <div class="container">
+        <div class="member-lack-bet-record text-center" ng-if="items && !items.length">
+            <img src="../../assets/img/member-lack-box.png">
+        </div>
+        <div
+            class="list"
+            ng-if="items.length"
+            pull-refresh
+            refresh="refresh()"
+            load-more="more()"
+        >
+            <div class="row" ng-repeat="item in items">
+                <div class="col">
+                    <span class="block text-left">
+                        {{item.username}}
+                    </span>
+                    <span class="block text-left fs16">
+                        {{item.addtime}}
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="block text-right">
+                        {{item.name}}
+                    </span>
+                    <span class="block assertive text-right main-color">
+                        {{item.amount}}元
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</content>

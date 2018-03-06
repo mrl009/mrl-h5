@@ -1,0 +1,83 @@
+.ssc-hz {
+    .lot-number-right {
+        width: 100%;
+    }
+
+    .ch_numball {
+    	li {
+    		width: percentage(1/7);
+    	}
+    }
+}
+
+
+.ssc-lhtag {
+    line-height: 58/20rem;
+    display: block;
+}
+
+.ssc-tag {
+	display: block;
+}
+.lot-number-wrap .zx-title {
+	height: 2.2rem;
+	line-height: 2.2rem;
+}
+.zx-title {
+	background: #EBF6FF;
+	margin-bottom: 0.4rem;
+
+	.lot-number-right {
+		margin-right: 0;
+	}
+
+	.ch_numball {
+		background: transparent;
+		padding-bottom: 0;
+
+		li {
+			height: 2.2rem;
+			margin-top: 0;
+			width: percentage(1/5);
+			display: flex;
+    		align-items: center;
+		}
+
+		.ball {
+			border: 0!important;
+			background: transparent;
+		    height: 2.2rem;
+		    line-height: 2.2rem;
+		    font-size: 0.7rem;
+		    width: auto;
+		    color: #747474;
+
+		    &.active {
+		    	background: transparent!important;
+    			color: #747474!important;
+		    }
+		}
+	}
+
+	.icon-checkbox {
+		width: 0.9rem;
+		height: 0.9rem;
+		display: inline-block;
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			color: #747474;
+		}
+	}
+
+	.active {
+		.icon-checkbox {
+			&:before {
+				content: '\e608';
+			}
+		}
+	}
+}

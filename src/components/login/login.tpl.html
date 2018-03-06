@@ -1,0 +1,73 @@
+<iheader>
+    <back></back>
+    <h1 class="title">登录</h1>
+</iheader>
+<content class="login">
+    <form ng-submit="login()" name="myForm">
+        <div class="list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">账号</div>
+                            <div class="item-input">
+                                <input
+                                    class="fs16"
+                                    style="padding:0"
+                                    placeholder="用户名"
+                                    ng-model="data.username"
+                                    maxlength="20"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">密码</div>
+                            <div class="item-input">
+                                <input
+                                    type="password"
+                                    style="padding:0"
+                                    placeholder="请输入密码"
+                                    class="fs16"
+                                    ng-model="data.pwd">
+                            </div>
+                            <span class="iconfont icon-eye fs8" ng-click="seePwd()"></span>
+                        </div>
+                    </div>
+                </li>
+                <li ng-if="data.isCode">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">验证码</div>
+                            <div class="item-input">
+                                <input
+                                    type="text"
+                                    placeholder="请输入验证码"
+                                    class="fs16"
+                                    ng-model="data.code"
+                                >
+                            </div>
+                            <img
+                                ng-src="{{data.codeSrc}}"
+                                class="code-img"
+                                ng-click="codeRefresh()"
+                            >
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button
+            class="button-login fs16"
+            ng-class="{true: 'main-w', false: 'disabled-bg'}[!!(data.username && data.pwd)]"
+            type="submit"
+        >登录</button>
+    </form>
+    <div class="login-footer-button">
+        <a href="/register" class="button-link fs16">快速注册</a>
+        <a ng-click="wjtip()" class="button-link fs16 fr">忘记密码</a>
+    </div>
+</content>

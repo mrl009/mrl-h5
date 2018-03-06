@@ -1,0 +1,115 @@
+
+<iheader>
+    <back></back>
+    <h1 class="title">智能追号</h1>
+</iheader>
+<content hastabs="true" class="smartTraching">
+    <div class="slidingTabs bg-white">
+        <ul class="fs14 light-gray">
+            <li class="slider-slide-tab text-center"
+                ng-class="{'main-color': showAdvanced == false}"
+                ng-click="changeType()">普通追号</li>
+            <li class="slider-slide-tab text-center"
+                ng-class="{'main-color': showAdvanced == true}"
+                ng-click="changeType(2)">高级追号</li>
+        </ul>
+        <div class="tab-indicator-wrapper">
+            <div class="tab-indicator main-bg" ng-class="{'active': showAdvanced == true}"></div>
+        </div>
+    </div>
+    <tab-slide>
+        <div class="smart-config bg-white">
+            <div class="row fs14">
+                <div class="col col-50 text-center">
+                    追号
+                    <input class="row-inp text-center"
+                           type="tel"
+                           ng-model="senior.period"
+                           maxlength="3"
+                           ng-keyup="filter($event)">
+                    期
+                </div>
+                <div class="col col-50 text-center">
+                    起始
+                    <input class="row-inp text-center"
+                           type="tel"
+                           ng-model="senior.multiple"
+                           maxlength="3"
+                           ng-keyup="filter($event)">
+                    倍
+                </div>
+            </div>
+            <div class="row fs14" ng-if="showAdvanced">
+                <div class="col col-50 text-center">
+                    每隔
+                    <input class="row-inp text-center"
+                           type="tel"
+                           ng-model="senior.number"
+                           maxlength="3"
+                           ng-keyup="filter($event)">
+                    期
+                </div>
+                <div class="col col-50 text-center">
+                    乘以
+                    <input class="row-inp text-center"
+                           type="tel"
+                           ng-model="senior.fnumber"
+                           maxlength="3"
+                           ng-keyup="filter($event)">
+                    倍
+                </div>
+            </div>
+        </div>
+    </tab-slide>
+    <div class="smart-tab-bar fs14 row">
+        <div class="col col-25 text-center">期数</div>
+        <div class="col col-30 text-center">倍数</div>
+        <div class="col col-20 text-center">金额</div>
+        <div class="col col-25 text-center">预计开奖时间</div>
+    </div>
+    <ul class="smart-list fs12">
+        <li class="row" ng-repeat="item in dataList track by $index">
+             <div class="col col-25">{{item.kithe}}</div>
+             <div class="col col-30 flex-middle flex-center">
+                 <div class="m-r5 iconfont circle" ng-click="increment(item, '-')">&#xe657;</div>
+                 <input type="tel" class="multiple text-center"
+                        maxlength="3"
+                        minlength="1"
+                        ng-keyup="filter($event)"
+                        ng-model="item.multiple">
+                 <div class="iconfont circle m-l5" ng-click="increment(item, '+')">&#xe60b;</div>
+             </div>
+             <div class="col col-20 main-color">
+                 {{(item.multiple * total).toFixed(3)}}
+             </div>
+             <div class="col col-25">
+                 {{item.open_time.split(' ')[0]}}<br>
+                 {{item.open_time.split(' ')[1]}}
+             </div>
+        </li>
+    </ul>
+</content>
+<ifooter class="smart-foot">
+    <div class="footer-left ">
+        <div class="sliding">
+            <div class="circle" ng-click="switch($event)">
+            </div>
+        </div>
+    </div>
+    <div class="footMain fs14 m-l10">
+        <div class="">
+            中奖后停止追号
+        </div>
+        <div class="graylight">
+            <span class="assertive">{{ senior.period }}</span>期
+            <span class="assertive">{{ sum_total }}</span>元
+        </div>
+    </div>
+    <div class="foot-right">
+        <button
+            class="btn main-bg text-center white radius5 fr"
+            ng-click="betSubmit()"
+            ng-disabled="suData.sumbet < 1"
+        >确认下注</button>
+    </div>
+</ifooter>

@@ -1,0 +1,81 @@
+<iheader>
+    <back></back>
+    <span class="gtype" ng-click="initData(gtype=='gc'?'sc':'gc')" ng-if="allauth"
+    >{{gtype=='gc'? GF:BY}}</span>
+    <h1 class="title">全部彩种</h1>
+    <span class="badge-lottery iconfont pull-right white fs20"
+          ng-click="changeList()"
+    >
+        {{defaultLottery? '&#xe62b;':'&#xe62c;'}}
+    </span>
+</iheader>
+
+<content class="all-lottery">
+    <div ng-show="defaultLottery && gtype == 'gc'" class="animated fadeIn">
+        <div class="all-lottery-list"
+             ng-repeat="(key, item) in all_gc_list.list"
+             ng-show="item.length">
+            <p class="title fs14 black pd-l10">
+                <span class="main-color fs16">|</span> {{key}}
+            </p>
+            <div class="content bg-white">
+                <div
+                    class="content-cell"
+                    ng-class="{'yu-1': convert(item)%3 ==1, 'yu-2': convert(item)%3==2, 'yu-0': convert(item)%3==0}"
+                    ng-repeat="cell in item track by $index">
+                    <a href="/{{cell.tmp}}/{{cell.tmp}}/{{cell.gid}}">
+                        <lazy-img url="{{cell.img}}"></lazy-img>
+                        <p class="text-center fs14">{{cell.name}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="defaultLottery && gtype == 'sc'" class="animated fadeIn">
+        <div class="all-lottery-list"
+             ng-repeat="(key, item) in all_sc_list.list"
+             ng-show="item.length">
+            <p class="title fs14 black pd-l10">
+                <span class="main-color fs16">|</span> {{key}}
+            </p>
+            <div class="content bg-white">
+                <div
+                    class="content-cell"
+                    ng-class="{'yu-1': convert(item)%3 ==1, 'yu-2': convert(item)%3==2, 'yu-0': convert(item)%3==0}"
+                    ng-repeat="cell in item track by $index">
+                    <a href="/{{cell.tmp}}/{{cell.tmp}}/{{cell.gid}}">
+                        <lazy-img url="{{cell.img}}"></lazy-img>
+                        <p class="text-center fs14">{{cell.name}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="default-lottery-list bg-white m-t10 animated fadeIn" ng-show="!defaultLottery && gtype == 'gc'">
+        <div class="grid bg-white"
+             ng-repeat="item in all_gc_list.normal_list track by $index">
+            <a class="flex-middle" href="/{{item.tmp}}/{{item.tmp}}/{{item.gid}}">
+                <lazy-img url="{{item.img}}"></lazy-img>
+                <!--<img src="{{item.img}}">-->
+                 <div class="lottery-info">
+                     <h3 class="fs14 black">{{item.name}}</h3>
+                     <p class="fs12 light-gray">{{item.every_time}}</p>
+                 </div>
+            </a>
+        </div>
+    </div>
+    <div class="default-lottery-list bg-white m-t10 animated fadeIn" ng-show="!defaultLottery && gtype == 'sc'">
+        <div class="grid bg-white"
+             ng-repeat="item in all_sc_list.normal_list track by $index">
+            <a class="flex-middle" href="/{{item.tmp}}/{{item.tmp}}/{{item.gid}}">
+                <lazy-img url="{{item.img}}"></lazy-img>
+                <!--<img src="{{item.img}}">-->
+                 <div class="lottery-info">
+                     <h3 class="fs14 black asc">{{item.name}}</h3>
+                     <p class="fs12 light-gray">{{item.every_time}}</p>
+                 </div>
+            </a>
+        </div>
+    </div>
+</content>

@@ -1,0 +1,167 @@
+<iheader>
+    <a href="#" class="icon pull-left fs14 white" ng-if="allauth"
+       ng-click="showType(playSn)"
+    >{{playName}}</a>
+    <h1 class="title">购彩大厅</h1>
+    <a href="/allLottery/{{playSn}}" class="icon pull-right fs14 white">全部彩种</a>
+</iheader>
+<content class="buy buy-wrap" hasTabs="true" >
+	<slide-tabs>
+		<slide-tab ng-repeat="lottery in lotterys"
+			bar-title="{{lottery.name}}"
+			bar-img="{{lottery.img}}"
+			type="{{lottery.type}}">
+			<div class="item-wrap">
+				<div ng-repeat="item in lottery.items" class="buy-item">
+					<a href="/{{item.tmp}}/{{item.tmp}}/{{item.gid}}">
+						<div class="item-link row iconfont">
+							<lazy-img class="item-image" url="{{item.img}}" wrap="slide-tab"></lazy-img>
+							<span class="item-title fs16">{{item.name}}</span>
+						</div>
+						<div class="lottery row {{item.tmp}}-item" ng-if="syTimeCc[item.gid]!='未开盘'">
+					        <div class="col-50 right-line">
+					            <div class="text-center lottery-title fs14" ng-click="openLottery()">
+					                近期开奖
+					            </div>
+					            <ul class="list-inline text-center pd-ball"
+                                    ng-style="{'padding': kithe[item.gid].number.length>= 10? '0 1.5rem':kithe[item.gid].number.length>= 8? '0 2rem': ''}"
+                                    ng-class="{'open-pk10': type=='pk10'}" kithe="{{kithe[item.gid]}}">
+					                <li ng-repeat="num in kithe[item.gid].number track by $index">
+                                    <!--普通-->
+					                    <p class="white circle20 main-w fs12 text-center kj-ball"
+                                           ng-if="item.cptype != 'pk10' && item.cptype != 's_pk10' &&
+                                           item.cptype != 'lhc' && item.cptype != 's_lhc' &&
+                                           item.cptype != 'pcdd' && item.cptype != 's_pcdd' &&
+                                           item.cptype != 'k3' && item.cptype != 's_k3'">
+                                            {{num}}
+                                        </p>
+                                    <!--pcdd-->
+					                    <span class="open-win-ball-cell main-w"
+                                           ng-if="(item.cptype == 'pcdd' || item.cptype == 's_pcdd') && $index !== 3">
+                                            {{num}}
+                                        </span>
+					                    <span class="open-win-ball-cell"
+                                              code="{{num}}"
+                                           ng-if="(item.cptype == 'pcdd' || item.cptype == 's_pcdd') && $index === 3">
+                                            {{num}}
+                                        </span>
+                                        <span  class="fs14 text-center bold"
+                                            ng-if="($index == 0 || $index == 1) && (item.cptype == 'pcdd' || item.cptype == 's_pcdd')">+</span>
+                                        <span  class="fs14 text-center bold"
+                                            ng-if="$index == 2 && (item.cptype == 'pcdd' || item.cptype == 's_pcdd')">=</span>
+                                    <!--pk10-->
+					                    <p class="white circle20 open-win-ball-cell fs12 text-center kj-ball"
+                                           codepk="{{num}}"
+                                           ng-if="item.cptype == 'pk10' || item.cptype == 's_pk10'">
+                                            {{num}}
+                                        </p>
+                                    <!--六合彩-->
+					                    <p class="white circle20 open-win-ball-cell fs12 text-center kj-ball"
+                                           code="{{num}}"
+                                           ng-if="item.cptype == 'lhc' || item.cptype == 's_lhc'">
+                                            {{num}}
+                                        </p>
+                                    <!--K3-->
+                                        <P ng-if="item.cptype == 'k3' || item.cptype == 's_k3'"
+                                           class="{{['k3-1', 'k3-2', 'k3-3', 'k3-4', 'k3-5','k3-6'][num-1]}}"
+                                        ></P>
+					                </li>
+					            </ul>
+					        </div>
+					        <div class="col-50">
+					            <div class="text-center lottery-title fs14">
+					                距{{kithe[item.gid].kithe}}期截止
+					            </div>
+					            <ul class="list-inline text-center fs22 white time-block"
+                                    ng-style="{'margin-top': kithe[item.gid].number.length >= 8 ? '0.5rem':''}">
+					                <li class="bg-black">{{hdDate(syTimeCc[item.gid], 0)}}</li>
+					                <li class="bg-black mg-l5 mg-r5">{{hdDate(syTimeCc[item.gid], 1)}}</li>
+					                <li class="bg-black">{{hdDate(syTimeCc[item.gid], 2)}}</li>
+					            </ul>
+					        </div>
+					    </div>
+
+					    <div class="lottery row {{item.tmp}}-item" ng-if="syTimeCc[item.gid]=='未开盘'">
+					        <div class="col-50 right-line">
+					            <div kithe="{{kithe[item.gid]}}" class="text-center lottery-title fs14" ng-click="openLottery()">
+					                近期开奖
+					            </div>
+					            <ul class="list-inline text-center pd-ball" ng-class="{'open-pk10': type=='pk10'}" kithe="{{kithe[item.gid]}}">
+					                <li ng-repeat="num in kithe[item.gid].number track by $index">
+					                    <p class="white circle20 main-w fs12 text-center kj-ball">{{num}}</p>
+					                </li>
+					            </ul>
+					        </div>
+					        <div class="col-50">
+					            <div class="text-center lottery-title fs14">
+					                距{{kithe[item.gid].kithe}}期截止
+					            </div>
+					            <ul class="list-inline text-center fs22 white time-block">
+					                <li class="bg-black">未</li>
+					                <li class="bg-black mg-l5 mg-r5">开</li>
+					                <li class="bg-black">盘</li>
+					            </ul>
+					        </div>
+					    </div>
+					</a>
+				    <div class="row content-tabs">
+	                    <a class="col" ng-href="/trend/{{item.gid}}/{{item.tmp}}">
+	                        <span class="icon-trend"></span>
+	                        <span class="btn-label fs14">号码走势</span>
+	                        <span class="divider">|</span>
+	                    </a>
+	                    <a class="col" ng-href="/rule/{{item.tmp}}">
+	                        <div class="icon-rule"></div>
+	                        <span class="btn-label fs14">玩法规则</span>
+	                        <span class="divider">|</span>
+	                    </a>
+	                    <a class="col" ng-click="favorite(item.gid, item.favorite)">
+	                        <span class="icon-favor"
+	                        	ng-class="{active: favorObj[item.gid] == 1}"
+	                        	n="{{favorObj[item.gid]}}"
+	                        ></span>
+	                        <span class="btn-label fs14">加入收藏</span>
+	                    </a>
+	                </div>
+	                <!-- <a class="item-link row" href="/{{item.cptype}}/{{item.cptype}}/{{item.gid}}">
+	                    <div class="col col-20 col-center img-div">
+	                    <lazy-img class="item-image" url="{{item.img}}" wrap="slide-tab"></lazy-img>
+	                    </div>
+	                    <div class="col col-80 buy-content">
+	                        <span class="title ng-binding">{{item.name}}</span>
+	                        <i class="iconfont icon-arrow-right"></i>
+	                        <p class="name open-number ng-binding" >{{hn(kithe[item.gid].number)}}</p>
+	                        <p class="timer">
+	                            <span class="timer-label">距离第
+	                            	<span class="kithe-num ng-binding">{{kithe[item.gid].kithe}}</span>期截止:
+	                            </span>
+	                            <span class="kithe ng-binding">{{syTimeCc[item.gid]}}</span>
+	                        </p>
+	                    </div>
+	                </a>
+	                <hr>
+	                <div class="row content-tabs">
+	                    <a class="col" ng-href="/trend/{{item.gid}}">
+	                        <span class="icon-trend"></span>
+	                        <span class="btn-label fs14">号码走势</span>
+	                        <span class="divider">|</span>
+	                    </a>
+	                    <a class="col" ng-href="/rule/{{item.cptype}}">
+	                        <div class="icon-rule"></div>
+	                        <span class="btn-label fs14">玩法规则</span>
+	                        <span class="divider">|</span>
+	                    </a>
+	                    <a class="col" ng-click="favorite(item.gid, item.favorite)">
+	                        <span
+	                        	class="icon-favor"
+	                        	ng-class="{active: favorObj[item.gid] == 1}"
+	                        	n="{{favorObj[item.gid]}}"
+	                        ></span>
+	                        <span class="btn-label fs14">加入收藏</span>
+	                    </a>
+	                </div> -->
+	            </div>
+            </div>
+		</slide-tab>
+	</slide-tabs>
+</content>

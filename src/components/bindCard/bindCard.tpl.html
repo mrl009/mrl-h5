@@ -1,0 +1,113 @@
+<iheader>
+    <back></back>
+    <h1 class="title">{{title}}</h1>
+</iheader>
+<content class="bindCard">
+    <!--<p class="fs10 main-color pd-l10" ng-show="show_name">为了您的账户安全,真实姓名需要与绑定银行卡姓名一致。</p>-->
+    <form class="radius5 fs14">
+        <input type="password" style="position:absolute; top: -10000px;">
+        <div class="bank-card-form m-t10">
+            <div class="row input-group bg-form-group" ng-if="show_name && type == 2">
+                <div class="pd-l10">真实姓名</div>
+                <div class="m-l10">
+                    <input class="bg-input-none placeholder-gray"
+                           ng-model="form.bank_name"
+                           placeholder="请输入持卡人姓名">
+                </div>
+            </div>
+        </div>
+
+        <div class="bank-card-form m-t10" ng-if="type != 2">
+            <div class="row input-group bg-form-group underline-gray">
+                <div class="pd-l10">收款机构</div>
+                <div class="m-l10">
+                    <span>{{type == 1? '微信': '支付宝'}}</span>
+                </div>
+            </div>
+            <div class="row input-group bg-form-group underline-gray">
+                <div class="pd-l10">{{type == 1? '微信': '支付宝'}}账号</div>
+                <div class="m-l10" ng-if="type == '0'">
+                    <input class="bg-input-none placeholder-gray"
+                           placeholder="请输入支付宝账号"
+                           ng-model="form.zfb"/>
+                </div>
+                <div class="m-l10" ng-if="type == 1">
+                    <input class="bg-input-none placeholder-gray"
+                           placeholder="请输入微信账号"
+                           ng-model="form.wx"
+                    />
+                </div>
+            </div>
+            <div class="row input-group bg-form-group">
+                <div class="pd-l10 col-25">收款二维码</div>
+                <div class="m-l10 upload_QRCode">
+                    <span class="light-gray fs14">点击上传二维码</span>
+                    <input type="file" class="bg-input-none placeholder-gray" multiple accept="image/*"
+                           file-up-load="uploadQRCode">
+                    <img id="QR_code_box" ng-show="QR_code" ng-src="{{QR_code}}">
+                    <i class="iconfont fr m-r10" ng-hide="QR_code"> &#xe620;</i>
+                </div>
+            </div>
+        </div>
+
+        <div class="bank-card-form m-t10" ng-if="type == 2">
+            <div class="row input-group bg-form-group underline-gray">
+                <div class="pd-l10">收款银行</div>
+                <div class="m-l10">
+                    <input class="bg-input-none placeholder-gray"
+                           placeholder="请输入银行卡号"
+                           ng-model="form.bank_num"
+                    />
+                </div>
+            </div>
+            <div class="row input-group bg-form-group underline-gray">
+                <div class="pd-l10 col-30">银行</div>
+                <div class="text-right col-70" ng-click="showBankList()">
+                    <span class="m-r20">{{form.bank_id? bankList[form.bank_id].name:'请选择银行'}}</span>
+                    <i class="icon iconfont icon-arrow-right fs16 gray"></i>
+                </div>
+            </div>
+            <div class="row input-group bg-form-group">
+                <div class="pd-l10">开户行地址</div>
+                <div class="m-l10">
+                    <input class="bg-input-none placeholder-gray"
+                           placeholder="请输入开户银行地址"
+                           ng-model="form.address"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="bank-card-form m-t10">
+            <div class="row input-group bg-form-group" ng-if="isPhone && show_phone">
+                <div class="pd-l10">手机号码</div>
+                <div class="m-l10">
+                    <input class="bg-input-none placeholder-gray"
+                           type="text bg-input-none"
+                           ng-model="form.phone"
+                           placeholder="请输入您的手机号">
+                </div>
+            </div>
+        </div>
+
+        <div class="bank-card-form m-t10">
+            <div class="row input-group bg-form-group radius5">
+                <div class="pd-l10">资金密码</div>
+                <div class="m-l10">
+                    <input type="password"
+                           class="bg-input-none placeholder-gray"
+                           placeholder="{{isPwd?'请验证资金密码':'请设置资金密码'}}"
+                           ng-model="form.bank_pwd"
+                           maxlength="6"
+                    />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="bottom-btn">
+        <button class="button button-big button-fill"
+                ng-click="submit()">
+            确认</button>
+    </div>
+</content>
+

@@ -1,0 +1,11 @@
+<div class="lot-number-wrap yb clearfix">
+    <div class="lot-number-right fr inhert-width">
+        <div class="ch_numball ball-red">
+            <ul class="balls">
+                <li ng-repeat="t in lottery.balls track by t.id">
+                    <span class="ball" ng-click="selBalls($event)" rate="{{t.rate}}" rate_min="{{t.rate_min}}" rebate="{{t.rebate}}" name="{{t.name}}" code="{{t.code}}" pid="{{t.id}}">{{t.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

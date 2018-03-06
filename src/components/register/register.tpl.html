@@ -1,0 +1,119 @@
+<iheader>
+    <back></back>
+    <h1 class="title">注册</h1>
+    <a class="icon pull-right" href="/tabs/home">
+    	<i class="icon iconfont icon-house fs26"></i>
+    </a>
+</iheader>
+<content class="register">
+    <form ng-submit="submit()">
+    	<div class="list-block">
+            <ul>
+                <li ng-if="is_show_agent">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">邀请码</div>
+                            <div class="item-input">
+                                <input
+                                    placeholder="{{is_show_agent == 1 ? '可不填' : '必填'}}"
+                                    ng-model="data.agent_id"
+                                    ng-readonly="is_agent_id"
+                                    class="fs16">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">账号</div>
+                            <div class="item-input">
+                                <input class="fs16"
+                                       placeholder="请输入4~14位会员账号"
+                                       ng-model="data.username"
+                                       maxlength="14"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">密码</div>
+                            <div class="item-input">
+                                <input type="password"
+                                       placeholder="请输入6~12位会员密码"
+                                       maxlength="12"
+                                       ng-model="data.password"
+                                       class="fs16">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">密码</div>
+                            <div class="item-input">
+                                <input type="password"
+                                       placeholder="请输入重复密码"
+                                       ng-model="data.repwd"
+                                       class="fs16"
+                                       maxlength="12">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li ng-if="is_show_bankname">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">真实姓名</div>
+                            <div class="item-input">
+                                <input class="fs16"
+                                       placeholder="请输入真实姓名"
+                                       ng-model="data.bank_name"
+                                       maxlength="14"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li ng-if="is_show_code">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label fs16">验证码</div>
+                            <div class="item-input">
+                                <input type="text"
+                                       placeholder="请输入验证码"
+                                       ng-model="data.code"
+                                       class="fs16"
+                                       maxlength="4"
+                                >
+                            </div>
+                            <img ng-src="{{codeSrc}}" class="code-img" ng-click="getCode()">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="register-tips fs12">
+                <i class="icon iconfont icon-dui main-color fs12"></i>
+                我已经满合法博彩年龄，且同意各项开户条约，"
+            	<a class="main-color" href="/question/7">开户协议</a>"
+            </p>
+        </div>
+        <button
+            class="button-register fs16"
+            ng-class="{true:'main-w', false:'disabled-bg' }[isFillForm]"
+            type="submit"
+        >注册</button>
+    </form>
+
+    <div class="register-footer text-left">
+        <a href="{{ONLINE_SERVICE}}"
+        	target="_blank"
+        	class="button-link fr fs12"
+        >遇到了问题？请联系客服。</a>
+    </div>
+</content>

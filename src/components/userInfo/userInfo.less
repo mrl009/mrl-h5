@@ -1,0 +1,93 @@
+.userInfo {
+    .setting{
+        li.flex-middle {
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 7px;
+            }
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 0.75rem 0.5rem;
+            .iconfont {
+                font-size: 14px;
+            }
+            [type = 'text'] {
+                width: 80%;
+            }
+        }
+        [type = 'file'] {
+            opacity: 0;
+            top:0;right:0;bottom:0;left:0;
+            width:100%;
+            height:100%;
+        }
+
+        .sexList {
+            box-shadow: 0 0 5px 0 darkgrey;
+            width: 4rem;
+            top: 0;
+            right: 0;
+            padding:0.3rem 0;
+            border-radius:0.3rem;
+            .checkSex {
+                background-color:#4899fc;
+                color:#fff;
+            }
+        }
+
+    }
+    .grade {
+        .row {
+            padding:0;
+        }
+        p {
+            margin:0;
+        }
+        .podpis {
+           margin:0.6rem 0 0.4rem 0;
+        }
+        img {
+            width:55/20rem;
+            height:55/20rem;
+            border-radius: 7px;
+        }
+        .over{
+            overflow: hidden;
+        }
+        .user-detail {
+            padding:25/20rem 0 0 25/20rem;
+            height: 7.5rem;
+            background-image: linear-gradient(-180deg, #652428 0%, #370B2E 100%);
+        }
+        .vip-progress {
+            justify-content: space-between;
+            width:95%;
+        }
+        .progress {
+            height:0.8rem;
+            width:250/20rem;
+            border-radius:0.4rem;
+            position:relative;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height:100%;
+            border-top-left-radius: 0.4rem;
+            border-bottom-left-radius: 0.4rem;
+        }
+        .progress-text{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate3d(-50%,-50%,0);
+            z-index:999;
+        }
+        .border-r {
+            border-right:1px solid #eee;
+        }
+        .border-b {
+            border-bottom:1px solid #eee;
+        }
+    }
+}

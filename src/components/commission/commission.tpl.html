@@ -1,0 +1,38 @@
+<iheader>
+    <back></back>
+    <h1 class="title">代理佣金</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="commission">
+    <div class="item-background-top">
+        <div class="statistics text-center white">
+            本月统计
+        </div>
+        <div class="row main-bg">
+            <div class="col">
+                <span class="block white text-center">{{init.rate_price||'0'}}元</span>
+                <span class="block orange text-center">可得佣金</span>
+            </div>
+            <div class="col-border"></div>
+            <div class="col ">
+                <span class="block font-white text-center white">{{init.now_price||'0'}}元</span>
+                <span class="block font-orange text-center orange">有效打码量</span>
+            </div>
+        </div>
+        <div class="row bg-tab white">
+            <span class="col text-center">期数</span>
+            <span class="col text-center">有效打码量</span>
+            <span class="col text-center">佣金</span>
+        </div>
+        <div class="item row row-line " ng-repeat=" val in init.list" ng-class="{'link-color':val.status==1}">
+            <span class="col text-center col-bottom-border">{{val.report_date}}</span>
+            <span class="col text-center col-bottom-border">{{val.now_price}}</span>
+            <span class="col text-center col-bottom-border">{{val.rate_price}}</span>
+        </div>
+    </div>
+    <div class="member-lack-bet-record text-center" ng-show="!init.list.length">
+        <img src="../../assets/img/member-lack-box.png">
+    </div>
+</content>

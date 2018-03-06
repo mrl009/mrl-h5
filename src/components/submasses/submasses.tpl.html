@@ -1,0 +1,43 @@
+<iheader>
+    <back></back>
+    <h1 class="title">下级用户</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="submasses">
+    <div class="search-box">
+        <input
+            class="input-search"
+            placeholder="请输入用户名"
+            ng-model="username"
+            ng-change="handleChange(this)"
+        />
+        <button class="button button-background fr main-bg" ng-click="getSubList()">搜索</button>
+    </div>
+    <div class="row subTabs main-bg">
+        <span class="col text-center white">用户</span>
+        <span class="col text-center white">余额</span>
+        <span class="col text-center white">注册时间</span>
+    </div>
+
+    <div class="member-lack-bet-record text-center" ng-if="!users.length">
+        <img src="../../assets/img/member-lack-box.png">
+    </div>
+    <div class="sub-user-list">
+        <ul class="list"
+            pull-refresh
+            refresh="refresh()"
+            load-more="loadMore()"
+            ng-if="users.length"
+        >
+            <li class="item row text-center row-line radius5"
+                ng-repeat="item in users">
+                <span class="col">{{item.username}}</span>
+                <span class="col">{{item.balance}}</span>
+                <span class="col">{{item.addtime}}</span>
+            </li>
+        </ul>
+    </div>
+</content>
+

@@ -1,0 +1,50 @@
+.bonus {
+    width: 100%;
+    .rate {
+        text-align: right;
+        font-size: 0.8*16/20rem;
+    }
+
+    .title {
+        color: #D0011B;
+        font-size: 0.8*16/20rem;
+    }
+
+    .rebate {
+        text-align: right;
+        color: #D0011B;
+        font-size: 0.8*16/20rem;
+    }
+
+    .it-list {
+        background-color: #FFF;
+        font-size: 0.8*16/20rem;
+        border-radius: 0.2rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .it-list .content span:last-child{
+        text-align: right;
+    }
+
+    .row + .row {
+        margin-top: -5px;
+    }
+
+    .col {
+        padding: 5px;
+    }
+
+    .row {
+        padding: 5px;
+    }
+
+    div {
+        &:last-child {
+            .it-list {
+                margin-bottom: 50/20rem;
+            }
+        }
+    }
+}

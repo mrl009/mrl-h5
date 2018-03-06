@@ -1,0 +1,52 @@
+<iheader>
+    <back></back>
+    <h1 class="title">分享朋友</h1>
+</iheader>
+<content class="share">
+    <img ng-src="{{qrcode}}" alt="">
+    <p class="fs12 text-center">{{message}}</p>
+    <div class="bdsharebuttonbox">
+        <div class="jiathis_style_m"></div>
+    </div>
+
+    <!--<div id="nativeShare"></div>-->
+    <div class="c-popup-content">
+        <div class="c-tool-list wa-image-scroll-wrapper">
+            <div class="c-flexbox c-share-list wa-image-scroller"
+                 style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+                 transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                <div class="c-tool-btn wa-image-entity" ng-click="shareFriend()">
+                    <img class="c-img" src="//m.baidu.com/se/static/pmd/pmd/share/images/wxfriend_2.png">
+                    <span class="c-gap-top c-line-clamp1">微信好友</span>
+                </div>
+                <div class="c-tool-btn wa-image-entity" ng-click="shareFriend()">
+                    <img class="c-img" src="//m.baidu.com/se/static/pmd/pmd/share/images/pyq_2.png">
+                    <span class="c-gap-top c-line-clamp1">微信朋友圈</span>
+                </div>
+                <div class="c-tool-btn wa-image-entity" ng-click="shareFriend()">
+                    <img class="c-img" src="//m.baidu.com/se/static/pmd/pmd/share/images/qqfriend_2.png">
+                    <span class="c-gap-top c-line-clamp1">QQ好友</span>
+                </div>
+
+                <div class="c-tool-btn wa-image-entity" ng-click="qqZone()">
+                    <img class="c-img" src="//m.baidu.com/se/static/pmd/pmd/share/images/qzone_2.png"><span class="c-gap-top c-line-clamp1">QQ空间</span>
+                </div>
+                <div class="c-tool-btn wa-image-entity">
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.junlenet.com&title={{WEBNAME}}&pic={{logo_wap}}&appkey=&searchPic=false" target="_blank">
+                        <img class="c-img" src="//m.baidu.com/se/static/pmd/pmd/share/images/sinaweibo_2.png"><span class="c-gap-top c-line-clamp1">新浪微博</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-modal" ng-show="show_modal" ng-click="hideModal($event)">
+        <div class="app-modal-content animated bounceInUp" ng-show="show_modal">
+            <div class="app-copy-title">单击复制下方链接, 去粘贴给好友吧!</div>
+            <div class="app-share-link pd-l10 fs20">
+                {{load_href}}  <br>
+                <span class="fs12">{{message}}</span>
+            </div>
+            <div class="text-center app-cancel-share" ng-click="hideModal($event)">取消</div>
+        </div>
+    </div>
+</content>

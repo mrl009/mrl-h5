@@ -1,0 +1,109 @@
+<iheader>
+    <back></back>
+    <h1 class="title">代理中心</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="proxy">
+    <div>
+        <div class="head_portrait">
+             <div class="head-img">
+                  <img src='../../assets/img/proxy/avatar.png'>
+             </div>
+             <span class="assertive-name">{{initData.username}}</span>
+        </div>
+        <div class="user_info" ng-if="initData.isAgent">
+             <div class="row">
+                  <div class="col">
+                       <span class="block assertive text-center warn-color">用户余额</span>
+                       <span class="block text-center font-back">{{initData.balance}}</span>
+                  </div>
+                  <div class="col-border"></div>
+                  <div class="col" ng-click="getSheet()">
+                       <span class="block assertive text-center warn-color">下级用户</span>
+                       <span class="block text-center font-back">{{initData.off_sum}}</span>
+                  </div>
+             </div>
+        </div>
+        <div class="popularize-group radius5" ng-if="initData.isAgent">
+             <div class="item item-radius item-sup text-left row">
+                  <span class="light-border col-25 no-wrap">推广号码:</span>
+                  <input
+                    id="extension_num"
+                    type="text"
+                    ng-model="initData.extension_num"
+                    class="col col-55"
+                    ng-readonly="readonly"
+                  />
+                  <button class="button fr js-cp1 warn-color border-color" ng-click="copy('extension_num', 'js-cp1')">复制</button>
+             </div>
+             <div class="item item-radius item-sub text-left row">
+              <span class="light-border col-25 no-wrap">推广链接:</span>
+                <input
+                  id="extension_url"
+                  type="text"
+                  class="col col-55"
+                  ng-model="initData.extension_url"
+                  ng-readonly="readonly"
+                />
+                <button class="button fr js-cp2 warn-color border-color" ng-click="copy('extension_url', 'js-cp2')" >复制</button>
+             </div>
+        </div>
+        <div class="list-block mg5">
+            <ul ng-if="initData.isAgent">
+                <li class="item-content item-link" ng-click="jump('sheet')">
+                    <div class="item-media"><i class="icon icon-sheet"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title fs14">
+                            代理报表
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-link" ng-click="jump('submasses')">
+                    <div class="item-media"><i class="icon icon-nextu"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title fs14">
+                            下级用户
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-link" ng-click="jump('account')">
+                    <div class="item-media"><i class="icon icon-acct"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title fs14">
+                            账户明细
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-link" ng-click="jump('betting')">
+                    <div class="item-media"><i class="icon icon-trd"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title fs14">
+                            投注记录
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-link" ng-click="jump('commission')">
+                    <div class="item-media"><i class="icon icon-pm"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title fs14">
+                            代理佣金
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="radius5" ng-if="!initData.isAgent">
+                <li class="item-content item-link" ng-click="jump('apply')">
+                    <div class="item-media"><i class="icon icon-apply"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title fs14">
+                            申请代理
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</content>
+

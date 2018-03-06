@@ -1,0 +1,82 @@
+.ion-tabs {
+	.ion-list-wrap {
+	    position: absolute;
+	    width: 100%;
+	    top: 2.2rem;
+	    bottom: 0;
+	    overflow: hidden;
+	}
+
+	.ion-tab-wrap {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+	}
+
+	.ion-lists {
+		height: 2.2rem;
+		line-height: 2.2rem;
+		width: 100%;
+		white-space: nowrap;
+		.ion-titem {
+			display: inline-block;
+			text-align: center;
+
+			&.selected {
+				color: #d91d36;
+				position: relative;
+				&:after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 1px;
+					background: #d91d36;
+					left: 0;
+					bottom: 0;
+				}
+			}
+
+			&-1 {
+				width: 100%;
+			}
+
+			&-2 {
+				width: percentage(1/2);
+			}
+
+			&-3 {
+				width: percentage(1/3);
+			}
+
+			&-4 {
+				width: percentage(1/4);
+			}
+
+			&-5 {
+				width: percentage(1/5);
+			}
+
+			&-6 {
+				width: percentage(1/6);
+			}
+
+			&-7 {
+				width: percentage(1/7);
+			}
+
+			&-8 {
+				width: percentage(1/8);
+			}
+
+			&-9 {
+				width: percentage(1/9);
+			}
+
+			&-10 {
+				width: percentage(1/10);
+			}
+		}
+	}
+}

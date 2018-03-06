@@ -1,0 +1,41 @@
+<iheader>
+	<back></back>
+	<h1 class="title">设置</h1>
+</iheader>
+<content class="set">
+	<div class="lh35 pd-l10 fs14">账户安全设置</div>
+  	<div class="fs14" ng-if="isLogin">
+        <a class="set-item bg-white"  href="/userCard">
+            <span>我的收款中心</span>
+            <i class="iconfont">&#xe61c;</i>
+		</a>
+        <a class="set-item bg-white" href="/modifyLoginPwd">
+	        <span>登录密码</span>
+            <i class="iconfont">&#xe61c;</i>
+        </a>
+        <a class="set-item bg-white" href="/modifyMoneyPwd/{{isSetBankPwd == '已设置'? 1: 2}}">
+	       <span>资金密码</span>
+           <span class="fr fs12 light-gray">{{isSetBankPwd}}</span>
+        </a>
+        <a class="set-item bg-white m-t20" href="/question/1">
+	       <span>关于我们</span>
+           <i class="iconfont">&#xe61c;</i>
+        </a>
+    </div>
+
+	<div class="buttons pd-l10 pd-r10">
+    	<button
+        class="button button-big button-fill fs16"
+        ng-click="logout()"
+      >退出</button>
+    </div>
+</content>
+
+<!--<script id="showDesc.html" type="text/ng-template">-->
+    <!--<div class="desc-wrap">-->
+        <!--<div class="desc-item" ng-repeat="rule in rules">-->
+            <!--<div class="desc-item-head">{{rule.title}}</div>-->
+            <!--<div class="desc-item-content">{{rule.content}}</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</script>-->

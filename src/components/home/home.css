@@ -1,0 +1,279 @@
+/* ============= Home ================= */
+.home .notice {
+  border-bottom: 1px solid #ddd;
+}
+.home .notice a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .actived {
+  transition: all 0.2s;
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #fff;
+}
+.home .actived p {
+  color: #fff!important;
+}
+.home .funs {
+  display: flex;
+  flex: 1;
+  padding: 0.6rem 0 0 0;
+}
+.home .fun-img {
+  display: block;
+  margin: 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.home-fun-p {
+  color: #666;
+  display: block;
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+.home-fun-a {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.3rem;
+  font-size: 0.7rem;
+  text-decoration: none;
+}
+.home .fh {
+  color: #676767;
+}
+.home .icon-hot,
+.home .icon-more-game,
+.home .icon-win-top,
+.home .icon-lucy-dial,
+.home .icon-sign-in {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+}
+.home .icon-lucy-dial,
+.home .icon-sign-in {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.home .icon-arrow-right {
+  width: 0.1rem;
+  padding-right: 0.65rem;
+}
+.home .game-list {
+  padding: 0 0.5rem;
+  overflow: hidden;
+}
+.home .game-list .col-50:nth-child(2n) .game-item {
+  border-right: 0;
+}
+.home .game-item {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.home .play-type {
+  border-bottom: 1px solid #d8d8d8;
+}
+.home .play-type > .col-50 {
+  line-height: 2rem;
+}
+.home .play-type > .col-50 span {
+  padding: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+.home .play-list .load-more {
+  padding: 0.5rem 0!important;
+}
+.home .play-list.rows {
+  width: 100%!important;
+  min-height: 10rem;
+  position: relative;
+  overflow: hidden;
+}
+.home .play-list.rows:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+}
+.home .play-list.rows .col-4 {
+  float: left;
+  display: block;
+  width: 33.3333%;
+  height: 5rem;
+  overflow: hidden;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+  background: #fff;
+}
+.home .play-list.rows .col-4:before,
+.home .play-list.rows .col-4:after {
+  content: '';
+  display: table;
+}
+.home .play-list.rows .col-4:nth-child(3n) {
+  border-right: 0;
+}
+.home .play-list img {
+  margin: 0.2rem auto 0;
+}
+.home .play-list p {
+  margin: 0!important;
+}
+.home .col-50 {
+  width: 50%;
+}
+.home .game-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.home .game-info {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+}
+.home .game-title {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #000000;
+}
+.home .game-time-tips {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.6rem;
+  margin-top: 0.32rem;
+  color: #676767;
+}
+.home .game-time-tips span {
+  white-space: nowrap;
+}
+.home .rank-img {
+  width: 2.5rem;
+  vertical-align: bottom;
+}
+.home .lucky {
+  border-radius: 0;
+  margin-top: 0.1rem;
+}
+.home .lucky .row {
+  height: 2.4rem;
+  line-height: 2.4rem;
+  position: relative;
+  border-bottom: solid 1px #eee;
+  margin-top: 0;
+}
+.home .lucky .wins {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  padding: 0;
+  text-align: center;
+  color: #676767;
+}
+.home .activity .col-50 {
+  height: 4rem;
+}
+.home .activity .rightLine {
+  position: relative;
+}
+.home .activity .rightLine:after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 2.5rem;
+  background: #ededed;
+  top: 50%;
+  right: 0;
+  transform: translate3d(0, -50%, 0);
+}
+.home .bottom-nav {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.home .bottom-nav > a.block {
+  width: 4.25rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+.home .swiper-container {
+  height: 6.5rem;
+}
+.home .carousel-img {
+  height: 100%;
+  width: 100%;
+}
+.home .red-packet {
+  position: fixed;
+  right: 1rem;
+  top: 31%;
+  width: 3rem;
+  z-index: 5;
+}
+.home .red-packet .redpic {
+  max-width: 5.5rem !important;
+  height: 5.5rem;
+}
+.home .download {
+  position: fixed;
+  width: 100%;
+  height: 2.5rem;
+  bottom: 2.3rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.home .download p {
+  font-weight: 700;
+  margin-left: 0.5rem;
+  color: #fff;
+}
+.home .download .btn {
+  padding: 0.2rem 0.6rem;
+}
+.ath-container {
+  transition: all 5s;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 99999;
+  padding: 0.7em 0.6em;
+  width: 13em;
+  background: rgba(0, 0, 0, 0.7);
+}
+.ath-container p {
+  margin: 0!important;
+}
+.ath-container img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.ath-container:after {
+  content: '';
+  border: 1rem solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: -1.9rem;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+.ath-container .zclose {
+  font-size: 1.3rem;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 2rem;
+  height: 100%;
+  margin-top: -0.6rem;
+  margin-right: -0.8rem;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+<div class="temcll lot-number-wrap pcdd-tm clearfix">
+	<div class="lot-number-left fl text-center">
+	  <p class="tm-number fs16 no-wrap">号码</p>
+	  <p class="tm-rate fs12 no-wrap">赔率</p>
+	</div>
+	<div class="lot-number-right fr" >
+		<div class="ch_numball ball-red tm">
+		  <ul class="balls">
+		    <li ng-repeat="t in lottery.balls">
+		      <span class="ball" ng-click="selBalls($event)" name="{{t.name}}" rate="{{t.rate}}" rebate="{{t.rebate}}" code="{{t.code}}" pid="{{t.id}}">{{t.name}}</span>
+		      <div ng-bind="t.rate==0?lottery.rate:t.rate" class="rate" ng-class="{'color124':t.code==124,'color125':t.code==125,'color126':t.code==126}"></div>
+		    </li>
+		  </ul>
+		</div>
+	</div>
+</div>

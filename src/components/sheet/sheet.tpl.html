@@ -1,0 +1,74 @@
+<iheader>
+    <back></back>
+    <h1 class="title">代理报表</h1>
+    <a class="icon pull-right white fs14" href="/question/8">
+        代理说明
+    </a>
+</iheader>
+<content class="sheet" class="fs14 sheet">
+    <div class="row main-bg">
+        <div class="col">
+            <span class="block white text-center">{{agentData.off_sum||0}}</span>
+            <span class="block fs12 text-center orange">会员数</span>
+        </div>
+        <span class="block block-line"></span>
+        <div class="col">
+            <span class="block white text-center">{{agentData.date_num||0}}</span>
+            <span class="block fs12 text-center orange">今日注册</span>
+        </div>
+    </div>
+    <div class="item row row-reset">
+        <div class="col-10 ">
+            <span class="block">时间</span>
+        </div>
+        <div class="col-25">
+            <input class="item-input-reset"
+               type="text"
+               readonly="readonly"
+               ng-model="time_start"
+               value="{{time_start}}"
+               ng-click="setStart($event)"/>
+        </div>
+        <div class="col-5 marg-x">
+            <span class="block">至</span>
+        </div>
+        <div class="col-25 ">
+            <input class="item-input-reset"
+                   type="text"
+                   readonly="readonly"
+                   ng-model="time_end"
+                   value="{{time_end}}"
+                   ng-click="setEnd($event)"/>
+        </div>
+        <div class="col-20 padding-left">
+            <button class=" button-background button-search main-w"  ng-click="getSheet()">搜索</button>
+        </div>
+    </div>
+    <ul class="list-css-reset">
+        <li class="item row item-css-reset main-bg">
+            <a  class="col item-a fs18"
+                ng-repeat="item in dateList"
+                ng-class="{'invert-active':$index == currentIndex}"
+                ng-click="checkDate($index)">{{item.title}}</a>
+        </li>
+        <li class="item row row-line">
+            <span class="col text-center col-bottom-border">总打码量</span>
+            <span class="col text-center col-bottom-border main-color">{{total_now_price||'0'}}</span>
+        </li>
+        <li class="item row row-line">
+            <span class="col text-center col-bottom-border">总返佣</span>
+            <span class="col text-center col-bottom-border main-color">{{total_rate_price||'0'}}</span>
+        </li>
+    </ul>
+    <ul class="list-css-reset proxy-mode">
+        <li class="item row item-css-reset main-bg">
+            <span class="col">代理分成模式</span>
+        </li>
+        <li class="item row row-line" ng-repeat="item in dataSet">
+            <span class="col text-center col-bottom-border">{{item.name}}</span>
+            <span class="col text-center col-bottom-border">{{item.bet_amount}}</span>
+            <span class="col text-center col-bottom-border">{{item.rate}}%</span>
+        </li>
+    </ul>
+    <p  class="text-center explain">分成按每日结算，最终解释权为官方所有</p>
+</content>

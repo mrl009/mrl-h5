@@ -1,0 +1,19 @@
+<div class="ch_numball ball-red bigBalls">
+    <ul class="balls">
+        <li ng-repeat="t in lottery.balls">
+            <span
+                class="ball"
+                ng-click="selBalls($event)"
+                name="{{t.name}}"
+                rate="{{t.rate}}"
+                rebate="{{t.rebate}}"
+                code="{{t.code}}"
+                pid="{{t.id}}"
+            >
+                <div>{{t.name}}</div>
+                <div ng-bind="t.rate" class="rate"></div>
+            </span>
+        </li>
+    </ul>
+</div>
+

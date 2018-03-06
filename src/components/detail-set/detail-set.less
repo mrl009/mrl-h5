@@ -1,0 +1,49 @@
+.set-card {
+    border-radius: 0.5*16/20rem;
+    margin-top: 1*16/20rem;
+    margin-bottom: 1*16/20rem;
+    padding: 0;
+    width: 100%;
+    background: transparent;
+    .header {
+	    font-size: 0.8*16/20rem;
+	    background-color: #96ccfa;
+	}
+
+	.bet-price {
+	    text-align: right;
+	}
+
+	hr{
+	    background-color: rgba(255, 255, 255, 0.3);
+	    margin: 0;
+	}
+
+	.content {
+		background: #fff;
+		span {
+			font-size: 0.8 * 16/20rem;
+		}
+	}
+
+	div {
+		&:last-child {
+			hr {
+				height: 0;
+				border: 0;
+			}
+
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	.col {
+		padding: 5px;
+		white-space: nowrap;
+	}
+
+	.row {
+		padding: 5px;
+	}
+}
+

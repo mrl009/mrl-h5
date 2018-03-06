@@ -1,0 +1,41 @@
+@import "../../assets/css/variables";
+.betting{
+    ul.tabs{
+        margin:0.5rem 0;
+        background:@tab-bg-color;
+        padding:0.2rem;
+        li.col{
+            font-size:0.7rem;
+            height:34px;
+            line-height:30px;
+        }
+        li.active{
+            background:#fff;
+            border-radius:1rem;
+            font-size:0.8rem;
+        }
+    }
+    .betting-list{
+        padding:0.3rem;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        top: 5.6rem;
+        overflow: auto;
+        div.row{
+            background:#fff;
+            border-radius:10px;
+            margin-bottom:0.5rem;
+            span.wins-price{
+                color: #D0011B;
+            }
+            span.wins-sum{
+                color: #FF0000;
+                font-weight: 700;
+            }
+        }
+        .m-t2{
+            margin-top:2rem;
+        }
+    }
+}

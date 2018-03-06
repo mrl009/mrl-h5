@@ -1,0 +1,33 @@
+<iheader>
+    <back></back>
+    <h1 class="title">优惠活动</h1>
+</iheader>
+<content>
+    <div class="accordion">
+        <a class="item block bg-white" href="/activity/view/88">
+            <div class="lh35 fs14">
+                VIP晋级奖励
+            </div>
+            <div>
+                <lazy-img url="https://www.sqxingyun.com/uploads//photo_2017-12-22_17-17-30.jpg"></lazy-img>
+                <!--<img src="../../assets/img/VIP/vip-banner.png"></img>-->
+                <div class="fs12 flex-space lh35">
+                    <span>活动时间:2017-11-20 至 2018-04-29</span>
+                    <span class="flex-middle">查看详情<span class="iconfont fs14">&#xe615;</span></span>
+                </div>
+            </div>
+        </a>
+        <a class="item block bg-white" ng-repeat="item in alist" href="/activity/view/{{item.id}}">
+            <div class="lh35 fs14">
+                {{item.title}}
+            </div>
+            <div style="width:100%">
+                <lazy-img url="{{item.img_base64}}"></lazy-img>
+                <div class="fs12 flex-space lh35">
+                    <span>活动时间:{{item.start_time}} 至 {{item.expiration_time}}</span>
+                    <span class="flex-middle">查看详情<span class="iconfont fs14">&#xe615;</span></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</content>

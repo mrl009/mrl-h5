@@ -1,0 +1,24 @@
+<div class="s_box bg-white container" ng-repeat="item in lottery">
+    <h3 class="fs12 ball-title">
+        <span class="title bg-gray">{{item.name}}{{item.rate}}</span>
+    </h3>
+    <div class="bg-white">
+        <ul class="balls">
+            <li class="s-ball m-b10 fl text-center" ng-repeat="t in item.balls">
+                <div class="s-ball-no flex-center flex-middle"
+                      ng-click="selBalls($event)"
+                      btitle="{{item.name}}"
+                      name="{{t.name}}"
+                      rate="{{t.rate}}"
+                      rebate="{{t.rebate}}"
+                      code="{{t.code}}"
+                      tid="{{t.tid}}"
+                      pid="{{t.id}}">
+                    <span class="text-center"
+                          ng-style="{'padding': t.name.length>=3? '0 0.2rem':''}">{{t.name}}</span>
+      		    </div>
+                <div class="fs12 m-t5 text-center">{{t.rate}}</div>
+            </li>
+        </ul>
+    </div>
+</div>

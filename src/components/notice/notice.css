@@ -1,0 +1,48 @@
+.notice-list .ion-record {
+  vertical-align: top;
+  line-height: 0;
+  margin-left: -0.2rem;
+  margin-right: 0;
+  color: #d91d36;
+}
+.notice-list img {
+  height: 2.4rem;
+  border-radius: 0.3rem;
+  margin: 0.5rem;
+}
+.notice-list i {
+  float: right;
+  line-height: 3.2rem;
+  margin-right: 0.5rem;
+  color: #dcdcdc;
+}
+.notice-list span {
+  line-height: 3.2rem;
+  margin-left: 0.2rem;
+  color: #000000;
+}
+.notice-list div {
+  padding: 0;
+  margin: 0;
+}
+.notice-list .item {
+  padding: 0;
+  border-radius: 0.3rem;
+  margin-bottom: 0.8rem;
+  border: 0;
+  background-color: #fff;
+}
+.notice-list {
+  padding: 0.5rem;
+}
+.notice-list .icon-arrow-right {
+  margin-right: 0.2rem;
+  flex-grow: 1;
+  text-align: right;
+}
+.notice-list .qipao {
+  width: 1.2rem;
+  height: 1.2rem;
+  top: -0.2rem;
+  right: -0.8rem;
+}

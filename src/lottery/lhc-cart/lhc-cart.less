@@ -1,0 +1,101 @@
+.lhc-cart {
+	.cd-area {
+		background: #fff;
+		height: 40/20rem;
+		line-height: 40/20rem;
+		margin-bottom: 16/20rem;
+	}
+
+	.data-area {
+		padding-bottom: 1rem;
+	}
+
+	.head-area {
+		background: #FFFFFF;
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.13), 0 -1px 1px 0 rgba(0,0,0,0.13), inset 0 -1px 3px 0 rgba(129,129,129,0.59);
+		border-radius: 10px;
+		height: 20/20rem;
+		margin: 0 5/20rem;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			height: 8/20rem;
+			left: 6/20rem;
+			right: 6/20rem;
+			background: #fff;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			border-radius: 10/20rem;
+			box-shadow: 0 2px 3px 0 rgba(0,0,0,0.13), 0 -1px 1px 0 rgba(0,0,0,0.13), inset 0 -1px 8px 0 rgba(129,129,129,0.59);
+		}
+	}
+
+	.lists-area {
+		width: percentage(340/375);
+		margin-left: percentage((375-340)/750);
+		background: #fff;
+		padding-top: 20/20rem;
+		position: relative;
+		margin-top: -12/20rem;
+		border-radius: 3px 3px 0 0;
+		// box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.5);
+
+		.la {
+			&-col {
+				float: left;
+				width: percentage(1/4);
+				white-space: nowrap;
+				font-size: 14/20rem;
+				text-align: center;
+			}
+
+			&-row {
+				height: 40/20rem;
+				line-height: 40/20rem;
+				position: relative;
+				&:after {
+					content: '';
+					height: 1px;
+					background: #d8d8d8;
+					position: absolute;
+					left: 0;
+					width: 100%;
+					bottom: 0;
+					transform: scaleY(0.33);
+				}
+			}
+
+			&-head {
+				height: 30/20rem;
+				line-height: 30/20rem;
+				background: #FFF7E4;
+				&:after {
+					height: 0;
+				}
+			}
+		}
+	}
+
+	.balls-area {
+	    height: 10/20rem;
+	    background: #fff;
+	    margin: 0 percentage((375-340)/750);
+
+	    .deco-ball {
+		    height: 20/20rem;
+		    width: percentage(1/17);
+		    background: #fff;
+		    float: left;
+		    border-radius: 100%;
+		}
+	}
+}
+
+@media only screen and (min-width: 320px) {
+	.lhc-cart .lists-area .la-col {
+		font-size: 0.6rem;
+	}
+}

@@ -1,0 +1,335 @@
+/* ========= topup ========*/
+.top-up {
+	.card-input {
+        margin: 0 auto;
+        margin-top: 0.5*16/20rem;
+        margin-bottom: 0.5*16/20rem;
+        border-radius: 0.3*16/20rem;
+        display: inline-block;
+        margin-left: 0;
+        border: 0;
+    }
+    .money-box{
+        height:1.5rem;
+        line-height:1.5rem;
+        border:none;
+        overflow:hidden;
+        resize: none;
+    }
+    .pay-btn-wrap.ng-scope {
+        margin: 0 0.75rem;
+    }
+
+    .ion-ios-checkmark {
+        color: #D0011B;
+    }
+
+    .account-area {
+        padding: 0.2*16/20rem;
+    }
+
+    .account-area span {
+        color: #999;
+        font-size: 1*12/20rem;
+    }
+
+    .account-area .balance {
+        float: right;
+        text-align: right;
+    }
+
+    .account-area {
+    	.username,
+    	.balance-num {
+	        color: #D0011B;
+	    }
+    }
+    .input-area {
+        padding-top:0.5rem;
+        .hr{
+            margin-top: .4rem;
+            border-color: #e2dddd;
+            margin-bottom: .4rem;
+        }
+    }
+    .input-area input {
+        border: 1px solid #9e9e9e;
+        padding: 0.2*16/20rem;
+        color: #D0011B;
+        width: 70%;
+        border: 0;
+        font-size: 1*14/20rem;
+    }
+
+    .input-area span {
+        font-size: 0.8rem;
+    }
+
+    .input-area span:last-child {
+        margin-left: 0.5rem;
+    }
+
+    .input-area {
+        background-color: #ffffff;
+    }
+
+    .tabs {
+        background-color: #ffffff;
+        color: #000000;
+        border: 0;
+        background-image: none;
+        top: 12*16/20rem;
+        width: 96%;
+        margin-left: 0.5*16/20rem;
+        border-radius: 0.5*16/20rem;
+        overflow-x: scroll;
+        flex: initial;
+        -webkit-flex: initial;
+        justify-content: initial;
+        -webkit-justify-content: initial;
+    }
+
+    .tab-item {
+        overflow: initial;
+        flex: initial;
+        text-overflow: initial;
+        margin: 0 10/20px;
+    }
+
+    .tab-content {
+        top: 10.6rem;
+        width: 96%;
+        margin-left: 0.5rem;
+        /*height: auto;*/
+        // height: 29rem;
+
+    }
+
+    .tab-item {
+    	&.tab-item-active,
+	    &.active,
+	    &.activated {
+	        color: #D0011B;
+	        border-bottom: 0.01rem solid
+	    }
+    }
+
+    .title-text {
+        margin: 0.5rem;
+        font-size: 0.8rem;
+        color: #9e9e9e;
+    }
+
+    .tab-list {
+        background-color: #ffffff;
+    }
+
+    .slide-wrap {
+    	// margin: 0 0.5rem;
+    }
+
+    .slide-tabs-wrap .slide-tab {
+    	// margin: 0.2*16/20rem;
+        margin-top: 0.5*16/20rem;
+        display: block;
+
+    	//.item-content {
+	    //    border: 1px solid transparent;
+	    //}
+
+	    //.item-content.active{
+	    //    background-color: #ffffff;
+	    //    border: 1px solid #D0011B;
+	    //    margin-bottom: 0.1rem;
+	    //    margin-left: 0.02rem;
+	    //    margin-top: 0.05rem;
+	    //    margin-right: 0.02rem;
+	    //}
+
+	    .tab-list-content {
+	        background-color: #fff;
+            img{
+                width:2.5rem;
+                height:2.5rem;
+                margin-right:0.5rem;
+            }
+	        //&:last-child {
+	        //	.item-content {
+	        //		border-bottom-color: transparent;
+            //
+             //       &.active {
+             //           border-bottom-color: #d0011b;
+             //       }
+	        //	}
+	        //}
+	    }
+
+	    .ion-ios-checkmark {
+	        float: right;
+	    }
+
+	    .tab-list-content p {
+	        margin: 0;
+	        border: 0;
+	        padding: 0;
+	        color: #666;
+	        font-size: 13/20rem;
+	    }
+
+	    .item-content {
+	        padding: 0.5*16/20rem;
+	        border-bottom: 1px solid #ccc;
+	    }
+
+	    .item-input {
+	        border-radius: 0.3*16/20rem;
+	        margin-left: 2*16/20rem;
+	        margin-right: 2*16/20rem;
+	        font-size: 0.8*16/20rem;
+	    }
+
+	    hr {
+	        margin-left: 0.5rem;
+	        margin-right: 1rem;
+	        background-color: rgba(255, 255, 255, 0.3);
+	        border-color: rgba(255, 255, 255, 0.3);
+	    }
+
+	    .item-radio{
+	        border-left-color: transparent;
+	        border-right-color: transparent;
+	        border-bottom-color: transparent;
+	    }
+    }
+
+    .tab-list-content:first-child .item-radio{
+        border-top: 0;
+    }
+
+    .card-input-area {
+        padding: 1.5*16/20rem;
+        .item {
+        	border: 1px solid #ddd;
+        }
+
+        input {
+	        margin: 0;
+	    }
+    }
+
+    .card-input-area .item.active{
+        background-color: #ffffff;
+    }
+
+    .moneylist ul li {
+        display: inline-block;
+        width:4.2rem;
+        text-align: center;
+        overflow: hidden;
+        padding:0.1rem 0.2rem;
+        border: 1px solid #e5e5e5;
+        border-radius: .1rem;
+        margin:0.2rem;
+        color: #666;
+    }
+
+    .slide-wrap,
+    .slide-tabs-wrap {
+    	height: auto;
+        .slide-bar {
+            background: #fff6f6;
+            padding: 10px 8px;
+        }
+    }
+
+    .slide-bars-wrap {
+    	width: 100%;
+        background: #fff6f6;
+        display: block !important;
+    }
+
+    .slide-tab {
+        overflow: hidden;
+        margin-top: 0 !important;
+    }
+
+    .item-radio {
+    	input {
+    		position: absolute;
+    		left: -9999px;
+    	}
+    }
+
+    .item {
+	    border-color: #ddd;
+	    background-color: #fff;
+	    color: #444;
+	    position: relative;
+	    z-index: 2;
+	    display: block;
+	    padding: 16/20rem;
+	    margin: -1px 0.5rem;
+	    border-width: 1px;
+	    border-style: solid;
+	    font-size: 16/20rem;
+	    border-left: 0;
+	    border-right: 0;
+	}
+
+	.item-input {
+	    display: flex;
+	    align-items: center;
+	    position: relative;
+	    overflow: hidden;
+	    padding: 6/20rem 0 5/20rem 16/20rem;
+	}
+
+	.input-label {
+	    display: table;
+	    padding: 7/20rem 10/20rem 7/20rem 0/20rem;
+	    max-width: 200/20rem;
+	    width: 35%;
+	    color: #444;
+	    font-size: 16/20rem;
+	}
+}
+
+.topup-alert {
+    background :            #fff;
+    border-radius :         1*16/20rem;
+    padding :               1*16/20rem;
+    position :              absolute;
+    top :                   50%;
+    left :                  50%;
+    transform :             translate(-50%, -50%);
+    min-width :             18*16/20rem;
+
+    .topup-alert-title {
+        padding-bottom: 0.5*16/20rem;
+        span {
+            position: relative;
+            left: 40%;
+            font-weight: bold;
+        }
+    }
+
+    hr {
+        margin: 0;
+    }
+
+    .topup-alert-content {
+        padding: 0.4rem;
+    }
+
+    .topup-alert-button {
+        position :           relative;
+        left :               35%;
+        color :              white;
+        clear :              both;
+        background-color :   #c71522;
+        width :              5*16/20rem;
+        height :             2*16/20rem;
+        border-radius :      10px;
+        border :             none;
+    }
+}

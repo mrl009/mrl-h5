@@ -1,0 +1,47 @@
+<iheader>
+    <ul class="flex-center head-tabs white-text">
+        <li class="fl change text-center"
+            ng-class="{'change': 'left' == title}"
+            ng-click="toggleTitle('left')">中奖信息</li>
+        <li class="fl text-center"
+            ng-class="{'change': 'right' == title}"
+            ng-click="toggleTitle('right')">昨日奖金榜</li>
+    </ul>
+</iheader>
+<content class="discover" hasTabs="true">
+    <div class="animated bounceInLeft" ng-show="title == 'left'">
+        <a class="flex-middle player-item bg-white fs14"
+           ng-repeat="item in winnerList track by $index"
+           href="/discover/1/{{item.uid}}">
+            <img ng-src="{{item.img? item.img: default_img}}" alt=""/>
+            <!--<lazy-img url="{{v.img_base64}}"></lazy-img>-->
+            <div>
+                <p>
+                    <span class="deactivated">{{item.username}}</span>
+                    在{{item.game}}
+                </p>
+                喜中 <span class="main-color">¥{{item.price_sum}}</span>
+            </div>
+            <i class="iconfont">&#xe61c;</i>
+        </a>
+    </div>
+    <div class="animated bounceInRight" ng-show="title == 'right'">
+        <a class="flex-middle player-item bg-white fs14"
+           ng-repeat="item in topList track by $index"
+           href="/discover/2/{{item.uid}}">
+            <img ng-src="{{item.img? item.img:default_img}}" alt=""/>
+            <div>
+                <p>
+                    账号昵称:
+                    <span class="deactivated">{{item.username}}</span>
+                </p>
+                昨日奖金: <span class="main-color">¥{{item.lucky_price}}</span>
+            </div>
+            <i class="top-one white-text" ng-if="$index == 0">{{$index+1}}</i>
+            <i class="top-two white-text" ng-if="$index == 1">{{$index+1}}</i>
+            <i class="top-three white-text" ng-if="$index == 2">{{$index+1}}</i>
+            <i class="top-no" ng-if="$index > 2">{{$index+1}}</i>
+        </a>
+    </div>
+</content>
+

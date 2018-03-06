@@ -1,0 +1,41 @@
+<iheader>
+    <back></back>
+    <h1 class="title">今日盈亏</h1>
+</iheader>
+<content class="profit">
+    <div class="top-bg">
+        <div class="golden fs16 text-center">盈利金额</div>
+        <div class="golden fs32 text-center m-b15">{{info.profit}}</div>
+        <div class="lh30 white-text fs14">
+            <i class="iconfont">&#xe605;</i>
+            盈利计算公式：中奖 - 投注 + 活动 + 返点
+        </div>
+    </div>
+    <ul class="profit-info mt-8">
+        <li class="b-r b-b bg-white">
+            <span class="main-color fs20">{{info.valid_price}}</span>
+            <span>投注金额</span>
+        </li>
+        <li class="b-r b-b bg-white">
+            <span class="main-color fs20">{{info.lucky_price}}</span>
+            <span>中奖金额</span>
+        </li>
+        <li class="b-b bg-white">
+            <span class="main-color fs20">{{info.activi_price}}</span>
+            <span>活动礼金</span>
+        </li>
+        <li class="b-r bg-white">
+            <span class="main-color fs20">{{info.inpour_price}}</span>
+            <span>充值金额</span>
+        </li>
+        <li class="b-r bg-white">
+            <span class="main-color fs20">{{info.outflow_price}}</span>
+            <span>提现金额</span>
+        </li>
+        <li class="bg-white">
+            <span class="main-color fs20">{{info.return_price}}</span>
+            <span>返水金额</span>
+        </li>
+    </ul>
+</content>
+

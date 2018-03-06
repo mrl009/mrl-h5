@@ -1,0 +1,153 @@
+<iheader>
+    <h1 class="title">会员中心</h1>
+    <a class="icon pull-right white" href="/set">
+        <i class="icon iconfont icon-set"></i>
+    </a>
+</iheader>
+<content class="my" hasTabs="true">
+    <div class="member row main-bg white-text">
+        <div class="col col-25 member-head-div">
+            <div class="member-avatar ma-unlogin" ng-hide="isLogin">
+            </div>
+            <div
+            	class="member-avatar ma-login"
+                ng-click="showPhotos()"
+            	ng-show="isLogin"
+            	style="background-image: url({{data.img}});">
+                <span class="icon-vip">
+                    <span class="fs8 bold">VIP{{data.dengji}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="col col-75 member-content">
+            <!--未登录-->
+            <div class="member-btns-wrap" ng-hide="isLogin">
+                <a class="fs20 white-text" href="/login/">登录</a>
+                <span class="fs20">
+						<span class="speactor-margin">/</span>
+					</span>
+                <a class="fs20 white-text" href="/register">注册</a>
+            </div>
+
+            <!--登陆后-->
+            <div class="member-btns-wrap less-mb" ng-show="isLogin">
+                <p>{{data.username}}
+                    <a class="fs8 bold btn-bg-yellow m-l5 p3 warn-color"
+                       href="/activity/view/88"
+                       style="padding: 0.1rem .5rem;border-radius: 4px;"
+                    >VIP{{data.dengji}}</a>
+                </p>
+                <p class="lh40">
+                    <span class="iconfont">&#xe62e;</span>
+                    <span class="m-l10 m-r10">{{data.balance}}</span>
+                    <span class="refresh-btn"
+                          ng-class="{'rotate-circle': clicked=='clicked'}"
+                          ng-click="refresh()"
+                          disabled="disabled">
+                            <i class="iconfont icon-shuaxin white-text"></i>
+                    </span>
+                    <!--<span class="iconfont">&#xe600;</span>-->
+                </p>
+            </div>
+            <div class="member-tc-wrap fs14">
+                <a class="warn-color text-center lh35 btn-bg-yellow m-r15" href="/topup">充值</a>
+                <!--ng-if="quick_recharge_url"-->
+                <a ng-click="checkLogin($event)"
+                   ng-if="isLogin && quick_recharge_url"
+                   href="{{quick_recharge_url}}"
+                   class="warn-color text-center lh35 btn-bg-yellow m-r15"  target="_blank">快速充值</a>
+                <a ng-click="showWithdraw()" class="text-center lh35 btn-bg-red white-text">提现</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row bg-white my-tabs-info fs14">
+        <!--<a class="col col-25 text-center" href="/tabs/order">-->
+        <!--<div class="icon-bet"></div>-->
+        <!--投注记录-->
+        <!--</a>-->
+        <a class="col col-25 text-center" href="/tabs/order">
+            <div class="icon-bet"></div>
+            投注记录
+        </a>
+        <a class="col col-25 text-center" href="/cashRecord">
+            <div class="icon-account"></div>
+            账户明细
+        </a>
+        <a class="col col-25 text-center" href="/income">
+            <div class="icon-topup"></div>
+            充值记录
+        </a>
+        <a class="col col-25 text-center" href="/payoutRecord">
+            <div class="icon-pay"></div>
+            提现记录
+        </a>
+    </div>
+
+    <div class="mt-8 bg-white my-items fs14 m-b10">
+        <a href="/userInfo">
+            <div class="icon-user-info"></div>
+            个人信息
+        </a>
+        <a href="/profit">
+            <div class="icon-profit"></div>
+            今日盈亏
+        </a>
+        <a href="/proxy">
+            <div class="icon-proxy"></div>
+            代理中心
+        </a>
+        <a href="/bonus">
+            <div class="icon-prize"></div>
+            奖金详情
+        </a>
+        <a href="/rule/">
+            <div class="icon-rule"></div>
+            玩法规则
+        </a>
+        <a href="/detailSet">
+            <div class="icon-wanfa"></div>
+            详细设定
+        </a>
+        <a href="/notice">
+            <div class="icon-notice re">
+                <i class="badge-qipao qipao  ab" ng-show="hasMemberNotice"></i>
+            </div>
+            <span>信息公告</span>
+        </a>
+        <a href="/favorite">
+            <div class="icon-favorite"></div>
+            我的收藏
+        </a>
+        <a ng-href="{{ONLINE_SERVICE}}">
+            <div class="icon-service"></div>
+            在线客服
+        </a>
+        <a href="/qqService">
+            <div class="icon-qq-service"></div>
+            QQ客服
+        </a>
+        <a href="/set">
+            <div class="icon-safety"></div>
+            安全中心
+        </a>
+        <a href="/share">
+            <div class="icon-share"></div>
+            分享朋友
+        </a>
+    </div>
+</content>
+<script id="change-photos.html" type="text/ng-template">
+   <div class="img-box bg-white">
+       <div class="upload-photo text-center re">
+         <i class="iconfont block main-color">&#xe61d;</i>
+        <input class="ab" type="file"  capture="camera" accept="image/png,image/jpeg" multiple
+               file-up-load="uploadAvatar">
+        </div>
+         <div ng-repeat="img in imgs track by $index"
+              ng-click="selectPicture($index)">
+            <img ng-src="{{img}}"
+                 ng-class="{'border-color': $index == checkImgIndex}">
+        </div>
+    </div>
+</script>

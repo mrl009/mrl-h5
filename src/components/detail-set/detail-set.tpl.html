@@ -1,0 +1,25 @@
+<iheader>
+    <back></back>
+    <h1 class="title">详细设定</h1>
+</iheader>
+<content class="detail-set">
+    <slide-tabs auto-hide="true">
+        <slide-tab ng-repeat="item in dsItems" bar-title="{{item.label}}" type="{{item.value}}">
+            <div class="card set-card">
+                <div class="header row">
+                    <span class="col col-50">项目</span>
+                    <span class="col col-25 bet-price">单项(号)限额</span>
+                    <span class="col col-25 bet-price">单笔限额</span>
+                </div>
+                <div class="content" ng-repeat="it in item.items">
+                    <div class="row">
+                        <span class="col col-50">{{it.title}}</span>
+                        <span class="col col-25 bet-price">{{it.max_play}}</span>
+                        <span class="col col-25 bet-price">{{it.max_stake}}</span>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </slide-tab>
+    </slide-tabs>
+</content>

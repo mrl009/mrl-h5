@@ -1,0 +1,78 @@
+<iheader>
+    <back></back>
+    <h1 class="title">{{payData.title}}</h1>
+</iheader>
+<content class="wx-accounts fs14 bg-white">
+    <!--<div class="row bg-white wx-account-tabs">-->
+        <!--<div class="col-50 text-center lh40 "-->
+             <!--ng-click="checkType(1)"-->
+             <!--ng-class="{'border-color': type == 1}">-->
+            <!--{{payData.name}}支付-->
+        <!--</div>-->
+        <!--<div class="col-50 text-center lh40"-->
+             <!--ng-click="checkType(2)"-->
+             <!--ng-class="{'border-color': type == 2}">-->
+            <!--已支付,我要提单-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="container animated bounceInLeft">
+        <div class="bg-gray padding-box">
+            <p class="pd-l10 m-b5" ng-if="payData.jump == 3">
+                <span>订单号码:</span>
+                <span id="order-num" class="light-gray">{{payData.order_num? payData.order_num: ''}}</span>
+                <span class="m-l10 bg-deactivated copy-btn white-text"
+                      ng-click="copyWx('copy-btn', 'order-num')">复制</span>
+            </p>
+            <p class="pd-l10 m-b5" ng-if="payData.jump != 3 && payData.jump_mode == 4">
+                <span>{{payData.name}}账号:</span>
+                <span id="wx-name" class="deactivated">{{payData.user}}</span>
+                <span class="m-l10 bg-deactivated copy-btn white-text"
+                      ng-click="copyWx('copy-btn', 'wx-name')">复制</span>
+            </p>
+            <p class="pd-l10 m-b5">
+                充值金额: <span class="main-color fs18">{{payData.money}}</span>元
+            </p>
+        </div>
+        <p class="fs12 pd-l10 pd-r10 warn-color" ng-if="payData.jump == 3">
+            温馨提示：为了提高入款速度，系统自带小数点金额充值，扫码支付后，系统会按照实际充值金额到账
+        </p>
+        <div class="qr-img">
+            <img ng-src="{{img}}" alt="">
+            <a  ng-href="{{img}}" download="zhifuqrcode.png"
+                class="text-center block gold main-bg lh40 flex-space">
+                <i class="iconfont fs24">&#xe61e;</i>
+                <span>↑</span>
+                <span>长按保存二维码</span>
+                <span>↑</span>
+            </a>
+            <p ng-class="showPayBtn? 'flex-space': 'flex-center'">
+                <a href="{{payUrl}}" ng-if="showPayBtn" class="main-w">打开{{payData.name}}支付</a>
+                <a href="" class="main-w" ng-click="checkPay()">我已支付</a>
+            </p>
+        </div>
+        <div class="pd-l10 pd-r10"  ng-bind-html="stepContent.content"></div>
+    </div>
+    <!--<div class="container submit-order animated bounceInRight" ng-show="type == 2">-->
+        <!--<div class="row">-->
+            <!--<div class="col-30 text-right lh40 pd-r10">-->
+                <!--充值金额:-->
+            <!--</div>-->
+            <!--<div class="col-60 text-left flex-middle">-->
+                <!--<input type="text" class="radius5 lh30"-->
+                       <!--ng-model="params.money" placeholder="请输入你充值的金额">-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-30 text-right lh40 pd-r10">-->
+                <!--订单号:-->
+            <!--</div>-->
+            <!--<div class="col-60 text-left flex-middle">-->
+                <!--<input type="text" class="radius5 lh30" ng-model="params.order" placeholder="请输入订单号">-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="btn-group">-->
+            <!--<button ng-click="wxSubmit()"-->
+                <!--class="main-bg radius5 white-text text-center lh40 fs16">立即提单</button>-->
+        <!--</div>-->
+    <!--</div>-->
+</content>

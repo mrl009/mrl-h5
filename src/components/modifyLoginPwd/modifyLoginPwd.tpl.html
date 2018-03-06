@@ -1,0 +1,41 @@
+<iheader>
+    <back></back>
+    <h1 class="title">修改登录密码</h1>
+</iheader>
+<content class="modify-money-pwd">
+    <div class="fs14 m-t10">
+        <input type="password" style="position:absolute;top:-999px"/> <!--阻止默认填写表单-->
+        <div class="item-input-wrapper  bg-white">
+            <span>旧密码</span>
+            <input
+                type="password"
+                name="pwd"
+                ng-model="form.pwd"
+                placeholder="请输入旧密码">
+        </div>
+        <div class="item-input-wrapper mt-8 bg-white">
+            <span>新密码</span>
+            <input
+                type="password"
+                name="new_pwd"
+                ng-model="form.new_pwd"
+                placeholder="请输入新密码">
+        </div>
+        <div class="item-input-wrapper mt-8 bg-white">
+            <span>确认新密码</span>
+            <input type="password"
+                name="r_new_pwd"
+                ng-model="form.r_new_pwd"
+                placeholder="请再次确认密码">
+        </div>
+        <p class="m-t20 m-b20 text-center fs12">
+            请输入 <span class="main-color">6~12</span> 位密码，至少包含一个字母和一个数字
+        </p>
+        <div class="register-form-submit-btn">
+            <button class="block text-center white-text radius5 main-bg fs14"
+            ng-click="modifyLoginPwd()">
+                确 认
+            </button>
+        </div>
+    </div>
+</content>

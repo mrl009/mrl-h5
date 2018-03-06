@@ -1,0 +1,40 @@
+<iheader>
+    <back></back>
+    <h1 class="title">提现详情</h1>
+</iheader>
+<content class="payDetail">
+    <ul class="bg-white m-b10">
+        <li>
+            <span>交易单号</span><span class="fr">{{info.order_num}}</span>
+        </li>
+        <li>
+            <span>交易时间</span><span class="fr">{{info.addtime}}</span>
+        </li>
+        <li>
+            <span>交易方式</span><span class="fr">{{info.content}}</span>
+        </li>
+        <li>
+            <span>交易状态</span><span class="fr">{{info.tips}}</span>
+        </li>
+    </ul>
+    <ul class="bg-white m-b10">
+        <li>
+            <span>提现金额</span><span class="fr">{{info.price}}元</span>
+        </li>
+        <li>
+            <span>行政费用</span><span class="fr">{{info.admin_fee}}元</span>
+        </li>
+        <li>
+            <span>手续费</span><span class="fr">{{info.hand_fee}}元</span>
+        </li>
+        <li>
+            <span>实际出款金额</span><span class="fr">{{info.actual_price}}元</span>
+        </li>
+    </ul>
+
+    <ul class="bg-white">
+        <li>
+            <span>备注:{{info.remark}}</span>
+        </li>
+    </ul>
+</content>

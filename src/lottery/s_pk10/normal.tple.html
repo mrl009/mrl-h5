@@ -1,0 +1,48 @@
+<!--<div class="s_ssc" ng-repeat="item in lottery">-->
+    <!--<div class="lot-number-left">-->
+        <!--<p style="font-size:1rem"><span class="title">{{item.name}}{{item.rate}}</span></p>-->
+    <!--</div>-->
+    <!--<div class="lot-number-right">-->
+        <!--<div class="ch_numball ball-red fangBall lot-number-wrap" style="background: #fff">-->
+            <!--<ul class="balls">-->
+                <!--<li ng-repeat="t in item.balls">-->
+            <!--<span class="ball" -->
+                  <!--ng-click="selBalls($event)" -->
+                  <!--btitle="{{item.name}}" -->
+                  <!--name="{{t.name}}" -->
+                  <!--rate="{{t.rate}}" -->
+                  <!--rebate="{{t.rebate}}" -->
+                  <!--code="{{t.code}}" -->
+                  <!--tid="{{t.tid}}" -->
+                  <!--pid="{{t.id}}">{{t.name}}-->
+            <!--<div class="rate fs13" ng-bind="t.rate" class="rate"></div>-->
+      		<!--</span>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="s_box" ng-repeat="item in lottery">
+    <h3 class="fs12 ball-title">
+        <span class="title bg-gray">{{item.name}}{{item.rate}}</span>
+    </h3>
+    <div class="bg-white over">
+        <ul class="balls">
+            <li class="s-block m-b10 fl text-center" ng-repeat="t in item.balls">
+                <div class="s-block-no flex-middle flex-center fs14"
+                      ng-click="selBalls($event)"
+                      btitle="{{item.name}}"
+                      name="{{t.name}}"
+                      rate="{{t.rate}}"
+                      rebate="{{t.rebate}}"
+                      code="{{t.code}}"
+                      tid="{{t.tid}}"
+                      pid="{{t.id}}">
+                    <span class="text-center">{{t.name}}</span>
+      		    </div>
+                <div class="fs12 m-t5 text-center">{{t.rate}}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+

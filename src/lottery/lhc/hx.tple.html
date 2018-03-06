@@ -1,0 +1,18 @@
+<!--合肖-->
+<div class="ch_numball ball-red fangBall">
+    <ul class="balls">
+        <li ng-repeat="t in lottery.balls">
+          <span
+            class="ball border-color"
+            ng-click="selBalls($event, lottery.rate)"
+            name="{{t.name}}"
+            rate="{{lottery.rate}}"
+            rebate="{{lottery.rebate}}"
+            code="{{t.code}}"
+            pid="{{t.id}}">
+              <div>{{t.name}}</div>
+              <div class="sxnumber">{{sxArr[t.name]}}</div>
+          </span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,74 @@
+<iheader>
+	<back></back>
+	<div class="title">我的收款中心</div>
+</iheader>
+
+<content class="user-card-content" ng-if="items.length">
+    <!-- 支付宝 -->
+    <div class="bank-card-item mt-8 bg-white"
+         ng-class="{'show': 0 === showCode}"
+         ng-click="showQRCode(0, items[0].is_bind)"
+         ng-if="items[0].is_open"
+    >
+        <div class="flex-middle">
+            <img class="bank-card-list-img m-r10" ng-if="items[0].img" ng-src="{{items[0].img}}">
+            <div>
+                <span class="black">{{items[0].name}}</span>
+                <div class="fs14 m-t5 light-gray">{{items[0].num}}</div>
+            </div>
+            <i class="iconfont icon-arrow-right light-gray"></i>
+            <div>
+                <span class="fs18 light-gray bank-card-list-unbind" ng-if="!items[0].is_bind">未绑定</span>
+            </div>
+        </div>
+        <div class="drop-down text-center" ng-if="items[0].qrcode">
+            <p class="text-center fs14 light-gray">收款二维码</p>
+            <img ng-src="{{items[0].qrcode}}" alt="">
+        </div>
+    </div>
+    <!-- 微信 -->
+    <div class="bank-card-item mt-8 bg-white"
+         ng-class="{'show': 1 === showCode}"
+         ng-click="showQRCode(1, items[1].is_bind)"
+         ng-if="items[1].is_open"
+    >
+        <div class="flex-middle">
+            <img class="bank-card-list-img m-r10" ng-if="items[1].img" ng-src="{{items[1].img}}">
+            <div>
+                <span class="black">{{items[1].name}}</span>
+                <div class="fs14 m-t5 light-gray">{{items[1].num}}</div>
+            </div>
+            <i class="iconfont icon-arrow-right light-gray"></i>
+            <div>
+                <span class="fs18 light-gray bank-card-list-unbind" ng-if="!items[1].is_bind">未绑定</span>
+            </div>
+        </div>
+        <div class="drop-down text-center" ng-if="items[1].qrcode">
+            <p class="text-center fs14 light-gray">收款二维码</p>
+            <img ng-src="{{items[1].qrcode}}" alt="">
+        </div>
+    </div>
+    <!-- 银行卡 -->
+    <div class="bank-card-item mt-8 bg-white"
+         ng-class="{'show': 2 === showCode}"
+         ng-click="showQRCode(2, items[2].is_bind)"
+    >
+        <div class="flex-middle">
+            <img class="bank-card-list-img m-r10" ng-if="items[2].img" ng-src="{{items[2].img}}">
+            <div>
+                <span class="black">{{items[2].name?items[2].name:'银行卡'}}</span>
+                <div class="fs14 m-t5 light-gray">{{items[2].num}}</div>
+            </div>
+            <i class="iconfont icon-arrow-right light-gray" ng-if="!items[2].is_bind"></i>
+            <div>
+                <span class="fs18 light-gray bank-card-list-unbind" ng-if="!items[2].is_bind">未绑定</span>
+            </div>
+        </div>
+    </div>
+</content>
+<content ng-if="!items.length">
+    <div class="member-lack-user-card">
+        <img src="../../assets/img/member-lack-card@2x.png">
+        <p>您没有绑定银行卡</p>
+    </div>
+</content>

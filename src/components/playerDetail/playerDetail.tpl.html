@@ -1,0 +1,44 @@
+<iheader>
+    <back></back>
+    <h1 class="title">玩家信息</h1>
+</iheader>
+<content class="player-detail">
+    <div class="top-bg text-center">
+        <img ng-src="{{playerInfo.img != 0? playerInfo.img: DEFAULT_IMG}}" alt="">
+    </div>
+    <div class="fs14 text-center bg-white detail">
+        <div class="text-right">
+            <span class="fs18 vip white-text main-bg ">{{playerInfo.VipID}}</span>
+        </div>
+        <span class="fs16">
+            {{playerInfo.nickname? playerInfo.nickname:playerInfo.username}}
+        </span>
+        <div class="light-gray lh35 text-center">
+            账号: {{playerInfo.username}}
+        </div>
+        <span class="white-text radius5 gender">性别: {{playerInfo.sex}}</span>
+        <div class="lh35 text-center">
+            头衔: {{playerInfo.VipName}}&nbsp;&nbsp;最近30天累计中奖: {{playerInfo.lucky_price}}
+        </div>
+    </div>
+    <div class="like-lottery bg-white">
+        <h3 class="text-center">Ta喜欢的彩票</h3>
+        <a ng-repeat="item in playerInfo.game_list" href="#">
+            <img ng-src="{{item.game_img}}" alt="">
+        </a>
+    </div>
+</content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

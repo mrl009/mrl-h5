@@ -1,0 +1,25 @@
+<iheader>
+    <back></back>
+    <h1 class="title">奖金详情</h1>
+</iheader>
+<content>
+    <slide-tabs auto-hide="true">
+        <slide-tab ng-repeat="item in bsItems" bar-title="{{item.label}}" bar-img="{{item.img}}" type="{{item.value}}">
+                <div class="bonus">
+                    <div ng-repeat="it in item.items">
+                        <div class="row">
+                            <span class="col col-50 title">{{it.title}}</span>
+                            <span class="col col-50 rebate">返利{{it.rebate}}%</span>
+                        </div>
+                        <div class="it-list">
+                            <div class="content row" ng-repeat="i in it.rows">
+                                <span class="col col-50">{{i.name}}</span>
+                                <span class="col col-50">{{i.rate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </slide-tab>
+    </slide-tabs>
+</content>

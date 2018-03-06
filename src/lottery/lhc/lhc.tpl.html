@@ -1,0 +1,153 @@
+<iheader>
+    <back ng-click="goBack()"></back>
+    <h1 class="title" >
+        <label class="zx fs12">玩法</label>
+        <span class="t-btn" ng-click="openType($event)">{{playInfo.topTitle}}&nbsp;&nbsp;<i class="icon-xt"></i></span>
+    </h1>
+    <i class="icon pull-right iconfont icon-dropmenu fs20 white" ng-click="dropMenu($event)"></i>
+</iheader>
+<content hasTabs="true" class="lhc">
+    <div class="lottery row">
+        <div class="col-7 right-line">
+            <h3 class="text-center lottery-title fs14" ng-click="openLottery()">
+                <i class="iconfont fs20">&#xe611;</i>
+                近期开奖
+            </h3>
+            <ul class="list-inline text-center">
+                <li ng-repeat="num in lastest.number track by $index">
+                    <p class="white kj-ball bg-{{lastest.color[$index]}} fs12 center">{{num}}</p>
+                    <p class="center fs12">{{lastest.shengxiao[$index]}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-5">
+            <h3 class="text-center lottery-title fs14">
+                距{{kithe[gid].kithe}}期截止
+            </h3>
+            <ul class="list-inline text-center fs22 white time-block lhc-time-block" ng-if="hdDate(syTimeCc[gid], 0)!='未开盘'">
+                <li class="bg-black clear-mag">{{hdDate(syTimeCc[gid], 0)}}</li>
+                <li class="bg-black clear-mag">{{hdDate(syTimeCc[gid], 1)}}</li>
+                <li class="bg-black clear-mag">{{hdDate(syTimeCc[gid], 2)}}</li>
+            </ul>
+            <ul class="list-inline text-center fs22 white time-block" ng-if="hdDate(syTimeCc[gid], 0)=='未开盘'">
+                <li class="bg-black clear-mag">未</li>
+                <li class="bg-black clear-mag">开</li>
+                <li class="bg-black clear-mag">盘</li>
+            </ul>
+        </div>
+    </div>
+    <div class="lot-wrap lot-number" ng-class="{'hx-wrap': oneSname == 'hx'}">
+        <div ng-if="onePlayId == 212" class="hx-tool">
+            <div class="lhc-hx">
+                <div class="hxList">
+                    <div ng-click="tools(1)">
+                        <span>野兽</span>
+                    </div>
+                    <span style="color: rgb(216, 216, 216); text-align: center;">|</span>
+                    <div ng-click="tools(2)"><span>家禽</span>
+                    </div>
+                    <span style="color: rgb(216, 216, 216); text-align: center;">|</span>
+                    <div ng-click="tools(3)"><span>单</span>
+                    </div>
+                    <span style="color: rgb(216, 216, 216); text-align: center;">|</span>
+                    <div ng-click="tools(4)"><span>双</span>
+                    </div>
+                </div>
+                <div class="hxList">
+                    <div ng-click="tools(5)"><span>前肖</span>
+                    </div>
+                    <span style="color: rgb(216, 216, 216); text-align: center;">|</span>
+                    <div ng-click="tools(6)"><span>后肖</span>
+                    </div>
+                    <span style="color: rgb(216, 216, 216); text-align: center;">|</span>
+                    <div ng-click="tools(7)"><span>天肖</span>
+                    </div>
+                    <span style="color: rgb(216, 216, 216); text-align: center;">|</span>
+                    <div ng-click="tools(8)"><span>地肖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="hint mg-t15 graylight">
+            <div class="fl fs14" ng-click="randomOne()">
+                <i class="iconfont fs24 icon-yao"></i>
+                摇一摇
+            </div>
+            <div class="fr fs14">
+                <a ng-click="showTips(tid)" class="graylight">
+                    <i class="iconfont fs24 icon-info"></i>
+                    玩法提示
+                </a>
+            </div>
+        </nav>
+        <div class="chose-balls" ng-if="oneSname != 'zmgg'">
+            <ul class="chose-tabs list-inline">
+                <li class="chose-tabs-item bg-gray fs14"
+                    ng-repeat="v in p2"
+                    ng-class="{true:'active main-w', false:''}[v.id==tid]"
+                    ng-click="getBalls(v.id, v.pid, $event)"
+                    id="{{v.id}}"
+                    pid="{{v.pid}}"
+                    ng-if="oneSname !='z1' && oneSname != 'zxbz'"
+                    >{{v.name}}
+                </li>
+                <li class="chose-tabs-item bg-gray fs14"
+                    ng-repeat="v in p2"
+                    ng-class="{true:'active main-w', false:''}[v.id==tid]"
+                    ng-click="getBalls(v.id,v.pid, $event)"
+                    id="{{v.id}}"
+                    pid="{{v.pid}}"
+
+                    ng-if="oneSname == 'z1' || oneSname == 'zxbz'"
+
+                >{{v.name}}:{{rates[v.id]}}
+                </li>
+                <li ng-show="oneSname == 'hx'"
+                    class="fr chose-tabs-item fs14 hx-rate border-color"
+                >赔率:{{rateInfo}}</li>
+            </ul>
+        </div>
+        <ng-include src="LTY_ROOT + tmp"></ng-include>
+    </div>
+    <div class="betinfo" ng-if="suData.sumbet!=0">
+        <span class="main-color" ng-bind="suData.sumbet"></span>注
+        <span class="main-color" ng-bind="suData.sumbet*suData.txtmoney"></span>元
+    </div>
+    <!--<div class="betinfo" ng-if="activeNum>=2 && tid==206">
+        <span class="main-color" ng-bind="suData.sumbet"></span>注
+        <span class="main-color" ng-bind="suData.sumbet*suData.txtmoney"></span>元
+    </div>-->
+</content>
+<ifooter class="lhc lottery-footer">
+    <div class="left">
+        <button class="button-del" ng-click="clearAll()">
+            <i class="iconfont icon-lajixiang"></i>
+        </button>
+    </div>
+    <div class="title money fs14">
+        <div class="bet-input-left">
+            <span class="fl fs14">预设金额</span>
+            <span class="txtmoney fl">
+                <!-- <input
+                    type="number"
+                    class="text-input fs16"
+                    maxlength="6"
+                    ng-model="suData.txtmoney"
+                    ng-keyup="inputKeyUp()"
+                    onafterpaste="inputOnafterpaste()"
+                > -->
+                <number type="number"
+                    class="text-input fs16"
+                    maxlength="6"
+                    init-value="suData.txtmoney">
+            </span>
+            <span class="yuan fl fs14">元</span>
+        </div>
+    </div>
+    <div class="right">
+        <button class="button button-add main-w"
+            ng-click="bet()"
+            ng-disabled="suData.txtmoney < 1"
+        >添加注单</button>
+    </div>
+</ifooter>

@@ -1,0 +1,19 @@
+<iheader>
+    <back></back>
+    <h1 class="title">{{title}}</h1>
+</iheader>
+<content class="notice-detial-list">
+    <div ng-repeat="item in items" ng-if="items">
+        <div class="time-div">
+            <span class="time">{{item.time}}</span>
+        </div>
+        <p class="content">{{item.content}}</p>
+    </div>
+    <div class="list" ng-if="!items">
+        <div class="empty-wrap">
+            <img src="/src/assets/img/member-lack-box.png"
+                class="empty-img" />
+            <p>暂无消息~</p>
+        </div>
+    </div>
+</content>

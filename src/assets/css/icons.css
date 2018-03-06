@@ -1,0 +1,140 @@
+/* =========== icons ========== */
+.icon-arrow-left,
+.icon-house {
+  color: #fff;
+}
+.icon-hot {
+  background: url('../img/icon-hot.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-more-game {
+  background: url('../img/icon-more-game.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-win-top {
+  background: url('../img/icon-more-game.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-sign-in {
+  background: url('../img/icon-sign-in.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-lucy-dial {
+  background: url('../img/icon-lucy-dial.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-vip {
+  background: url('../img/icon-vip.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-current-vip {
+  background: url('../img/VIP/current-vip.png') center no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 1.5rem;
+  width: 2rem;
+}
+.icon-tabs-order {
+  background: url('../img/icon-vip.png') center no-repeat;
+}
+.icon-proxy {
+  background: url('../img/icon-proxy.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-bet {
+  background: url('../img/icon-bet.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-account {
+  background: url('../img/icon-account.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-topup {
+  background: url('../img/icon-topup.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-pay {
+  background: url('../img/icon-pay.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-user-info {
+  background: url('../img/icon-user-info.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-profit {
+  background: url('../img/icon-profit.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-notice {
+  background: url('../img/icon-notice.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-share {
+  background: url('../img/icon-share.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-service {
+  background: url('../img/icon-service.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-prize {
+  background: url('../img/icon-prize.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-favorite {
+  background: url('../img/icon-favorite.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-rule {
+  background: url('../img/icon-rule.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-wanfa {
+  background: url('../img/icon-wanfa.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-qq-service {
+  background: url('../img/icon-qq-service.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-safety {
+  background: url('../img/icon-safety.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.icon-phone {
+  background: url('../img/icon-phone.png') center no-repeat;
+  background-size: 1.2rem 1rem;
+}
+.icon-email {
+  background: url('../img/icon-email.png') center no-repeat;
+  background-size: 1.2rem 1rem;
+}
+.icon-phone {
+  background: url('../img/icon-wx.png') center no-repeat;
+  background-size: 1.2rem 1rem;
+}
+.icon-dama {
+  background: url('../img/dama@3x.png') center no-repeat;
+  background-size: 1.1rem 1rem;
+}
+.icon-shouxf {
+  background: url('../img/shouxvfei@3x.png') center no-repeat;
+  background-size: 1rem 1rem;
+}
+.icon-xzf {
+  background: url('../img/xingzhengfei@3x.png') center no-repeat;
+  background-size: 0.9rem 1rem;
+}
+.icon-zkk {
+  background: url('../img/zongkouchu@3x.png') center no-repeat;
+  background-size: 1rem 1rem;
+}
+.icon-faxian {
+  background: url('../img/icon-faxian.png') center no-repeat;
+  background-size: 1.2rem 1.2rem;
+  padding: 0 0.5rem;
+}
+.badge-qipao {
+  background: url('../img/icon-qipao.png') center no-repeat;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,185 @@
+.withdraw {
+  transition: top 0.2s;
+}
+.withdraw .title {
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+.withdraw .bank-card-content {
+  margin: 0.5rem 0;
+}
+.withdraw .bank-card-content p {
+  margin: 0;
+}
+.withdraw .bank-card-content img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  margin: 0.3rem 0 0 0.3rem;
+}
+.withdraw .bank-card-content div.fl {
+  padding-left: 0.5rem;
+}
+.withdraw .withdraw-detail {
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.withdraw .withdraw-detail span {
+  white-space: normal;
+  font-size: 0.65rem !important;
+}
+.withdraw .withdraw-detail input {
+  width: 100%;
+  line-height: 2rem;
+}
+.withdraw .withdraw-detail input::placeholder {
+  color: #ccc;
+  font-size: 0.7rem !important;
+}
+.withdraw a.btn {
+  margin-top: 2rem;
+  padding: 0.6rem 0;
+}
+.move {
+  top: -9.8rem !important;
+  z-index: 1 !important;
+}
+.withdraw-alert {
+  background-image: url(../../assets/img/withdraw/withdraw_alert.png);
+  background-size: 100% 100%;
+  padding: 4.5rem 0 1rem 0;
+}
+.withdraw-alert i {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+}
+.withdraw-alert .withdraw-alert-button button {
+  width: 4rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  border-radius: 0.5rem;
+}
+.withdraw-alert-title {
+  padding: 0 1rem;
+}
+.withdraw-alert-right {
+  display: inline-block;
+  line-height: 1.5rem;
+  margin-left: 0.5rem;
+}
+.cash-wrap {
+  text-align: center;
+  margin: .5rem;
+}
+.cash-tip .circle {
+  position: relative;
+  top: 0.1rem;
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 1px solid #a4a4a4;
+}
+.cash-tip .circle:before {
+  content: '';
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.cash-tip .circle.active {
+  border-color: #F44336;
+}
+.cash-tip .circle.active:before {
+  background: #F44336;
+}
+.bottom-btn {
+  padding: 0 0.5rem;
+}
+.wdp-list {
+  position: relative;
+  width: 12.2rem;
+  height: 2.1rem;
+  background: #e9e9e9;
+  border: 0.05rem solid #d9d9d9;
+  margin: .5rem auto;
+}
+.wdp-item {
+  border-right: 0.05rem solid #d9d9d9;
+  width: 16.6666667%;
+  height: 2rem;
+  float: left;
+  text-align: center;
+  line-height: 2rem;
+}
+.wdp-item.active:before {
+  content: '';
+  width: 0.7rem;
+  height: 0.7rem;
+  display: inline-block;
+  background: #666;
+  border-radius: 100%;
+}
+.wdp-item.last-child {
+  border-right: 0;
+}
+.wdp-item div {
+  width: 100%;
+  height: 100%;
+}
+.wdp-input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  height: 2rem;
+  border: 0;
+  width: 200%!important;
+  margin-left: -100%;
+}
+.popup-container .popup {
+  width: 18rem!important;
+}
+.popup-title {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.wdp-item.focus-cursor:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 1rem;
+  vertical-align: middle;
+  background: #000;
+  animation: wink 0.8s infinite ease-in-out;
+  -webkit-animation: wink 0.8s infinite ease-in-out;
+}
+@-webkit-keyframes wink {
+  0% {
+    background: #000;
+  }
+  50% {
+    background: transparent;
+  }
+  100% {
+    background: #000;
+  }
+}
+/* Standard syntax */
+@keyframes wink {
+  0% {
+    background: #000;
+  }
+  50% {
+    background: transparent;
+  }
+  100% {
+    background: #000;
+  }
+}

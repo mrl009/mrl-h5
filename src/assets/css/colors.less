@@ -1,0 +1,86 @@
+// 第一层级的颜色控制
+//-------------------------------
+@import "./variables";
+//内容背景颜色
+.content-bg {
+	background-color: #eee;
+}
+
+.main-bg {
+	background-color: @color-primary!important;
+}
+
+.disabled-bg {
+	background-color: #ddd!important;
+}
+.success-bg{
+    background-color:@color-success;
+}
+
+//屎黄色背景
+.bg-vip {
+    background-color: #8d5527;
+}
+.white {
+	color: #fff;
+}
+.deactivated{
+    color:@color-deactivated;
+}
+.bg-deactivated{
+    background-color: @color-deactivated;
+}
+.light-gray{
+    color:#a4a4a4;
+}
+.bg-form-group{
+    background:@color-bg-form-group;
+}
+.bg-input-none{
+    background:transparent;
+}
+.bg-white{
+    background:@color-bg-form-group;
+}
+.bg-gray{
+    background:@color-text-gray-light;
+}
+.btn-bg-yellow {
+    background: @color-btn-yellow;
+}
+
+.btn-bg-red {
+    background: @color-btn-red;
+}
+.placeholder-gray{
+    &::placeholder{
+        color:@color-text-gray-light;
+    }
+}
+.main-color {
+	color: @color-primary!important;
+}
+
+.warn-color {
+	color: @color-primary!important;
+}
+
+//.main-w {
+//	background-color: @color-primary!important;
+//	color: #fff!important;
+//}
+.invert-active {
+    background: #fff!important;
+    color: @color-primary!important;
+}
+.orange{
+    color:#ffcd6b;
+}
+
+.border-color {
+    border-color: @color-primary!important;
+}
+
+.gold {
+    color: #FBC757;
+}

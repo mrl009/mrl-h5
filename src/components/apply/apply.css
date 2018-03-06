@@ -1,0 +1,55 @@
+.apply form {
+  margin: 1rem 0.5rem;
+}
+.apply form .form-group {
+  background: #fff;
+  margin-bottom: 0.5rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+.apply form .form-group label.iconfont {
+  width: 2.5rem;
+  font-size: 1.5rem;
+}
+.apply form .form-group span.line {
+  display: inline-block;
+  width: 2px;
+  height: 1rem;
+  background: #F44336;
+}
+.apply form .form-group input {
+  margin-top: -15px;
+  padding-left: 0.5rem;
+  width: 80%;
+}
+.apply form .form-text p {
+  margin-bottom: 0.2rem;
+}
+.apply form .form-text textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 3px 0 rgba(103, 103, 103, 0.5);
+  -moz-box-shadow: inset 0 1px 3px 0 rgba(103, 103, 103, 0.5);
+  box-shadow: inset 0 1px 3px 0 rgba(103, 103, 103, 0.5);
+}
+.apply form .form-submit {
+  padding: 1.2rem;
+}
+.apply .btn-block {
+  display: block;
+  padding: 0.6rem 0;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+}
+.apply .btn-disabled {
+  background-color: #999;
+}
+.apply .btn-submit {
+  background-color: #F44336;
+}
+.apply .pd12 {
+  padding: 1.2rem;
+}

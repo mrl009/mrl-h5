@@ -1,0 +1,46 @@
+<iheader>
+    <back></back>
+    <h1 class="title">我的收藏</h1>
+    <a class="icon pull-right white fs14" ng-if="items && items.length" ng-click="prepareDelete()">
+        {{text}}
+    </a>
+</iheader>
+<content ng-if="items" class="favorite">
+        <div ng-repeat="item in items track by $index" class="row list-cell">
+            <div class="col col-90" ng-click="jumpToGame($index)">
+            <img ng-src="{{item.img}}">
+            <div class="favorite-name">{{item.name}}</div>
+            </div>
+            <div class="right-icon col col-10">
+                <button
+                    class="button button-icon circle ion-ios-circle-outline"
+                    ng-show="data.isDelete"
+                    ng-click="prepareSelected($index,item.id,'add')"
+                ></button>
+                <button
+                    class="button button-icon icon iconfont icon-dui main-color ion-ios-checkmark hidden"
+                    ng-show="data.isDelete"
+                    ng-click="prepareSelected($index,item.id,'delete')"
+                ></button>
+            </div>
+        </div>
+
+        <div align-title="left" class="favorite-footer-bar row" ng-if="data.isDelete && items">
+            <div class="buttons col col-50">
+                <button class="button favorite-footer-bar-left border-color main-color" ng-click="prepareSelected(this,'','all')" ng-if="!data.allSelected">全选</button>
+                <button class="button favorite-footer-bar-left border-color main-color" ng-click="prepareSelected(this,'','all')" ng-if="data.allSelected">取消</button>
+            </div>
+            <div class="buttons col col-50">
+                <button class="button favorite-footer-bar-right main-w border-color" ng-click="favoriteDelete()">确认删除</button>
+            </div>
+        </div>
+</content>
+<content ng-if="!items">
+    <div class="member-lack-favorite">
+        <img src="../../assets/img/member-lack-box.png">
+        <p class="p-grep">没有收藏</p>
+        <p class="main-color">您可在购彩大厅进行收藏</p>
+    </div>
+</content>
+
+

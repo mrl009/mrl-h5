@@ -1,0 +1,24 @@
+<!--  -->
+<div class="lhc-lm clearfix">
+    <div class="lot-number-left lm-label fl">
+        <p >号码</p>
+    </div>
+    <div class="lot-number-right fr">
+        <div class="ch_numball ball-red tm">
+            <ul class="balls">
+                <li ng-repeat="t in lottery.balls">
+                    <span
+                        class="ball"
+                        ng-click="selBalls($event)"
+                        name="{{t.name}}"
+                        rate="{{lottery.rate}}"
+                        rebate="{{lottery.rebate}}"
+                        code="{{t.code}}"
+                        pid="{{t.id}}"
+                    >{{t.name}}</span>
+                    <div ng-bind="lottery.rate"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

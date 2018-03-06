@@ -1,0 +1,69 @@
+<iheader>
+    <back></back>
+    <h1 class="title">{{title}}</h1>
+</iheader>
+<content class="modify-money-pwd">
+    <!--修改-->
+    <form class="register-form fs14" ng-submit="submitPwd()" ng-if="checkType == 1">
+        <div class="bg-white item-input-wrapper">
+            <span>旧密码</span>
+            <input type="password" name="pwd"
+                   ng-model="form.bank_pwd"
+                   placeholder="请输入旧密码"
+                   maxlength="6" ng-keyup="filterNum($event)">
+        </div>
+        <div class="bg-white item-input-wrapper mt-8">
+            <span class="">新密码</span>
+            <input class="" type="password" name="new_pwd"
+                   ng-model="form.new_pwd"
+                   placeholder="请输入新密码"
+                   maxlength="6" ng-keyup="filterNum($event)">
+        </div>
+        <div class="bg-white item-input-wrapper mt-8">
+            <span class="">确认新密码</span>
+            <input type="password"
+                   name="r_new_pwd" ng-model="form.r_new_pwd"
+                   placeholder="请再次确认密码" maxlength="6" ng-keyup="filterNum($event)">
+        </div>
+        <p class="m-t20 m-b20 text-center">
+            密码必须为 <span class="main-color">6位数字</span>且符合0~9数字
+        </p>
+        <div class="register-form-submit-btn">
+            <button class="block text-center white-text radius5 main-bg fs14" type="submit">
+                确 认
+            </button>
+        </div>
+    </form>
+    <!--设置-->
+    <form class="register-form fs14" ng-submit="modifyMoneyPwd()" ng-if="checkType == 2">
+        <input type="password" style="position:absolute;top:-999px"/> <!--阻止默认填写表单-->
+
+        <div class="item-input-wrapper bg-white">
+            <span>姓名</span>
+            <input type="text"
+                   name="bank_name"
+                   ng-model="form.bank_name"
+                   placeholder="请输入您的真实姓名">
+        </div>
+        <div class="item-input-wrapper mt-8 bg-white">
+            <span>手机号</span>
+            <input type="text"
+                   name="phone"
+                   ng-model="form.phone"
+                   placeholder="请输入您的手机号"/>
+        </div>
+        <div class="item-input-wrapper mt-8 bg-white">
+            <span>资金密码</span>
+            <input type="password" name="bank_pwd"
+                   maxlength="6"
+                   ng-model="form.bank_pwd"
+                   placeholder="请输入资金密码">
+        </div>
+        <p class="m-t20 m-b20 text-center fs12">为了您的账户安全，真实姓名需要与绑定银行卡一致</p>
+        <div class="register-form-submit-btn">
+            <button class="block text-center white-text radius5 main-bg fs14" type="submit">
+                确 定
+            </button>
+        </div>
+    </form>
+</content>

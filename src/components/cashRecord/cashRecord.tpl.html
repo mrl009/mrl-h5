@@ -1,0 +1,71 @@
+<iheader>
+    <back></back>
+    <h1 class="title">账户明细</h1>
+    <a class="icon pull-right white fs14" ng-click="showFilter()">
+        筛选
+    </a>
+</iheader>
+<content class="cashRecord">
+    <div class="member-lack-bet-record text-center" ng-if="!items.length">
+        <img src="../../assets/img/member-lack-box.png">
+    </div>
+    <div class="list"
+        ng-if="items && items.length"
+        pull-refresh
+        refresh="refresh()"
+        load-more="more()"
+    >
+        <div class="row " ng-repeat="item in items">
+            <div class="col-40">
+                <span class="block text-left fs14 m-b5">
+                    {{item.name}}
+                </span>
+                <span class="block text-left fs14 light-gray">
+                    {{item.addtime}}
+                </span>
+            </div>
+            <div class="col-60">
+                <span class="block text-right fs14 m-b5">
+                    {{item.amount}}元
+                </span>
+                <span class="block text-right fs14 golden">
+                    订单号: {{item.order_num}}
+                </span>
+            </div>
+        </div>
+    </div>
+</content>
+<script id="cash-filter.html" type="text/ng-template">
+    <div class="filter-content">
+        <p class="fs14">日期</p>
+        <div class="date-wrap clearfix">
+            <div class="date-item fl border-color">
+                <i class="date-label fs14 main-w">起:</i>
+                <input readonly="readonly"
+                    ng-model="start"
+                    class="date-input fs14"
+                    ng-click="setDate($event, 'start')"
+                >
+            </div>
+            <div class="date-item fl date-marg border-color">
+                <i class="date-label fs14 main-w">止:</i>
+                <input readonly="readonly"
+                    ng-model="end"
+                    class="date-input fs14"
+                    ng-click="setDate($event, 'end')"
+                >
+            </div>
+        </div>
+        <p class="fs14">类型</p>
+        <div class="type-content">
+            <span class="fs12 no-wrap"
+                ng-click="setFilter(t.value)"
+                ng-class="{'active border-color': t.value == type}"
+                ng-repeat="t in status track by $index"
+                ng-if="t !== undefined"
+            >
+                {{t.label}}
+            </span>
+        </div>
+    </div>
+</script>

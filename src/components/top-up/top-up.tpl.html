@@ -1,0 +1,282 @@
+<iheader>
+    <back></back>
+    <h1 class="title">充值</h1>
+</iheader>
+<content class="top-up">
+    <div class="account-area">
+        <span>余额：<span class="balance-num warn-color">{{user.balance}}</span></span>
+    </div>
+    <div class="input-area">
+        <div class="flex-middle pd-l10">
+            <span class="col-center">充值金额：</span>
+            <textarea class="money-box" rows="1" cols="20" placeholder="输入金额"
+                      ng-model="pay.money"
+                      ng-change="filter()"
+            ></textarea>
+        </div>
+        <hr class="hr">
+        <div class="moneylist">
+            <ul class="clearfix fs14 text-center">
+                <li ng-repeat="v in moneyArr"
+                    ng-class="{true: 'main-w', false: 'invert-active'}[v == pay.money]"
+                    ng-click="changeMoney(v)"
+                    select="{{v == pay.money}}"
+                >{{v}}元</li>
+            </ul>
+        </div>
+    </div>
+    <div class="account-area">
+        <span>请选择支付方式</span>
+
+    </div>
+    <slide-tabs auto-hide="true" needWrap="true">
+        <slide-tab
+            ng-repeat="pay in payList"
+            bar-title="{{pay.name}}"
+            type="{{pay.type}}"
+        >
+            <!--线上支付-->
+            <div class="rows tab-list-content"
+                ng-repeat="i in pay.list track by $index"
+                ng-if="pay.type != 'bank' && pay.type != 'wy' && pay.type != 'card'"
+                ng-click="paySelect(pay.name, pay.type, i, $index)">
+                <label class="item-radio">
+                    <input type="radio" name="group" value="{{i.id}}">
+                    <div class="pay item-content flex-space">
+                        <div class="fl flex-middle">
+                            <img ng-src="{{i.img}}">
+                            <div>
+                                <span ng-class="{'main-color': $index == payIndex}">{{i.title}}</span>
+                                <p>{{i.Prompt}}</p>
+                            </div>
+                        </div>
+                        <i class="iconfont">&#xe61c;</i>
+                    </div>
+                    <i class="radio-icon disable-pointer-events ion-ios-checkmark"></i>
+                </label>
+            </div>
+            <!--网银-->
+            <div class="rows"
+                 ng-repeat="i in pay.list track by $index"
+                 ng-if="pay.type == 'wy'"
+                 ng-click="paySelect(pay.name, pay.type, i, $index)">
+                <label class="item-radio">
+                    <span class="item" ng-class="{'main-color': $index == payIndex}">{{i.name}}</span>
+                </label>
+            </div>
+            <!--在线转账-->
+            <div class="rows tab-list-content"
+                 ng-repeat="i in pay.list track by $index"
+                 ng-if="pay.type=='bank'"
+                 ng-click="paySelect(pay.name, pay.type, i, $index)">
+                <label class="item-radio">
+                    <input type="radio" name="group" value="{{i.id}}">
+                    <div class="pay item-content row" ng-class="{'main-color': $index == payIndex}">
+                        <div class="col col-25">
+                            <p class="item">银行</p>
+                            <p class="item">收款人</p>
+                            <p class="item">开户行</p>
+                            <p class="item">卡号</p>
+                        </div>
+                        <div class="col col-75">
+                            <p class="item bank_name">{{i.bank_name}}<p/>
+                            <p class="item user">{{i.name}}<p/>
+                            <p class="item card_address">{{i.card_address}}<p/>
+                            <p class="item num">{{i.num}}<p/>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <!--优惠卡-->
+            <div
+                class="rows tab-list-content"
+                ng-repeat="i in pay.list track by $index"
+                ng-if="pay.type=='card'">
+                <div class="card-input-area">
+                    <label class="item item-input">
+                        <span
+                            style="display: none"
+                            type="{{pay.type}}"
+                            name = "{{pay.name}}"
+                            pid="{{i.id}}"
+                            code="{{i.code}}"
+                            jump_mode="{{i.jump_mode}}"
+                            is_confirm="{{i.is_confirm}}">
+                        </span>
+                        <span class="input-label" ng-class="{'main-color': $index == payIndex}">卡密</span>
+                        <input
+                            class="card-input"
+                            type="text"
+                            id="card_pwdtext"
+                            placeholder="请输入您的卡密"
+                            ng-model="paycard.card_pwd"
+                        >
+                    </label>
+                </div>
+            </div>
+            <!--提交-->
+            <div class="pay-btn-wrap">
+                <a
+                    ng-if="pay.type=='card'"
+                    class="button button-big button-fill"
+                    ng-repeat="i in pay.list"
+                    type="{{x.type}}"
+                    pid="{{i.id}}"
+                    code="{{i.code}}"
+                    ng-click="paySelect(pay.type, pay.name, i)">提交
+                </a>
+            </div>
+        </slide-tab>
+    </slide-tabs>
+    <!--<slide-tabs auto-hide="true" needWrap="true">-->
+    <!--<slide-tab-->
+    <!--ng-repeat="pay in payList"-->
+    <!--bar-title="{{pay.name}}"-->
+    <!--type="{{pay.type}}">-->
+    <!--&lt;!&ndash;线上支付&ndash;&gt;-->
+    <!--<div-->
+    <!--class="rows tab-list-content"-->
+    <!--ng-repeat="i in pay.list"-->
+    <!--ng-if="pay.type != 'bank' && pay.type != 'wy' && pay.type != 'card'"-->
+    <!--ng-click="paySelect($event)">-->
+    <!--<label class="item-radio">-->
+    <!--<input type="radio" name="group" value="{{i.id}}">-->
+    <!--<div class="pay item-content flex-space">-->
+    <!--<div class="fl flex-middle">-->
+    <!--<img ng-src="{{i.img}}"-->
+    <!--style="width: 40px;margin-right: 10px">-->
+    <!--<div>-->
+    <!--<span-->
+    <!--type="{{pay.type}}"-->
+    <!--name = "{{pay.name}}"-->
+    <!--pid="{{i.id}}"-->
+    <!--code="{{i.code}}"-->
+    <!--catm_min="{{i.catm_min}}"-->
+    <!--qrcode="{{i.qrcode}}"-->
+    <!--catm_max="{{i.catm_max}}"-->
+    <!--jump_mode="{{i.jump_mode}}"-->
+    <!--is_confirm="{{i.is_confirm}}"-->
+    <!--bank_name="{{i.bank_name?i.bank_name:''}}"-->
+    <!--card_address="{{i.card_address?i.card_address:''}}"-->
+    <!--user="{{i.name?i.name:''}}"-->
+    <!--num="{{i.num?i.num:''}}"-->
+    <!--&gt;{{i.title}}</span>-->
+    <!--<p>{{i.Prompt}}</p>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<i class="iconfont">&#xe61c;</i>-->
+    <!--</div>-->
+    <!--<i class="radio-icon disable-pointer-events ion-ios-checkmark"></i>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;网银&ndash;&gt;-->
+    <!--<div-->
+    <!--class="rows"-->
+    <!--ng-repeat="i in pay.list"-->
+    <!--ng-if="pay.type == 'wy'"-->
+    <!--ng-click="paySelect($event)"-->
+    <!--&gt;-->
+    <!--<label class="item-radio">-->
+    <!--<span-->
+    <!--class="item"-->
+    <!--type="{{pay.type}}"-->
+    <!--name = "{{pay.name}}"-->
+    <!--pid="{{i.id}}"-->
+    <!--code="{{i.code}}"-->
+    <!--catm_min="{{i.catm_min}}"-->
+    <!--catm_max="{{i.catm_max}}"-->
+    <!--jump_mode="{{i.jump_mode}}"-->
+    <!--is_confirm="{{i.is_confirm}}"-->
+    <!--qrcode="{{i.qrcode}}"-->
+    <!--bank_type="{{i.bank_type}}"-->
+    <!--&gt;{{i.name}}</span>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;在线转账&ndash;&gt;-->
+    <!--<div class="rows tab-list-content"-->
+    <!--ng-repeat="i in pay.list"-->
+    <!--ng-if="pay.type=='bank'"-->
+    <!--ng-click="paySelect($event)">-->
+    <!--<label class="item-radio">-->
+    <!--<input type="radio" name="group" value="{{i.id}}">-->
+    <!--<div class="pay item-content row">-->
+    <!--<span-->
+    <!--style="display: none"-->
+    <!--type="{{pay.type}}"-->
+    <!--name = "{{pay.name}}"-->
+    <!--pid="{{i.id}}"-->
+    <!--code="{{i.code}}"-->
+    <!--qrcode="{{i.qrcode}}"-->
+    <!--catm_min="{{i.catm_min}}"-->
+    <!--catm_max="{{i.catm_max}}"-->
+    <!--jump_mode="{{i.jump_mode}}"-->
+    <!--is_confirm="{{i.is_confirm}}"-->
+    <!--&gt;</span>-->
+    <!--<div class="col col-25">-->
+    <!--<p class="item">银行</p>-->
+    <!--<p class="item">收款人</p>-->
+    <!--<p class="item">开户行</p>-->
+    <!--<p class="item">卡号</p>-->
+    <!--</div>-->
+    <!--<div class="col col-75">-->
+    <!--<p class="item bank_name">{{i.bank_name}}<p/>-->
+    <!--<p class="item user">{{i.name}}<p/>-->
+    <!--<p class="item card_address">{{i.card_address}}<p/>-->
+    <!--<p class="item num">{{i.num}}<p/>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;优惠卡&ndash;&gt;-->
+    <!--<div-->
+    <!--class="rows tab-list-content"-->
+    <!--ng-repeat="i in pay.list"-->
+    <!--ng-if="pay.type=='card'">-->
+    <!--<div class="card-input-area">-->
+    <!--<label class="item item-input">-->
+    <!--<span-->
+    <!--style="display: none"-->
+    <!--type="{{pay.type}}"-->
+    <!--name = "{{pay.name}}"-->
+    <!--pid="{{i.id}}"-->
+    <!--code="{{i.code}}"-->
+    <!--jump_mode="{{i.jump_mode}}"-->
+    <!--is_confirm="{{i.is_confirm}}"-->
+    <!--&gt;-->
+    <!--</span>-->
+    <!--<span class="input-label">卡密</span>-->
+    <!--<input-->
+    <!--class="card-input"-->
+    <!--type="text"-->
+    <!--id="card_pwdtext"-->
+    <!--placeholder="请输入您的卡密"-->
+    <!--ng-model="paycard.card_pwd"-->
+    <!--&gt;-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;提交&ndash;&gt;-->
+    <!--<div class="pay-btn-wrap">-->
+    <!--<a-->
+    <!--ng-if="pay.type=='card'"-->
+    <!--class="button button-big button-fill"-->
+    <!--ng-repeat="i in pay.list"-->
+    <!--type="{{x.type}}"-->
+    <!--pid="{{i.id}}"-->
+    <!--code="{{i.code}}"-->
+    <!--ng-click="paySelect($event)">提交-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</slide-tab>-->
+    <!--</slide-tabs>-->
+</content>
+<script id="topUpAlert.html" type="text/ng-template">
+    <div class="topup-alert">
+        <div class="topup-alert-title">
+            <span class="fs20">公 告</span>
+        </div>
+        <hr>
+        <div class="topup-alert-content fs14" ng-bind-html="html"></div>
+        <button class="topup-alert-button main-bg" ng-click="okAlert()">朕已阅</button>
+    </div>
+</script>

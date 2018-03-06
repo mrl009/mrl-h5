@@ -1,0 +1,44 @@
+.wx-accounts p {
+  margin: 0;
+}
+.wx-accounts .padding-box {
+  padding: 0.4rem 0;
+}
+.wx-accounts .qr-img {
+  margin: 0.5rem auto 1rem;
+  width: 12rem;
+}
+.wx-accounts .qr-img img {
+  width: 100%;
+  height: 12rem;
+}
+.wx-accounts .qr-img > a {
+  padding: 0 2rem;
+}
+.wx-accounts .qr-img > p {
+  margin-top: 0.4rem;
+}
+.wx-accounts .qr-img > p a {
+  padding: 0.4rem 0.2rem;
+}
+.wx-accounts .submit-order .row {
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+.wx-accounts .submit-order .row .col-60 {
+  height: 2rem;
+}
+.wx-accounts .submit-order .row .col-40 {
+  padding-top: 0.1rem;
+}
+.wx-accounts .submit-order input {
+  border: 1px solid #d8d8d8;
+  width: 100%;
+}
+.wx-accounts .submit-order .btn-group {
+  padding: 0 4rem;
+  margin-top: 4rem;
+}
+.wx-accounts .submit-order .btn-group button {
+  width: 100%;
+}

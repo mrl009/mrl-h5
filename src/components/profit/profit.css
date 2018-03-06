@@ -1,0 +1,21 @@
+.profit .top-bg {
+  padding: 1.5rem 0.5rem 0.4rem;
+  height: 7.5rem;
+  background-image: linear-gradient(-180deg, #652428 0%, #370B2E 100%);
+}
+.profit .profit-info .b-r {
+  border-right: 1px solid #d8d8d8;
+}
+.profit .profit-info .b-b {
+  border-bottom: 1px solid #d8d8d8;
+}
+.profit .profit-info li {
+  width: 33.33333%;
+  height: 6rem;
+  float: left;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

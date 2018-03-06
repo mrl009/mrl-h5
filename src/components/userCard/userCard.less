@@ -1,0 +1,66 @@
+
+.bank-card-item{
+    margin-bottom:0.4rem;
+    position:relative;
+    padding:0 0.5rem;
+    .flex-middle{
+        height:65/20rem;
+    }
+    i.iconfont{
+        position:absolute;
+        right:0.5rem;
+        transform-origin: center center;
+        transform:rotate(0deg);
+        transition:transform 0.2s;
+    }
+    .drop-down{
+        height:0;
+        transition:height 0.2s;
+        overflow: hidden;
+        border-top:1px solid transparent;
+        p{
+            margin:0.3rem 0 0.6rem 0;
+        }
+        img{
+            width:145/20rem;
+            height:145/20rem;
+            margin-bottom:1rem;
+        }
+    }
+    &.show{
+        i.iconfont{
+            transform:rotate(90deg)
+        }
+        .drop-down{
+            height:215/20rem;
+            border-top-color: #ddd;
+        }
+    }
+}
+.bank-card-list-img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.member-lack-user-card{
+    margin-top: 20%;
+}
+
+.member-lack-user-card img{
+    margin: 0 auto;
+    height: 12rem;
+    display: block;
+}
+
+.member-lack-user-card p{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2rem;
+    color: #adadad;
+}
+
+.bank-card-list-unbind {
+    position: absolute;
+    right: 1.6rem;
+    top: 0.9rem;
+}

@@ -1,0 +1,30 @@
+/* =============== media query 计算方式 ================ */
+@baseWidth: 375px;
+@baseFont: 20px;
+
+html {
+  font-size: @baseFont;  //默认当做320px宽度的屏幕来处理
+}
+
+@bps: 320px, 375px, 400px, 414px, 480px;
+
+.loop(@i: 1) when (@i <= length(@bps)) {  //注意less数组是从1开始的
+  @bp: extract(@bps, @i);
+  @font: @bp/@baseWidth*@baseFont;
+  @media only screen and (min-width: @bp){
+    html {
+      font-size: @font !important;
+    }
+  }
+  .loop((@i + 1));
+};
+.loop;
+
+.generate-font-size(@n, @i: 1) when (@i =< @n) {
+  @fs: @i * 2;
+  .fs@{fs}{
+    font-size: 1rem * (@fs / 20)!important;
+  }
+  .generate-font-size(@n, (@i + 1));
+}
+.generate-font-size(20,3);

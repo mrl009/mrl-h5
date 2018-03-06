@@ -1,0 +1,45 @@
+.discover .player-item {
+  position: relative;
+  overflow: hidden;
+  height: 2.75rem;
+  border-bottom: 1px solid #eee;
+}
+.discover .player-item.initHeight {
+  opacity: 0 !important;
+  height: 0 !important;
+}
+.discover .player-item.addItem {
+  transition: all .5s linear;
+  opacity: 1 !important;
+  height: 2.75rem !important;
+}
+.discover .player-item p {
+  margin: 0;
+}
+.discover .player-item img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.75rem;
+}
+.discover .player-item i {
+  position: absolute;
+  right: 0.5rem;
+}
+.discover .player-item [class^='top'] {
+  width: 1.1rem;
+  line-height: 1.1rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.discover .player-item .top-one {
+  background-image: linear-gradient(-156deg, #F5515F 0%, #9F041B 100%);
+}
+.discover .player-item .top-two {
+  background-image: linear-gradient(-156deg, #51AFF5 0%, #04559F 100%);
+}
+.discover .player-item .top-three {
+  background-image: linear-gradient(-156deg, #91F551 0%, #459F04 100%);
+}
+.discover .player-item .top-no {
+  font-size: 14px;
+}

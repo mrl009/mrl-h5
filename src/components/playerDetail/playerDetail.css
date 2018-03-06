@@ -1,0 +1,47 @@
+.player-detail .top-bg {
+  height: 4.75rem;
+  background: url("../../assets/img/bgImages/top-bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.player-detail .top-bg img {
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  border: 2px solid #fff;
+}
+.player-detail .detail {
+  padding: 1.6rem 0 0.4rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+.player-detail .vip {
+  padding: 0.3rem 0.5rem 0.3rem 1rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.player-detail .gender {
+  background: #FF9A70;
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+}
+.player-detail .like-lottery {
+  overflow: hidden;
+}
+.player-detail .like-lottery > h3 {
+  margin: 1.2rem 0;
+}
+.player-detail .like-lottery > a {
+  float: left;
+  overflow: hidden;
+  display: block;
+  padding: 0.5rem;
+  width: 25%;
+}
+.player-detail .like-lottery > a img {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+}

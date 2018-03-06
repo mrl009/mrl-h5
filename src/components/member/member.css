@@ -1,0 +1,107 @@
+/**************会员中心**************/
+.my p {
+  margin: 0;
+}
+.my .member {
+  background: #ffffff;
+  margin-bottom: 0.5rem;
+}
+.my .member-avatar {
+  margin: 0.75rem auto 0;
+  border-radius: 7px;
+  width: 2.75rem;
+  height: 2.75rem;
+  position: relative;
+}
+.my .member-avatar.ma-unlogin {
+  background: url(../../assets/img/icon-avatar.png) no-repeat center;
+  background-size: 3.15rem 3.15rem;
+}
+.my .member-avatar.ma-login {
+  background: url(../../assets/img/icon-login-avatar.png) no-repeat center;
+  background-size: 3.15rem 3.15rem;
+}
+.my .icon-vip {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  transform-origin: center center;
+  transform: rotate(45deg);
+  top: -0.6rem;
+  right: -0.6rem;
+}
+.my .icon-vip span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ac0d18;
+  transform: scale(0.7);
+}
+.my .qipao {
+  width: 1.2rem;
+  height: 1.2rem;
+  top: -0.5rem;
+  right: -1rem;
+  color: #fff;
+}
+.my .member-content {
+  margin: 0.32rem 0 0;
+}
+.my .member-content .member-tc-wrap {
+  margin: 0.5rem 0;
+}
+.my .member-content .member-tc-wrap a {
+  padding: 0.35rem 1rem;
+  border-radius: 4px;
+}
+.my .my-tabs-info [class^='icon'] {
+  margin: 0.4rem auto 0.25rem;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.my .my-items > a {
+  float: left;
+  width: 33.33333333%;
+  height: 4.75rem;
+  text-align: center;
+  background: #fff;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.my .my-items > a:nth-child(3n) {
+  border-right: 0;
+}
+.my .my-items > a:nth-child(1),
+.my .my-items > a:nth-child(2),
+.my .my-items > a:nth-child(3) {
+  border-top: 0;
+}
+.my .my-items > a [class^='icon'] {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.75rem auto 0.25rem;
+}
+.my .refresh-btn {
+  display: inline-block;
+  line-height: 1rem;
+  transform-origin: center center;
+  transform: rotate(0deg);
+}
+.my .rotate-circle {
+  transition: all 2s linear;
+  transform: rotate(360deg);
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

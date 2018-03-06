@@ -1,0 +1,32 @@
+<div class="ch_numball ball-red fangBall lot-number-wrap" style="background: #fff">
+  	<ul class="balls">
+    	<li ng-repeat="t in lottery.balls">
+	      	<span
+		      	class="ball"
+		      	ng-click="selBalls($event)"
+		      	name="{{t.name}}"
+		      	rate="{{t.rate}}"
+		      	rebate="{{t.rebate}}"
+		        code="{{t.code}}"
+		        pid="{{t.id}}"
+		        ng-if="onePlayId!=2704"
+		    >
+		        <div class="name fs18" ng-class="{'color124':t.code==124,'color125':t.code==125,'color126':t.code==126}">{{t.name}}</div>
+		        <div class="rate fs14">赔率:{{t.rate}}</div>
+      		</span>
+      		<span
+		      	class="ball color{{t.code}}"
+		      	ng-click="selBalls($event)"
+		      	name="{{t.name}}"
+		      	rate="{{t.rate}}"
+		      	rebate="{{t.rebate}}"
+		        code="{{t.code}}"
+		        pid="{{t.id}}"
+		        ng-if="onePlayId==2704"
+		    >
+		        <div class="name fs18" ng-class="{'color124':t.code==124,'color125':t.code==125,'color126':t.code==126}">{{t.name}}</div>
+		        <div class="rate fs14">赔率:{{t.rate}}</div>
+      		</span>
+    	</li>
+  	</ul>
+</div>
